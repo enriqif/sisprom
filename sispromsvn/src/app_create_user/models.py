@@ -21,6 +21,7 @@ class Medico(Persona):
     horarioAtencionMin = models.TimeField()
     horarioAtencionMax = models.TimeField()
     
+    
     def __unicode__(self, ):
         return self.nombre + " " +self.apellido
 
@@ -28,6 +29,7 @@ class Paciente(Persona):
     #codigoPaciente = models.IntegerField(max_length = 20, primary_key = True)
     edad = models.CharField(max_length = 3)
     obraSocial = models.CharField(max_length = 20)
+    estadoCivil = models.CharField(max_length = 20, default = '')
     
     def __unicode__(self, ):
         return self.nombre + " " +self.apellido
