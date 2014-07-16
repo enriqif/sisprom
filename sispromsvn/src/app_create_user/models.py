@@ -3,13 +3,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Persona(models.Model):
-    nombre = models.CharField(max_length = 30)
-    apellido = models.CharField(max_length = 30)
-    dni = models.CharField(max_length = 10)
-    direccion = models.CharField(max_length = 50)
-    telefono = models.CharField(max_length = 20)
-    provincia = models.CharField(max_length = 30)
-    localidad = models.CharField(max_length = 30)
+    nombre = models.CharField(max_length = 30, default = '')
+    apellido = models.CharField(max_length = 30, default = '')
+    dni = models.CharField(max_length = 10, default = '')
+    direccion = models.CharField(max_length = 50, default = '')
+    telefono = models.CharField(max_length = 20, default = '')
+    provincia = models.CharField(max_length = 30, default = '')
+    localidad = models.CharField(max_length = 30, default = '')
+    pais = models.CharField(max_length = 30, default = '')
 
 class Medico(Persona):
     #codigoMedico = models.CharField(max_length = 20, primary_key= True) 
