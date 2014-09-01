@@ -5,6 +5,9 @@ import java.util.List;
 import com.sisprom.framework.dominio.Consulta;
 import com.sisprom.framework.model.dao.ConsultaDao;
 
+//Create by
+//Modification by Marto
+
 public class ConsultaDaoImpl implements ConsultaDao {
 
 	@Override

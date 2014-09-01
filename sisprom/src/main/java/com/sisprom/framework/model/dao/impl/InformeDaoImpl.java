@@ -5,6 +5,9 @@ import java.util.List;
 import com.sisprom.framework.dominio.Informe;
 import com.sisprom.framework.model.dao.InformeDao;
 
+//Create by
+//Modification by Martin
+
 public class InformeDaoImpl implements InformeDao {
 
 	@Override

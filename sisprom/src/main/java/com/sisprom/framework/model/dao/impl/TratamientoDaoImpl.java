@@ -5,6 +5,9 @@ import java.util.List;
 import com.sisprom.framework.dominio.Tratamiento;
 import com.sisprom.framework.model.dao.TratamientoDao;
 
+//Create by
+//Modification by Martin
+
 public class TratamientoDaoImpl implements TratamientoDao{
 
 	@Override
