@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.sisprom.framework.dominio.Turno;
 
+//Create by marto
+
 public interface TurnoDao {
 
 	void save(Turno turno);

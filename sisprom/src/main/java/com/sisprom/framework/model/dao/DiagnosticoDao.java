@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.sisprom.framework.dominio.Diagnostico;
 
+//Create by marto
 public interface DiagnosticoDao {
 
 	void save(Diagnostico diagnostico);

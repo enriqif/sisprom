@@ -2,6 +2,8 @@ package com.sisprom.framework.model.dao;
 
 import java.util.List;
 
+//Create by marto
+
 public interface TeaTratamientoMedicamento {
 
 	void save(TeaTratamientoMedicamento teaTratamientoMedicamento);

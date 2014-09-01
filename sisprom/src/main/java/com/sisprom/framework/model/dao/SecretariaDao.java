@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.sisprom.framework.dominio.Secretaria;
 
+//Create by marto
+
 public interface SecretariaDao {
 
 	List<Secretaria> getAll();

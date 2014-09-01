@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.sisprom.framework.dominio.Medicamento;
 
+//Create by marto
 public interface MedicamentoDao {
 
 	void save(Medicamento medicamento);
