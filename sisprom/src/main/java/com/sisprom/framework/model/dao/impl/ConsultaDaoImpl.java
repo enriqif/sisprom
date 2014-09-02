@@ -5,10 +5,12 @@ import java.util.List;
 import com.sisprom.framework.dominio.Consulta;
 import com.sisprom.framework.model.dao.ConsultaDao;
 
+import com.sisprom.framework.model.xml.hibernate.util.HibernateUtil;
+
 //Create by
 //Modification by Marto
 
-public class ConsultaDaoImpl implements ConsultaDao {
+public class ConsultaDaoImpl extends HibernateDaoSupport implements ConsultaDao {
 
 	@Override
 	public List<Consulta> getAllConsulta() {
@@ -25,7 +27,7 @@ public class ConsultaDaoImpl implements ConsultaDao {
 	@Override
 	public void save(Consulta consulta) {
 		// TODO Auto-generated method stub
-		
+		this.getHibernateTemplate().save(consulta);
 	}
 
 	@Override
