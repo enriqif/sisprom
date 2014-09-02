@@ -17,20 +17,11 @@
 <!--  ============ Spring DataSource ===================== -->
 <!--  Parametro de conexion de Base de Datos  -->
  <bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-          
-     <property name="driverClassName" >
-     <value>oracle.jdbc.driver.OracleDriver</value>
-     </property>
-     <property name="url">
-     <value>jdbc:oracle:thin:@localhost:1521:xe</value>
-     </property>
-     <property name="username">
-     <value>sisprom</value> 
-     </property>
-     <property name="password">
-     <value>sisprom</value>
-     </property>
- </bean>
+			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+			<property name="username" value="sisprom"/>
+			<property name="password" value="siprom"/>
+		</bean>
  <!-- ===============/Spring DataSource ==================== -->
  
  
@@ -49,8 +40,10 @@
 
 <!-- =================== DAOS ========================================= -->
 
-<bean id="cpnsultaDao" class="com.sisprom.framework.model.impl.ConsultaDaoImpl">
-<property name="sessionFactory" ref="mySessionFactory"/>
+<bean id="services" class="com.sisprom.framework.model.services">
+	<property name="consultaDao"><ref bean= "consultaDao"/></property>
+
+
 </bean>
 
 
