@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+ xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xmlns:tx="http://www.springframework.org/schema/tx"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/tx 
+     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+     http://www.springframework.org/schema/aop 
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+
+
+<!--  ============ Spring DataSource ===================== -->
+<!--  Parametro de conexion de Base de Datos  -->
+ <bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+          
+     <property name="driverClassName" >
+     <value>oracle.jdbc.driver.OracleDriver</value>
+     </property>
+     <property name="url">
+     <value>jdbc:oracle:thin:@localhost:1521:xe</value>
+     </property>
+     <property name="username">
+     <value>sisprom</value> 
+     </property>
+     <property name="password">
+     <value>sisprom</value>
+     </property>
+ </bean>
+ <!-- ===============/Spring DataSource ==================== -->
+ 
+ 
+ 
+
+<!-- ================= /Hibernate SessionFactory  ==================== --> 
+ 
+ 
+<!--  =============== Trasaction Manager for Hibernate ================ -->
+<bean id="myTxManager"
+	class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	<property name="sessionFactory" ref="mySessionFactory" />
+	<property name="dataSource" ref="myDataSource" />
+</bean>
+<!-- ================================================================== -->
+
+<!-- =================== DAOS ========================================= -->
+
+<bean id="cpnsultaDao" class="com.sisprom.framework.model.impl.ConsultaDaoImpl">
+<property name="sessionFactory" ref="mySessionFactory"/>
+</bean>
+
+
+
+
+<!-- ================= /End Daos ==================================== -->
+
+<!-- ========== Servicio para el Transaction Manager ================== -->
+ <bean id="facade" class="com.sisprom.services.Facade">
+		
+		<property name="consultaDao" ref="consultaDao"/>
+		
+</bean>
+<!-- ================ /End Servicio =================================== -->
+
+</beans>
