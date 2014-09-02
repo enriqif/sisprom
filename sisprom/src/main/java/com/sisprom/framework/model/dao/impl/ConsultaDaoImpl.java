@@ -10,7 +10,7 @@ import com.sisprom.framework.model.xml.hibernate.util.HibernateUtil;
 //Create by
 //Modification by Marto
 
-public class ConsultaDaoImpl extends HibernateDaoSupport implements ConsultaDao {
+public class ConsultaDaoImpl  implements ConsultaDao {
 
 	@Override
 	public List<Consulta> getAllConsulta() {
@@ -27,7 +27,8 @@ public class ConsultaDaoImpl extends HibernateDaoSupport implements ConsultaDao 
 	@Override
 	public void save(Consulta consulta) {
 		// TODO Auto-generated method stub
-		this.getHibernateTemplate().save(consulta);
+		
+		//this.getHibernateTemplate().save(consulta);
 	}
 
 	@Override
