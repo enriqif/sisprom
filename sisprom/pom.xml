@@ -19,11 +19,67 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.6.Final</version>
 		</dependency>
+
+		<!-- antlr-runtime-3.0.1 -->
+
+
+		<!-- org.springframework.aop-3.1.0.M2 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+
+		<!-- org.springframework.asm-3.1.0.M2 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-asm</artifactId>
+			<version>3.0.3.RELEASE</version>
+		</dependency>
+
+		<!-- org.springframework.aspects-3.1.0.M2 -->
+
+		<!-- org.springframework.beans-3.1.0.M2 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+
+		<!-- org.springframework.context.support-3.1.0.M2 -->
+
+
+		<!-- org.springframework.context-3.1.0.M2 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+
+		<!-- org.springframework.core-3.1.0.M2 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+		
+		<!-- org.springframework.expression-3.1.0.M2 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+		<!-- spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+		
+		<!-- commons-logging-1.1.1 -->
+		
+
 	</dependencies>
-	<properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
 	<build>
 		<finalName>sisprom</finalName>
 	</build>
