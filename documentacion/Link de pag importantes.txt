@@ -1,6 +1,14 @@
 Links:
 
-
+Tutorial instalar tomcat en eclipse
+	pagina 1
+			http://palmor.softmedia.com.mx/tutoriales/configurando-apache-tomcat-en-eclipse/
+	pagina 2
+			http://ayudaenjava.wordpress.com/2012/07/18/45/
+	Pagina extra de  pruebas
+			http://www.cristalab.com/tutoriales/instalar-eclipse-y-tomcat-para-desarrollo-con-java-c64596l/
+			
+			
 Tutorial de spring
 	pagina 1
 		http://www.uv.es/grimo/teaching/SpringMVCv3PasoAPaso/
