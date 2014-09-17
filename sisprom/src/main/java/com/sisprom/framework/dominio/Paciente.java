@@ -1,24 +1,18 @@
 package com.sisprom.framework.dominio;
 
 public class Paciente extends Persona{
-	private String codigoPaciente;
 	private String obraSocial;
 	private String edad;
+
+
+
 	
-	public Paciente(String dni, String nombre, String apellido,
-			StringBuilder direccion, String telefono, String codigoPaciente,
+	public Paciente(int id, String nombre, String apellido, String direccion,
+			String telefono, String dni, Auditoria auditoria,
 			String obraSocial, String edad) {
-		super(dni, nombre, apellido, direccion, telefono);
-		this.codigoPaciente = codigoPaciente;
+		super(id, nombre, apellido, direccion, telefono, dni, auditoria);
 		this.obraSocial = obraSocial;
 		this.edad = edad;
-	}
-
-	public String getCodigoPaciente() {
-		return codigoPaciente;
-	}
-	public void setCodigoPaciente(String codigoPaciente) {
-		this.codigoPaciente = codigoPaciente;
 	}
 	public String getObraSocial() {
 		return obraSocial;

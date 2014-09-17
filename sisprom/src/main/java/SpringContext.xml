@@ -30,33 +30,42 @@
 <!-- ================= /Hibernate SessionFactory  ==================== --> 
  
  
-<!--  =============== Trasaction Manager for Hibernate ================ -->
+<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+			<property name="dataSource" ref="myDataSource"/>
+			<property name="mappingResources">
+				<list>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TSecretaria.hbm.xml</value>
+					
+				</list>
+				</property>
+			<property name="hibernateProperties">
+
+				 <props>
+
+			      <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				  <prop key="hibernate.show_sql">false</prop>
+			      </props>
+			</property>
+		
+		</bean>
+
 <bean id="myTxManager"
 	class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 	<property name="sessionFactory" ref="mySessionFactory" />
 	<property name="dataSource" ref="myDataSource" />
 </bean>
-<!-- ================================================================== -->
-
-<!-- =================== DAOS ========================================= -->
-
-<bean id="services" class="com.sisprom.framework.model.services">
-	<property name="consultaDao"><ref bean= "consultaDao"/></property>
-
-
-</bean>
-
-
-
 
 <!-- ================= /End Daos ==================================== -->
 
 <!-- ========== Servicio para el Transaction Manager ================== -->
- <bean id="facade" class="com.sisprom.services.Facade">
-		
-		<property name="consultaDao" ref="consultaDao"/>
-		
+<bean id="servicio" class="com.sisprom.framework.model.services.Services">
+	<property name="secretariaDao"><ref bean="secretariaDao"/></property>
+			
 </bean>
+<bean id="secretariaDao" class="com.sisprom.framework.model.dao.impl.SecretariaDaoImpl"> 
+			<property name="sessionFactory" ref="mySessionFactory"/>
+</bean>
+
 <!-- ================ /End Servicio =================================== -->
 
 </beans>

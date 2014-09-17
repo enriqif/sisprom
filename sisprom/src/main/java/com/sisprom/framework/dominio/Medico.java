@@ -3,28 +3,22 @@ package com.sisprom.framework.dominio;
 import java.sql.Time;
 
 public class Medico extends Persona{
-	private String codigoMedico;
 	private String matricula;
 	private String especialidad;
 	private Time horarioAtencionMin;
 	private Time horarioAtencionMax;
-	public Medico(String dni, String nombre, String apellido,
-			StringBuilder direccion, String telefono, String codigoMedico,
-			String matricula, String especialidad, Time horarioAtencionMin,
+	
+
+
+	public Medico(int id, String nombre, String apellido, String direccion,
+			String telefono, String dni, Auditoria auditoria, String matricula,
+			String especialidad, Time horarioAtencionMin,
 			Time horarioAtencionMax) {
-		super(dni, nombre, apellido, direccion, telefono);
-		this.codigoMedico = codigoMedico;
+		super(id, nombre, apellido, direccion, telefono, dni, auditoria);
 		this.matricula = matricula;
 		this.especialidad = especialidad;
 		this.horarioAtencionMin = horarioAtencionMin;
 		this.horarioAtencionMax = horarioAtencionMax;
-	}
-
-	public String getCodigoMedico() {
-		return codigoMedico;
-	}
-	public void setCodigoMedico(String codigoMedico) {
-		this.codigoMedico = codigoMedico;
 	}
 	public String getMatricula() {
 		return matricula;

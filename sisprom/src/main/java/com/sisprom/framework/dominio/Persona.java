@@ -1,20 +1,44 @@
 package com.sisprom.framework.dominio;
 
 
+
+
 public abstract class Persona{
+	private int id;
 	private String nombre;
 	private String apellido;
-	private StringBuilder direccion;
+	private String direccion;
 	private String telefono;
 	private String dni;
+	private Auditoria auditoria;
 	
-	public Persona(String dni, String nombre, String apellido,
-			StringBuilder direccion, String telefono) {
+	
+
+
+
+	public Persona(int id, String nombre, String apellido, String direccion,
+			String telefono, String dni,
+			com.sisprom.framework.dominio.Auditoria auditoria) {
+		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.dni = dni;
+		this.auditoria = auditoria;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;
@@ -28,12 +52,7 @@ public abstract class Persona{
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public StringBuilder getDireccion() {
-		return direccion;
-	}
-	public void setDireccion(StringBuilder direccion) {
-		this.direccion = direccion;
-	}
+	
 	public String getTelefono() {
 		return telefono;
 	}
@@ -45,6 +64,12 @@ public abstract class Persona{
 	}
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+	public Auditoria getAuditoria() {
+		return auditoria;
+	}
+	public void setAuditoria(Auditoria auditoria) {
+		this.auditoria = auditoria;
 	}
 	
 	
