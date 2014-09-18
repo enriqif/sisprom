@@ -77,7 +77,21 @@
 		</dependency>
 		
 		<!-- commons-logging-1.1.1 -->
-		
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+  		  	<groupId>org.springframework</groupId>
+      			 <artifactId>org.springframework.web</artifactId>
+      			 <version>2.5.6.A</version>
+    	 </dependency>
 <dependency>
 	<groupId>org.springframework</groupId>
 	<artifactId>spring-orm</artifactId>
