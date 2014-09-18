@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+
+
  
 import com.sisprom.framework.dominio.Secretaria;
 import com.sisprom.framework.model.dao.SecretariaDao;
