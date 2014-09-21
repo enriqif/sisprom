@@ -12,15 +12,9 @@ import com.sisprom.framework.model.xml.context.Context;
 @ManagedBean
 @SessionScoped
 public class MasterManagedBean {
-private String nombre;//Este atributo se debe borrar
-private Services services = Context.getBeanFacade();
-public String getNombre() {
-	return nombre;
-}
 
-public void setNombre(String nombre) {
-	this.nombre = nombre;
-}
+private Services services = Context.getBeanFacade();
+
 public String redireccionar(){	
 	    Auditoria audi=new Auditoria(null, null, null, null);
 	    Secretaria secre= new Secretaria(1,"sol", "camus", "tupac","32234242","1232345",audi,null,null); 

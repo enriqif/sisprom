@@ -13,10 +13,9 @@ public class test {
 	 */
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-//		Auditoria audi=new Auditoria(null, null, null, null);
-//		Secretaria secre= new Secretaria(1,"sol", "camus", "tupac","32234242","1232345",null,null,audi); 
-//		services.save(secre);
+		  Auditoria audi=new Auditoria(null, null, null, null);
+		  Secretaria secre= new Secretaria(1,"sol", "camus", "tupac","32234242","1232345",audi,null,null); 
+		  services.save(secre);
 
 	}
 
