@@ -5,7 +5,7 @@ import java.util.List;
 import com.sisprom.framework.dominio.Consulta;
 import com.sisprom.framework.model.dao.ConsultaDao;
 
-import com.sisprom.framework.model.xml.hibernate.util.HibernateUtil;
+
 
 //Create by
 //Modification by Marto
