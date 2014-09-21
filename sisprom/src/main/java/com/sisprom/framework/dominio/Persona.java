@@ -12,10 +12,6 @@ public abstract class Persona{
 	private String dni;
 	private Auditoria auditoria;
 	
-	
-
-
-
 	public Persona(int id, String nombre, String apellido, String direccion,
 			String telefono, String dni,
 			com.sisprom.framework.dominio.Auditoria auditoria) {
