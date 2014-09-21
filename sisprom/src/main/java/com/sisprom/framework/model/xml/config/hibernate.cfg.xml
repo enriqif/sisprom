@@ -4,19 +4,17 @@
 		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        
-        <!-- ====== Conexion DataSource ====================== -->
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>        
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>        
         <property name="hibernate.connection.username">sisprom</property>
         <property name="hibernate.connection.password">sisprom</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>        
 
-  <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.show_sql">true</property>
 	    <property name="hibernate.max_fetch_depth">30</property>
-        
-	    
-       
-        
-</session-factory>
+
+	    <mapping resource="com/sisprom/framework/model/xml/hibernate/map/TProveedor.hbm.xml"/>
+	   
+    </session-factory>
 </hibernate-configuration>
+

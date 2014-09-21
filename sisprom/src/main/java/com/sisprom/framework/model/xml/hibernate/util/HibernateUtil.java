@@ -14,7 +14,7 @@ public class HibernateUtil {
 
     public HibernateUtil()
     {
-      sessionFactory = new Configuration().configure("com/sisprom/framework/model/xml/config/hibernate.cfg.xml").buildSessionFactory();
+      sessionFactory = new Configuration().configure("com/sisprom/framework/model.xml/config/hibernate.cfg.xml").buildSessionFactory();
       session = sessionFactory.openSession();
     }
 

@@ -47,7 +47,7 @@
 		<property name="sessionFactory" ref="mySessionFactory"/>
     </bean>
 	
-	<bean id="myFacade" class="com.sisprom.framework.model.services.Services">
+	<bean id="services" class="com.sisprom.framework.model.services.Services">
 	  <property name="secretariaDao"><ref bean="secretariaDao"/></property>
 
 	  
