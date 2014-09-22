@@ -17,7 +17,7 @@ private Services services = Context.getBeanFacade();
 
 public String redireccionar(){	
 	    Auditoria audi=new Auditoria(null, null, null, null);
-	    Secretaria secre= new Secretaria(1,"sol", "camus", "tupac","32234242","1232345",audi,null,null); 
+	    Secretaria secre= new Secretaria(1,"solex", "camus", "tupac","32234242","1232345",audi,null,null); 
 	    services.save(secre);
 		return "segundaPagina";
 	
