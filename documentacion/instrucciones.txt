@@ -1,11 +1,13 @@
 Instrucciones para agregar el driver de oracle manualmente en .m2(maven)
+
 1-copiar el ojdbc5.jar en el C
 2-por linea de consola ubicar al archivo y dir
 3-
   ejecutar 
 
 	mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc5 -Dversion=11.1.0.7 -Dpackaging=jar -Dfile=ojdbc5.jar -DgeneratePom=true
-4-Agregar dependencias
+
+	4-Agregar dependencias
 <dependency>  
    <groupId>com.oracle</groupId>  
    <artifactId>ojdbc5</artifactId>  
