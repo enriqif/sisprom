@@ -5,8 +5,6 @@ public class Paciente extends Persona{
 	private String edad;
 
 
-
-	
 	public Paciente(int id, String nombre, String apellido, String direccion,
 			String telefono, String dni, Auditoria auditoria,
 			String obraSocial, String edad) {

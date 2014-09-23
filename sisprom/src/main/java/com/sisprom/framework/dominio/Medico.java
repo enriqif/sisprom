@@ -1,19 +1,20 @@
 package com.sisprom.framework.dominio;
 
+import java.sql.Date;
 import java.sql.Time;
 
 public class Medico extends Persona{
 	private String matricula;
 	private String especialidad;
-	private Time horarioAtencionMin;
-	private Time horarioAtencionMax;
+	private Date horarioAtencionMin;
+	private Date horarioAtencionMax;
 	
 
-
+	
 	public Medico(int id, String nombre, String apellido, String direccion,
 			String telefono, String dni, Auditoria auditoria, String matricula,
-			String especialidad, Time horarioAtencionMin,
-			Time horarioAtencionMax) {
+			String especialidad, Date horarioAtencionMin,
+			Date horarioAtencionMax) {
 		super(id, nombre, apellido, direccion, telefono, dni, auditoria);
 		this.matricula = matricula;
 		this.especialidad = especialidad;
@@ -32,18 +33,19 @@ public class Medico extends Persona{
 	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
 	}
-	public Time getHorarioAtencionMin() {
+	public Date getHorarioAtencionMin() {
 		return horarioAtencionMin;
 	}
-	public void setHorarioAtencionMin(Time horarioAtencionMin) {
+	public void setHorarioAtencionMin(Date horarioAtencionMin) {
 		this.horarioAtencionMin = horarioAtencionMin;
 	}
-	public Time getHorarioAtencionMax() {
+	public Date getHorarioAtencionMax() {
 		return horarioAtencionMax;
 	}
-	public void setHorarioAtencionMax(Time horarioAtencionMax) {
+	public void setHorarioAtencionMax(Date horarioAtencionMax) {
 		this.horarioAtencionMax = horarioAtencionMax;
 	}
+	
 	
 	
 }

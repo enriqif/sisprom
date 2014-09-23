@@ -1,22 +1,28 @@
 package com.sisprom.framework.dominio;
 
 public class Antecedente {
-	private String codigoAntecedente;
+	private int codigoAntecedente;
 	private String codigoHistoriaClinica;
 	private String codigoTipoAntecedente;
 	private String descripcion;
-	public Antecedente(String codigoAntecedente, String codigoHistoriaClinica,
-			String codigoTipoAntecedente, String descripcion) {
+	private Auditoria auditoria;
+
+	
+
+	public Antecedente(int codigoAntecedente, String codigoHistoriaClinica,
+			String codigoTipoAntecedente, String descripcion,
+			Auditoria auditoria) {
 		super();
 		this.codigoAntecedente = codigoAntecedente;
 		this.codigoHistoriaClinica = codigoHistoriaClinica;
 		this.codigoTipoAntecedente = codigoTipoAntecedente;
 		this.descripcion = descripcion;
+		this.auditoria = auditoria;
 	}
-	public String getCodigoAntecedente() {
+	public int getCodigoAntecedente() {
 		return codigoAntecedente;
 	}
-	public void setCodigoAntecedente(String codigoAntecedente) {
+	public void setCodigoAntecedente(int codigoAntecedente) {
 		this.codigoAntecedente = codigoAntecedente;
 	}
 	public String getCodigoHistoriaClinica() {
@@ -36,6 +42,12 @@ public class Antecedente {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public Auditoria getAuditoria() {
+		return auditoria;
+	}
+	public void setAuditoria(Auditoria auditoria) {
+		this.auditoria = auditoria;
 	}
 	
 }

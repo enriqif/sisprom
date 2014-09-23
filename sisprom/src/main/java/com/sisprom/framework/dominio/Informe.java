@@ -1,19 +1,20 @@
 package com.sisprom.framework.dominio;
 
 public class Informe {
-	private String codigoInforme;
+	private int codigoInforme;
 
-	public Informe(String codigoInforme) {
+	public Informe(int codigoInforme) {
 		super();
 		this.codigoInforme = codigoInforme;
 	}
 
-	public String getCodigoInforme() {
+	public int getCodigoInforme() {
 		return codigoInforme;
 	}
 
-	public void setCodigoInforme(String codigoInforme) {
+	public void setCodigoInforme(int codigoInforme) {
 		this.codigoInforme = codigoInforme;
 	}
-	
+
+
 }

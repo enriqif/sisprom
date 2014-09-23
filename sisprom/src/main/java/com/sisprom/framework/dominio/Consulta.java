@@ -1,20 +1,24 @@
 package com.sisprom.framework.dominio;
 
 public class Consulta {
-	private String codigoConsulta;
+	private int codigoConsulta;
 	private String codigoHistoriaClinica;
 	private String descripcion;
-	public Consulta(String codigoConsulta, String codigoHistoriaClinica,
-			String descripcion) {
+	private Auditoria auditoria;
+	
+
+	public Consulta(int codigoConsulta, String codigoHistoriaClinica,
+			String descripcion, Auditoria auditoria) {
 		super();
 		this.codigoConsulta = codigoConsulta;
 		this.codigoHistoriaClinica = codigoHistoriaClinica;
 		this.descripcion = descripcion;
+		this.auditoria = auditoria;
 	}
-	public String getCodigoConsulta() {
+	public int getCodigoConsulta() {
 		return codigoConsulta;
 	}
-	public void setCodigoConsulta(String codigoConsulta) {
+	public void setCodigoConsulta(int codigoConsulta) {
 		this.codigoConsulta = codigoConsulta;
 	}
 	public String getCodigoHistoriaClinica() {
@@ -28,6 +32,12 @@ public class Consulta {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public Auditoria getAuditoria() {
+		return auditoria;
+	}
+	public void setAuditoria(Auditoria auditoria) {
+		this.auditoria = auditoria;
 	}
 	
 }
