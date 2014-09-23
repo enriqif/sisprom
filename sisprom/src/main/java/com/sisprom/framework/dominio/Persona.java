@@ -10,11 +10,14 @@ public abstract class Persona{
 	private String direccion;
 	private String telefono;
 	private String dni;
+	private String usuario;
+	private String contrasenia;
 	private Auditoria auditoria;
 	
+	
 	public Persona(int id, String nombre, String apellido, String direccion,
-			String telefono, String dni,
-			com.sisprom.framework.dominio.Auditoria auditoria) {
+			String telefono, String dni, String usuario, String contrasenia,
+			Auditoria auditoria) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -22,8 +25,27 @@ public abstract class Persona{
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.dni = dni;
+		this.usuario = usuario;
+		this.contrasenia = contrasenia;
 		this.auditoria = auditoria;
 	}
+	
+	
+	
+	public Persona(int id, String nombre, String apellido, String direccion,
+			String telefono, String dni, String usuario) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.dni = dni;
+		this.usuario = usuario;
+	}
+
+
+
 	public String getDireccion() {
 		return direccion;
 	}
@@ -66,6 +88,18 @@ public abstract class Persona{
 	}
 	public void setAuditoria(Auditoria auditoria) {
 		this.auditoria = auditoria;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public String getContrasenia() {
+		return contrasenia;
+	}
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
 	}
 	
 	

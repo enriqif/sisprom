@@ -5,10 +5,11 @@ public class Paciente extends Persona{
 	private String edad;
 
 
+	
 	public Paciente(int id, String nombre, String apellido, String direccion,
-			String telefono, String dni, Auditoria auditoria,
-			String obraSocial, String edad) {
-		super(id, nombre, apellido, direccion, telefono, dni, auditoria);
+			String telefono, String dni, String usuario, String obraSocial,
+			String edad) {
+		super(id, nombre, apellido, direccion, telefono, dni, usuario);
 		this.obraSocial = obraSocial;
 		this.edad = edad;
 	}
