@@ -8,8 +8,6 @@ public class Medico extends Persona{
 	private Date horarioAtencionMin;
 	private Date horarioAtencionMax;
 		
-
-	
 	
 	public Medico(int id, String nombre, String apellido, String direccion,
 			String telefono, String dni, String usuario, String contrasenia,

@@ -3,6 +3,7 @@ package com.sisprom.framework.model.dao;
 import java.util.List;
 
 import com.sisprom.framework.dominio.Consulta;
+import com.sisprom.framework.dominio.Secretaria;
 
 public interface ConsultaDao {
 	
@@ -22,5 +23,8 @@ public interface ConsultaDao {
 	 */
 	void update(Consulta consulta);
 	
+	// Creacion Para pruebas
+	void delete(Consulta consulta);
+
 	
 }

@@ -28,7 +28,6 @@ public class ConsultaDaoImpl  implements ConsultaDao {
 	public void save(Consulta consulta) {
 		// TODO Auto-generated method stub
 		
-		//this.getHibernateTemplate().save(consulta);
 	}
 
 	@Override
@@ -36,6 +35,15 @@ public class ConsultaDaoImpl  implements ConsultaDao {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void delete(Consulta consulta) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 
 
 

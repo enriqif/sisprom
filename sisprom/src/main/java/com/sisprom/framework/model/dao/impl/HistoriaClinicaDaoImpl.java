@@ -26,9 +26,17 @@ public class HistoriaClinicaDaoImpl implements HistoriaClinicaDao{
 	}
 
 	@Override
-	public void generate(HistoriaClinica historiaClinica) {
+	public void save(HistoriaClinica historiaClinica) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void delete(HistoriaClinica historiaClinica) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

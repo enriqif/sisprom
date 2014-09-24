@@ -2,10 +2,12 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.sisprom.framework.dominio.Medico;
 import com.sisprom.framework.model.dao.MedicoDao;
 
-public class MedicoDaoImp implements MedicoDao{
+public class MedicoDaoImp extends HibernateDaoSupport implements MedicoDao{
 
 	@Override
 	public List<Medico> getAllMedico() {
@@ -20,15 +22,14 @@ public class MedicoDaoImp implements MedicoDao{
 	}
 
 	@Override
-	public void register(Medico medico) {
-		// TODO Auto-generated method stub
+	public void save(Medico medico) {
+		this.getHibernateTemplate().save(medico);
 		
 	}
 
 	@Override
-	public void edit(Medico medico) {
-		// TODO Auto-generated method stub
-		
+	public void update(Medico medico) {
+		this.getHibernateTemplate().update(medico);		
 	}
 
 	@Override
@@ -36,5 +37,16 @@ public class MedicoDaoImp implements MedicoDao{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void delete(Medico medico) {
+		this.getHibernateTemplate().delete(medico);
+
+		
+	}
+
+	
+
+	
 
 }

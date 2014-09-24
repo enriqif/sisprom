@@ -20,15 +20,23 @@ public class TipoAntecedenteDaoImpl implements TipoAntecedenteDao{
 	}
 
 	@Override
-	public void register(TipoAntecedente tipoAntecedente) {
+	public void save(TipoAntecedente tipoAntecedente) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void edit(TipoAntecedente tipoAntecedente) {
+	public void update(TipoAntecedente tipoAntecedente) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void delete(TipoAntecedente tipoAntecedente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

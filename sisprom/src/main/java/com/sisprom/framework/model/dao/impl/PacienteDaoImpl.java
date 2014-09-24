@@ -2,13 +2,15 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.sisprom.framework.dominio.Paciente;
 import com.sisprom.framework.model.dao.PacienteDao;
 
 //Create by
 //Modification by Martin
 
-public class PacienteDaoImpl implements PacienteDao{
+public class PacienteDaoImpl extends HibernateDaoSupport  implements PacienteDao{
 
 	@Override
 	public List<Paciente> getAll(Paciente paciente) {
@@ -45,5 +47,14 @@ public class PacienteDaoImpl implements PacienteDao{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void delete(Paciente paciente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
 
 }

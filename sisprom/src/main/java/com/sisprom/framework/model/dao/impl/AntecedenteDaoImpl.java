@@ -26,9 +26,17 @@ public class AntecedenteDaoImpl implements AntecedenteDao{
 	}
 
 	@Override
-	public void edit(Antecedente antecedente) {
+	public void update(Antecedente antecedente) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void delete(Antecedente antecedente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

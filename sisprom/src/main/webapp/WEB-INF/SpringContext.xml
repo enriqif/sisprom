@@ -19,30 +19,14 @@
 			<property name="password" value="sisprom"/>
 		</bean>
 		
-	<!--	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-			<property name="dataSource" ref="myDataSource"/>
-			<property name="mappingResources">
-				<list>
-					<value>com/sisprom/framework/model/xml/hibernate/map/TSecretaria.hbm.xml</value>
-				</list>
-				</property>
-			<property name="hibernateProperties">
-
-				 <props>
-
-			      <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
-				  <prop key="hibernate.show_sql">false</prop>
-			      </props>
-			</property>
-		
-		</bean>--> 
-		<!-- Hibernate Session Factory -->  
+			<!-- Hibernate Session Factory -->  
 <bean id="mySessionFactory"  
     class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
     <property name="dataSource" ref="myDataSource" />  
     <property name="mappingResources"> 
    		 	<list>
 					<value>com/sisprom/framework/model/xml/hibernate/map/TSecretaria.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TMedico.hbm.xml</value>
 			</list> 
   
     </property>  
@@ -64,10 +48,14 @@
    <bean id="secretariaDao" class="com.sisprom.framework.model.dao.impl.SecretariaDaoImpl">
 		<property name="sessionFactory" ref="mySessionFactory"/>
     </bean>
+	<bean id="medicoDao" class="com.sisprom.framework.model.dao.impl.MedicoDaoImp">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+	
 	
 	<bean id="services" class="com.sisprom.framework.model.services.Services">
 	  <property name="secretariaDao"><ref bean="secretariaDao"/></property>
-
+	  <property name="medicoDao"><ref bean="medicoDao"/></property>
 	  
 	</bean>
 </beans>

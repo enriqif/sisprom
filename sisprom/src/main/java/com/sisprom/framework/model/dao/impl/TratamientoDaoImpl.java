@@ -40,4 +40,12 @@ public class TratamientoDaoImpl implements TratamientoDao{
 		
 	}
 
+	@Override
+	public void delete(Tratamiento tratamiento) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
 }

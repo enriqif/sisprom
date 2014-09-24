@@ -14,5 +14,6 @@ public interface PacienteDao {
 	Paciente getData(Paciente paciente);
 	void buildGraphics();
 	
-	
+	void delete(Paciente paciente);
+
 }
