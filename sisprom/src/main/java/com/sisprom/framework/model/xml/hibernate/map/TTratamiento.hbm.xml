@@ -9,7 +9,11 @@
 			<generator class="increment"/>		
 		</id>
 				
-	
+		<many-to-one name="diagnostico"	class="com.sisprom.framework.dominio.Diagnostico" fetch="join" lazy="false">
+		<column name="DIAGNOSTICO_ID" precision="20" scale="0"
+				not-null="true" />
+		</many-to-one>	
+			
 		<property name="nombre" type="string">
 			<column name="TRATAMIENTO_NOMBRE" length="100" />
 		</property>
@@ -33,13 +37,13 @@
 			</property>
 		</component>
 		
-	
-<!-- 			<set name="historiaClinicaMap" table="HISTORIA_CLINICA" inverse="true" lazy="false" -->
-<!-- 			fetch="select"> -->
-<!-- 			<key> -->
-<!-- 				<column name="PACIENTE_ID" precision="20" scale="0" /> -->
-<!-- 			</key> -->
-<!-- 			<one-to-many class="com.sisprom.framework.dominio.HistoriaClinica" /> -->
-<!-- 		</set> -->
+		<set name="teaTratamientoMedicamentoMap" table="TRATAMIENTO_MEDICAMENTO" inverse="true" lazy="false"
+			fetch="select">
+			<key>
+				<column name="TRATAMIENTO_ID" precision="20" scale="0" />
+			</key>
+			<one-to-many class="com.sisprom.framework.dominio.TeaTratamientoMedicamento" />
+		</set>
+
 	</class>
 </hibernate-mapping>

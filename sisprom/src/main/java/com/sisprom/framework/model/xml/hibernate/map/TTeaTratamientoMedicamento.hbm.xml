@@ -3,24 +3,21 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.sisprom.framework.dominio.Medicamento" table="MEDICAMENTO">
-		<id name="codigoMedicamento" type="integer">
-			<column name="MEDICAMENTO_ID" precision="20" scale="0" />
+	<class name="com.sisprom.framework.dominio.TeaTratamientoMedicamento" table="TRATAMIENTO_MEDICAMENTO">
+		<id name="codigoTratamientoMedico" type="integer">
+			<column name="TRATAMIENTO_MEDICAMENTO_ID" precision="20" scale="0" />
 			<generator class="increment"/>
-		
 		</id>
-				
-	
-		<property name="nombre" type="string">
-			<column name="MEDICAMENTO_NOMBRE" length="100" />
-		</property>
-		<property name="descripcion" type="string">
-			<column name="MEDICAMENTO_DESCRIPCION" length="200" />
-		</property>
-	
+			
+			<many-to-one name="tratamiento"	class="com.sisprom.framework.dominio.Tratamiento" fetch="join" lazy="false">
+		<column name="TRATAMIENTO_ID" precision="20" scale="0"
+				not-null="true" />
+		</many-to-one>	
 		
-		
-		
+		<many-to-one name="medicamento"	class="com.sisprom.framework.dominio.Medicamento" fetch="join" lazy="false">
+			<column name="MEDICAMENTO_ID" precision="20" scale="0"
+				not-null="true" />
+		</many-to-one>	
 		<component name="auditoria" class="com.sisprom.framework.dominio.Auditoria">
 			<property name="usuarioCreacion" type="string">
 				<column name="USUARIO_CREACION" length="100" />
@@ -36,12 +33,5 @@
 			</property>
 		</component>
 		
-		<set name="teaTratamientoMedicamentoMap" table="TRATAMIENTO_MEDICAMENTO" inverse="true" lazy="false"
-			fetch="select">
-			<key>
-				<column name="MEDICAMENTO_ID" precision="20" scale="0" />
-			</key>
-			<one-to-many class="com.sisprom.framework.dominio.TeaTratamientoMedicamento" />
-		</set>
 	</class>
 </hibernate-mapping>

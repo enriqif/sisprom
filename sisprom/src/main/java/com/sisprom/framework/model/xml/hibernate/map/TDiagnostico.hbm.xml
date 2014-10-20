@@ -35,6 +35,12 @@
 				<column name="FECHA_MODIFICACION" length="7" />
 			</property>
 		</component>
-	
+		<set name="tratamientoMap" table="TRATAMIENTO" inverse="true" lazy="false"
+			fetch="select">
+			<key>
+				<column name="DIAGNOSTICO_ID" precision="20" scale="0" />
+			</key>
+			<one-to-many class="com.sisprom.framework.dominio.Tratamiento" />
+		</set>
 	</class>
 </hibernate-mapping>

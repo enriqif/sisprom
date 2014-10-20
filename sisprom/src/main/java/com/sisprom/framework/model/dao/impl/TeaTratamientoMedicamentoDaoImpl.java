@@ -2,39 +2,47 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
-import com.sisprom.framework.model.dao.TeaTratamientoMedicamento;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-public class TeaTratamientoMedicamentoDaoImpl implements TeaTratamientoMedicamento {
+
+import com.sisprom.framework.dominio.TeaTratamientoMedicamento;
+import com.sisprom.framework.model.dao.TeaTratamientoMedicamentoDao;
+
+public class TeaTratamientoMedicamentoDaoImpl extends HibernateDaoSupport implements TeaTratamientoMedicamentoDao {
 
 	@Override
 	public void save(TeaTratamientoMedicamento teaTratamientoMedicamento) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().save(teaTratamientoMedicamento);		
 		
 	}
 
 	@Override
 	public void update(TeaTratamientoMedicamento teaTratamientoMedicamento) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().update(teaTratamientoMedicamento);
 		
 	}
 
 	@Override
 	public void delete(TeaTratamientoMedicamento teaTratamientoMedicamento) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().delete(teaTratamientoMedicamento);
 		
 	}
 
 	@Override
-	public List<TeaTratamientoMedicamento> getAll() {
+	public List<TeaTratamientoMedicamentoDao> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<TeaTratamientoMedicamento> find(
+	public List<TeaTratamientoMedicamentoDao> find(
 			TeaTratamientoMedicamento teaTratamientoMedicamento) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+
+	
 
 }

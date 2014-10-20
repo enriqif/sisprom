@@ -11,6 +11,7 @@ import com.sisprom.framework.dominio.Medicamento;
 import com.sisprom.framework.dominio.Medico;
 import com.sisprom.framework.dominio.Paciente;
 import com.sisprom.framework.dominio.Secretaria;
+import com.sisprom.framework.dominio.TeaTratamientoMedicamento;
 import com.sisprom.framework.dominio.TipoAntecedente;
 import com.sisprom.framework.dominio.Tratamiento;
 import com.sisprom.framework.dominio.Turno;
@@ -22,6 +23,7 @@ import com.sisprom.framework.model.dao.MedicamentoDao;
 import com.sisprom.framework.model.dao.MedicoDao;
 import com.sisprom.framework.model.dao.PacienteDao;
 import com.sisprom.framework.model.dao.SecretariaDao;
+import com.sisprom.framework.model.dao.TeaTratamientoMedicamentoDao;
 import com.sisprom.framework.model.dao.TipoAntecedenteDao;
 import com.sisprom.framework.model.dao.TratamientoDao;
 import com.sisprom.framework.model.dao.TurnoDao;
@@ -40,7 +42,8 @@ public class Services {
 	private ConsultaDao consultaDao;
 	private DiagnosticoDao diagnosticoDao;
 	private TratamientoDao tratamientoDao;
-	
+	private TeaTratamientoMedicamentoDao  teaTratamientoMedicamentoDao;
+										  
 	// servicios de Secretaria
 	public void saveSecretaria(Secretaria secretaria) {
 		secretariaDao.save(secretaria);
@@ -166,6 +169,18 @@ public class Services {
 		diagnosticoDao.delete(diagnostico);
 	}
 	
+	// servicio TeaTratamientoMedicamento
+	
+	public void saveTeaTratamientoMedicamento(TeaTratamientoMedicamento teaTratamientoMedicamento){
+		teaTratamientoMedicamentoDao.save(teaTratamientoMedicamento);	
+	}
+	public void updateTeaTratamientoMedicamento(TeaTratamientoMedicamento teaTratamientoMedicamento){
+		teaTratamientoMedicamentoDao.update(teaTratamientoMedicamento);		
+	}
+	public void deleteTeaTratamientoMedicamento(TeaTratamientoMedicamento teaTratamientoMedicamento){
+		teaTratamientoMedicamentoDao.delete(teaTratamientoMedicamento);
+	}
+	
 	// getter and setters
 	public TurnoDao getTurnoDao() {
 		return turnoDao;
@@ -232,6 +247,13 @@ public class Services {
 	}
 	public void setDiagnosticoDao(DiagnosticoDao diagnosticoDao) {
 		this.diagnosticoDao = diagnosticoDao;
+	}
+	public TeaTratamientoMedicamentoDao getTeaTratamientoMedicamentoDao() {
+		return teaTratamientoMedicamentoDao;
+	}
+	public void setTeaTratamientoMedicamentoDao(
+			TeaTratamientoMedicamentoDao teaTratamientoMedicamentoDao) {
+		this.teaTratamientoMedicamentoDao = teaTratamientoMedicamentoDao;
 	}
 	
 	
