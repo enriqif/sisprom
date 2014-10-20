@@ -1,5 +1,8 @@
 package com.sisprom.framework.dominio;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Tratamiento {
 	private int codigoTratamiento;
 	//private int codigoDiagnostico;
@@ -8,16 +11,7 @@ public class Tratamiento {
 	private Auditoria auditoria;
 
 	private Diagnostico diagnostico;
-	
-	
-	public Tratamiento(int codigoTratamiento, String nombre,
-			String descripcion, Auditoria auditoria) {
-		super();
-		this.codigoTratamiento = codigoTratamiento;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.auditoria = auditoria;
-	}
+	private Set teaTratamientoMedicamentoMap = new HashSet(0);
 	
 	
 	public Tratamiento(int codigoTratamiento, String nombre,
@@ -60,6 +54,12 @@ public class Tratamiento {
 	}
 	public void setDiagnostico(Diagnostico diagnostico) {
 		this.diagnostico = diagnostico;
+	}
+	public Set getTeaTratamientoMedicamentoMap() {
+		return teaTratamientoMedicamentoMap;
+	}
+	public void setTeaTratamientoMedicamentoMap(Set teaTratamientoMedicamentoMap) {
+		this.teaTratamientoMedicamentoMap = teaTratamientoMedicamentoMap;
 	}
 	
 }
