@@ -29,11 +29,9 @@ public abstract class Persona{
 		this.contrasenia = contrasenia;
 		this.auditoria = auditoria;
 	}
-	
-	
-	
+
 	public Persona(int id, String nombre, String apellido, String direccion,
-			String telefono, String dni, String usuario) {
+			String telefono, String dni, Auditoria auditoria) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -41,9 +39,8 @@ public abstract class Persona{
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.dni = dni;
-		this.usuario = usuario;
+		this.auditoria = auditoria;
 	}
-
 
 
 	public String getDireccion() {

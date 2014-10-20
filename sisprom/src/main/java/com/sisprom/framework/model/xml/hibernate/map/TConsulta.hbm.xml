@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sisprom.framework.dominio.Consulta" table="CONSULTA">
+		<id name="codigoConsulta" type="integer">
+			<column name="CONSULTA_ID" precision="20" scale="0" />
+			<generator class="increment"/>
+		
+		</id>
+				
+	
+	<many-to-one name="historiaClinica"	class="com.sisprom.framework.dominio.HistoriaClinica" fetch="join" lazy="false">
+		<column name="HISTORIA_CLINICA_ID" precision="20" scale="0"
+				not-null="true" />
+		</many-to-one>	
+	
+		<property name="descripcion" type="string">
+			<column name="CONSULTA_DESCRIPCION" length="200" />
+		</property>
+		
+		
+		<component name="auditoria" class="com.sisprom.framework.dominio.Auditoria">
+			<property name="usuarioCreacion" type="string">
+				<column name="USUARIO_CREACION" length="100" />
+			</property>
+			<property name="fechaCreacion" type="date">
+				<column name="FECHA_CREACION" length="7" />
+			</property>
+			<property name="usuarioModificacion" type="string">
+				<column name="USUARIO_MODIFICACION" length="100" />
+			</property>
+			<property name="fechaModificacion" type="date">
+				<column name="FECHA_MODIFICACION" length="7" />
+			</property>
+		</component>
+	<set name="diagnosticoMap" table="DIAGNOSTICO" inverse="true" lazy="false"
+			fetch="select">
+			<key>
+				<column name="CONSULTA_ID" precision="20" scale="0" />
+			</key>
+			<one-to-many class="com.sisprom.framework.dominio.Diagnostico" />
+		</set>
+	</class>
+</hibernate-mapping>

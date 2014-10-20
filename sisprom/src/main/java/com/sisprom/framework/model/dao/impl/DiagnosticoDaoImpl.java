@@ -2,26 +2,27 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.sisprom.framework.dominio.Diagnostico;
 import com.sisprom.framework.model.dao.DiagnosticoDao;
 
-public class DiagnosticoDaoImpl implements DiagnosticoDao{
+public class DiagnosticoDaoImpl extends HibernateDaoSupport implements DiagnosticoDao{
 
 	@Override
 	public void save(Diagnostico diagnostico) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().save(diagnostico);
 		
 	}
 
 	@Override
 	public void update(Diagnostico diagnostico) {
-		// TODO Auto-generated method stub
-		
+		this.getHibernateTemplate().update(diagnostico);		
 	}
 
 	@Override
 	public void delete(Diagnostico diagnstico) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().delete(diagnstico);
 		
 	}
 

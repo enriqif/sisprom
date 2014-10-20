@@ -27,6 +27,16 @@
    		 	<list>
 					<value>com/sisprom/framework/model/xml/hibernate/map/TSecretaria.hbm.xml</value>
 					<value>com/sisprom/framework/model/xml/hibernate/map/TMedico.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TPaciente.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TTurno.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TTipoAntecedente.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/THistoriaClinica.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TAntecedente.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TMedicamento.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TTratamiento.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TConsulta.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TDiagnostico.hbm.xml</value>
+					
 			</list> 
   
     </property>  
@@ -48,14 +58,54 @@
    <bean id="secretariaDao" class="com.sisprom.framework.model.dao.impl.SecretariaDaoImpl">
 		<property name="sessionFactory" ref="mySessionFactory"/>
     </bean>
-	<bean id="medicoDao" class="com.sisprom.framework.model.dao.impl.MedicoDaoImp">
+	<bean id="medicoDao" class="com.sisprom.framework.model.dao.impl.MedicoDaoImpl">
 		<property name="sessionFactory" ref="mySessionFactory"/>
     </bean>
-	
+    <bean id="pacienteDao" class="com.sisprom.framework.model.dao.impl.PacienteDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="turnoDao" class="com.sisprom.framework.model.dao.impl.TurnoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+	<bean id="tipoAntecedenteDao" class="com.sisprom.framework.model.dao.impl.TipoAntecedenteDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="historiaClinicaDao" class="com.sisprom.framework.model.dao.impl.HistoriaClinicaDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="antecedenteDao" class="com.sisprom.framework.model.dao.impl.AntecedenteDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+	<bean id="medicamentoDao" class="com.sisprom.framework.model.dao.impl.MedicamentoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="tratamientoDao" class="com.sisprom.framework.model.dao.impl.TratamientoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+     <bean id="consultaDao" class="com.sisprom.framework.model.dao.impl.ConsultaDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+      <bean id="diagnosticoDao" class="com.sisprom.framework.model.dao.impl.DiagnosticoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+<!-- 	<bean id="services" class="com.sisprom.framework.model.services.Services"> -->
+<!-- 	  <property name="secretariaDao"><ref bean="secretariaDao"/></property> -->
+<!-- 	  <property name="medicoDao"><ref bean="medicoDao"/></property>	   -->
+<!-- 	</bean> -->
 	
 	<bean id="services" class="com.sisprom.framework.model.services.Services">
 	  <property name="secretariaDao"><ref bean="secretariaDao"/></property>
 	  <property name="medicoDao"><ref bean="medicoDao"/></property>
+	  <property name="pacienteDao"><ref bean="pacienteDao"/></property>
+	  <property name="turnoDao"><ref bean="turnoDao"/></property>	  
+	  <property name="tipoAntecedenteDao"><ref bean="tipoAntecedenteDao"/></property>	  
+	  <property name="historiaClinicaDao"><ref bean="historiaClinicaDao"/></property>	  
+	  <property name="antecedenteDao"><ref bean="antecedenteDao"/></property>	  
+	  <property name="medicamentoDao"><ref bean="medicamentoDao"/></property>
+	  <property name="tratamientoDao"><ref bean="tratamientoDao"/></property>
+	  <property name="consultaDao"><ref bean="consultaDao"/></property>
+	  <property name="diagnosticoDao"><ref bean="diagnosticoDao"/></property>
 	  
 	</bean>
+	
 </beans>

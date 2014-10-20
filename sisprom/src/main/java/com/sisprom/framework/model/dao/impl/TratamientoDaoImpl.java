@@ -2,13 +2,15 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.sisprom.framework.dominio.Tratamiento;
 import com.sisprom.framework.model.dao.TratamientoDao;
 
 //Create by
 //Modification by Martin
 
-public class TratamientoDaoImpl implements TratamientoDao{
+public class TratamientoDaoImpl extends HibernateDaoSupport implements TratamientoDao{
 
 	@Override
 	public List<Tratamiento> getAllArticulo() {
@@ -24,13 +26,13 @@ public class TratamientoDaoImpl implements TratamientoDao{
 
 	@Override
 	public void save(Tratamiento tratamiento) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().save(tratamiento);		
 		
 	}
 
 	@Override
 	public void update(Tratamiento tratamiento) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().update(tratamiento);
 		
 	}
 
@@ -42,8 +44,7 @@ public class TratamientoDaoImpl implements TratamientoDao{
 
 	@Override
 	public void delete(Tratamiento tratamiento) {
-		// TODO Auto-generated method stub
-		
+		this.getHibernateTemplate().delete(tratamiento);		
 	}
 
 	

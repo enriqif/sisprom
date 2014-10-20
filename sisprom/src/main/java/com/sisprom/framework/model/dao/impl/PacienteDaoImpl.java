@@ -26,14 +26,14 @@ public class PacienteDaoImpl extends HibernateDaoSupport  implements PacienteDao
 
 	@Override
 	public void save(Paciente paciente) {
-		// TODO Auto-generated method stub
 		
+		this.getHibernateTemplate().save(paciente);
 	}
 
 	@Override
 	public void update(Paciente paciente) {
-		// TODO Auto-generated method stub
-		
+
+		this.getHibernateTemplate().update(paciente);
 	}
 
 	@Override
@@ -50,8 +50,8 @@ public class PacienteDaoImpl extends HibernateDaoSupport  implements PacienteDao
 
 	@Override
 	public void delete(Paciente paciente) {
-		// TODO Auto-generated method stub
-		
+
+		this.getHibernateTemplate().delete(paciente);		
 	}
 
 	

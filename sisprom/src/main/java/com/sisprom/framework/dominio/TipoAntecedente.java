@@ -1,10 +1,14 @@
 package com.sisprom.framework.dominio;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TipoAntecedente {
 	private int codigoTipoAntecedente;
 	private String nombre;
 	private String descripcion;
 	private Auditoria auditoria;
+	private Set antecedenteMap = new HashSet(0);
 
 	
 	public TipoAntecedente(int codigoTipoAntecedente, String nombre,
@@ -38,6 +42,12 @@ public class TipoAntecedente {
 	}
 	public void setAuditoria(Auditoria auditoria) {
 		this.auditoria = auditoria;
+	}
+	public Set getAntecedenteMap() {
+		return antecedenteMap;
+	}
+	public void setAntecedenteMap(Set antecedenteMap) {
+		this.antecedenteMap = antecedenteMap;
 	}
 	
 }

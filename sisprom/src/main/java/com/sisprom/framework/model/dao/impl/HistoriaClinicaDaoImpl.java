@@ -2,10 +2,12 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.model.dao.HistoriaClinicaDao;
 
-public class HistoriaClinicaDaoImpl implements HistoriaClinicaDao{
+public class HistoriaClinicaDaoImpl extends HibernateDaoSupport implements HistoriaClinicaDao{
 
 	@Override
 	public List<HistoriaClinica> getAllHistoriaClinica() {
@@ -21,19 +23,18 @@ public class HistoriaClinicaDaoImpl implements HistoriaClinicaDao{
 
 	@Override
 	public void update(HistoriaClinica historiaClinica) {
-		// TODO Auto-generated method stub
-		
+		this.getHibernateTemplate().update(historiaClinica);		
 	}
 
 	@Override
 	public void save(HistoriaClinica historiaClinica) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().save(historiaClinica);		
 		
 	}
 
 	@Override
 	public void delete(HistoriaClinica historiaClinica) {
-		// TODO Auto-generated method stub
+		this.getHibernateTemplate().delete(historiaClinica);
 		
 	}
 

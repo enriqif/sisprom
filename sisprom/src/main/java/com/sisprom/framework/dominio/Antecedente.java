@@ -2,41 +2,44 @@ package com.sisprom.framework.dominio;
 
 public class Antecedente {
 	private int codigoAntecedente;
-	private String codigoHistoriaClinica;
-	private String codigoTipoAntecedente;
+	//private String codigoHistoriaClinica;
+	//private String codigoTipoAntecedente;
 	private String descripcion;
 	private Auditoria auditoria;
-
 	
-
-	public Antecedente(int codigoAntecedente, String codigoHistoriaClinica,
-			String codigoTipoAntecedente, String descripcion,
+	private TipoAntecedente tipoAntecedente;
+	private HistoriaClinica historiaClinica;
+		
+	public Antecedente(int codigoAntecedente, String descripcion,
 			Auditoria auditoria) {
 		super();
 		this.codigoAntecedente = codigoAntecedente;
-		this.codigoHistoriaClinica = codigoHistoriaClinica;
-		this.codigoTipoAntecedente = codigoTipoAntecedente;
 		this.descripcion = descripcion;
 		this.auditoria = auditoria;
 	}
+	
+	
+	public Antecedente(int codigoAntecedente, String descripcion,
+			Auditoria auditoria, TipoAntecedente tipoAntecedente,
+			HistoriaClinica historiaClinica) {
+		super();
+		this.codigoAntecedente = codigoAntecedente;
+		this.descripcion = descripcion;
+		this.auditoria = auditoria;
+		this.tipoAntecedente = tipoAntecedente;
+		this.historiaClinica = historiaClinica;
+	}
+
+
+
+
 	public int getCodigoAntecedente() {
 		return codigoAntecedente;
 	}
 	public void setCodigoAntecedente(int codigoAntecedente) {
 		this.codigoAntecedente = codigoAntecedente;
 	}
-	public String getCodigoHistoriaClinica() {
-		return codigoHistoriaClinica;
-	}
-	public void setCodigoHistoriaClinica(String codigoHistoriaClinica) {
-		this.codigoHistoriaClinica = codigoHistoriaClinica;
-	}
-	public String getCodigoTipoAntecedente() {
-		return codigoTipoAntecedente;
-	}
-	public void setCodigoTipoAntecedente(String codigoTipoAntecedente) {
-		this.codigoTipoAntecedente = codigoTipoAntecedente;
-	}
+	
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -48,6 +51,18 @@ public class Antecedente {
 	}
 	public void setAuditoria(Auditoria auditoria) {
 		this.auditoria = auditoria;
+	}
+	public TipoAntecedente getTipoAntecedente() {
+		return tipoAntecedente;
+	}
+	public void setTipoAntecedente(TipoAntecedente tipoAntecedente) {
+		this.tipoAntecedente = tipoAntecedente;
+	}
+	public HistoriaClinica getHistoriaClinica() {
+		return historiaClinica;
+	}
+	public void setHistoriaClinica(HistoriaClinica historiaClinica) {
+		this.historiaClinica = historiaClinica;
 	}
 	
 }

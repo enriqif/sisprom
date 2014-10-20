@@ -2,27 +2,29 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 import com.sisprom.framework.dominio.Turno;
 import com.sisprom.framework.model.dao.TurnoDao;
 
-public class TurnoDaoImpl implements TurnoDao{
+public class TurnoDaoImpl extends HibernateDaoSupport implements TurnoDao{
 
 	@Override
 	public void save(Turno turno) {
-		// TODO Auto-generated method stub
-		
+
+		this.getHibernateTemplate().save(turno);		
 	}
 
 	@Override
 	public void update(Turno turno) {
-		// TODO Auto-generated method stub
 		
+		this.getHibernateTemplate().update(turno);
 	}
 
 	@Override
 	public void delete(Turno turno) {
-		// TODO Auto-generated method stub
 		
+		this.getHibernateTemplate().delete(turno);
 	}
 
 	@Override

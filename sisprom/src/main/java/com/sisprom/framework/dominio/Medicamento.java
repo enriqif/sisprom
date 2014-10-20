@@ -4,6 +4,7 @@ public class Medicamento {
 	private int codigoMedicamento;
 	private String nombre;
 	private String descripcion;
+	
 	private Auditoria auditoria;
 	
 	public Medicamento(int codigoMedicamento, String nombre,

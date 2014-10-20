@@ -1,13 +1,16 @@
 package com.sisprom.framework.dominio;
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Medico extends Persona{
 	private String matricula;
 	private String especialidad;
 	private Date horarioAtencionMin;
 	private Date horarioAtencionMax;
-		
+	private Set historiaClinicaMap = new HashSet(0);
+	
 	
 	public Medico(int id, String nombre, String apellido, String direccion,
 			String telefono, String dni, String usuario, String contrasenia,
@@ -43,6 +46,12 @@ public class Medico extends Persona{
 	}
 	public void setHorarioAtencionMax(Date horarioAtencionMax) {
 		this.horarioAtencionMax = horarioAtencionMax;
+	}
+	public Set getHistoriaClinicaMap() {
+		return historiaClinicaMap;
+	}
+	public void setHistoriaClinicaMap(Set historiaClinicaMap) {
+		this.historiaClinicaMap = historiaClinicaMap;
 	}
 	
 	
