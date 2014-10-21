@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" >
+<head>
+<title>
+	<ui:insert name="windowTitle">
+	   Reservas on line
+	</ui:insert>
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="#{resource['css:style.css']}" />
+<link rel="stylesheet" type="text/css" href="#{resource['css:coin-slider.css']}" />
+<script type="text/javascript" src="#{resource['javascript:cufon-yui.js']}"></script>
+<script type="text/javascript" src="#{resource['javascript:cufon-titillium-600.js']}"></script>
+<script type="text/javascript" src="#{resource['javascript:jquery-1.4.2.min.js']}"></script>
+<script type="text/javascript" src="#{resource['javascript:script.js']}"></script>
+<script type="text/javascript" src="#{resource['javascript:coin-slider.min.js']}"></script>
+</head>
+<body>
+<div class="main">
+  <ui:include src="/sections/common/header.xhtml" />
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <ui:insert name="content">Main Section</ui:insert> 
+      </div>
+      <div class="sidebar">
+        <ui:insert name="funciones">
+        	<ui:include src="/sections/common/funciones.xhtml" />
+        </ui:insert>
+        <ui:insert name="sponsors">
+        	<ui:include src="/sections/common/sponsors.xhtml" />
+        </ui:insert>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <ui:include src="/sections/common/footer.xhtml" />
+</div>
+</body>
+</html>
