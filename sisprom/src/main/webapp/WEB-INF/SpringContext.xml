@@ -36,7 +36,7 @@
 					<value>com/sisprom/framework/model/xml/hibernate/map/TTratamiento.hbm.xml</value>
 					<value>com/sisprom/framework/model/xml/hibernate/map/TConsulta.hbm.xml</value>
 					<value>com/sisprom/framework/model/xml/hibernate/map/TDiagnostico.hbm.xml</value>
-					
+					<value>com/sisprom/framework/model/xml/hibernate/map/TTeaTratamientoMedicamento.hbm.xml</value>
 			</list> 
   
     </property>  
@@ -88,6 +88,10 @@
       <bean id="diagnosticoDao" class="com.sisprom.framework.model.dao.impl.DiagnosticoDaoImpl">
 		<property name="sessionFactory" ref="mySessionFactory"/>
     </bean>
+    
+     <bean id="teaTratamientoMedicamentoDao" class="com.sisprom.framework.model.dao.impl.TeaTratamientoMedicamentoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
 <!-- 	<bean id="services" class="com.sisprom.framework.model.services.Services"> -->
 <!-- 	  <property name="secretariaDao"><ref bean="secretariaDao"/></property> -->
 <!-- 	  <property name="medicoDao"><ref bean="medicoDao"/></property>	   -->
@@ -105,6 +109,7 @@
 	  <property name="tratamientoDao"><ref bean="tratamientoDao"/></property>
 	  <property name="consultaDao"><ref bean="consultaDao"/></property>
 	  <property name="diagnosticoDao"><ref bean="diagnosticoDao"/></property>
+	  <property name="teaTratamientoMedicamentoDao"><ref bean="teaTratamientoMedicamentoDao"/></property>
 	  
 	</bean>
 	
