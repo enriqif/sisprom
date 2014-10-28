@@ -1,8 +1,5 @@
 package com.sisprom.framework.model.services;
 
-import java.util.List;
-
-
 import com.sisprom.framework.dominio.Antecedente;
 import com.sisprom.framework.dominio.Consulta;
 import com.sisprom.framework.dominio.Diagnostico;
@@ -28,7 +25,6 @@ import com.sisprom.framework.model.dao.TipoAntecedenteDao;
 import com.sisprom.framework.model.dao.TratamientoDao;
 import com.sisprom.framework.model.dao.TurnoDao;
 
-
 public class Services {
 
 	private SecretariaDao secretariaDao;
@@ -47,26 +43,30 @@ public class Services {
 	// servicios de Secretaria
 	public void saveSecretaria(Secretaria secretaria) {
 		secretariaDao.save(secretaria);
-		}
-	public void updateSecretaria(Secretaria secretaria){
+	}
+
+	public void updateSecretaria(Secretaria secretaria) {
 		secretariaDao.update(secretaria);
 	}
-	public void deleteSecretaria (Secretaria secretaria){
+
+	public void deleteSecretaria(Secretaria secretaria) {
 		secretariaDao.delete(secretaria);
 	}
-	
+
 	// servico Medico
-	
-	public void saveMedico(Medico medico){
+
+	public void saveMedico(Medico medico) {
 		medicoDao.save(medico);
 	}
-	public void updateMedico(Medico medico){
+
+	public void updateMedico(Medico medico) {
 		medicoDao.update(medico);
 	}
-	public void deleteMedico(Medico medico){
+
+	public void deleteMedico(Medico medico) {
 		medicoDao.delete(medico);
 	}
-	
+
 	// Servicio Pacientes
 	
 	public void savePaciente(Paciente paciente){
@@ -182,6 +182,7 @@ public class Services {
 	}
 	
 	// getter and setters
+
 	public TurnoDao getTurnoDao() {
 		return turnoDao;
 	}
@@ -191,12 +192,15 @@ public class Services {
 	public SecretariaDao getSecretariaDao() {
 		return secretariaDao;
 	}
+
 	public void setSecretariaDao(SecretariaDao secretariaDao) {
 		this.secretariaDao = secretariaDao;
 	}
+
 	public MedicoDao getMedicoDao() {
 		return medicoDao;
 	}
+
 	public void setMedicoDao(MedicoDao medicoDao) {
 		this.medicoDao = medicoDao;
 	}
@@ -255,7 +259,5 @@ public class Services {
 			TeaTratamientoMedicamentoDao teaTratamientoMedicamentoDao) {
 		this.teaTratamientoMedicamentoDao = teaTratamientoMedicamentoDao;
 	}
-	
-	
 	
 }

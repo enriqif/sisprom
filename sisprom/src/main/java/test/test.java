@@ -16,8 +16,6 @@ public class test {
 		  Auditoria audi=new Auditoria(null, null, null, null);
 		 Secretaria secre= new Secretaria(1,"sol", "camus", "tupac","32234242","1232345","usu1","cont1",audi,null,null);
 		 services.saveSecretaria(secre);
-		  
-
 	}
 
 }

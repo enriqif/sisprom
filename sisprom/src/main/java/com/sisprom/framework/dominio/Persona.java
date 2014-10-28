@@ -1,5 +1,7 @@
 package com.sisprom.framework.dominio;
 
+import java.util.Date;
+
 
 
 

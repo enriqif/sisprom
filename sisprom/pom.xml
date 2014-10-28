@@ -7,64 +7,72 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>sisprom Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
-    <properties>  
-        <spring.version>3.1.0.RELEASE</spring.version>  
-        <hibernate.version>3.6.0.Final</hibernate.version>  
-        <javax_servlet.version>2.5</javax_servlet.version>  
-        <jstl.version>1.2</jstl.version>  
-        <hsql.version>2.2.9</hsql.version>  
-        <aspectj.version>1.7.3</aspectj.version>  
-        <junit.version>4.11</junit.version>  
-    </properties>  
-  
-    <dependencies>  
-        <!-- Spring -->  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-context</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-webmvc</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-orm</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-                <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-test</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>  
-  
-        <!-- Hibernate -->  
-        <dependency>  
-            <groupId>org.hibernate</groupId>  
-            <artifactId>hibernate-core</artifactId>  
-            <version>${hibernate.version}</version>  
-        </dependency>  
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-        <!-- Java EE -->  
-        <dependency>  
-            <groupId>javax.servlet</groupId>  
-            <artifactId>servlet-api</artifactId>  
-            <version>${javax_servlet.version}</version>  
-            <scope>provided</scope>  
-        </dependency>  
-        <dependency>  
-            <groupId>jstl</groupId>  
-            <artifactId>jstl</artifactId>  
-            <version>${jstl.version}</version>  
-        </dependency>  
-        <dependency>
+
+	<properties>
+		<spring.version>3.1.0.RELEASE</spring.version>
+		<hibernate.version>3.6.0.Final</hibernate.version>
+		<javax_servlet.version>2.5</javax_servlet.version>
+		<jstl.version>1.2</jstl.version>
+		<hsql.version>2.2.9</hsql.version>
+		<aspectj.version>1.7.3</aspectj.version>
+		<junit.version>4.11</junit.version>
+		<richfaces.version>4.0.0.Final</richfaces.version>
+	</properties>
+
+	<dependencies>
+		<!-- RichFace -->
+		<dependency>
+			<groupId>org.richfaces.ui</groupId>
+			<artifactId>richfaces-components-ui</artifactId>
+			<version>${richfaces.version}</version>
+		</dependency>
+
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- Java EE -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${javax_servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>2.1.7</version>
@@ -74,20 +82,27 @@
 			<artifactId>jsf-impl</artifactId>
 			<version>2.1.7</version>
 		</dependency>
-        <!-- driver -->  
-         <dependency>  
-   		 	<groupId>com.oracle</groupId>  
-    		<artifactId>ojdbc5</artifactId>  
-    		<version>11.1.0.7</version>  
-		</dependency> 
-  
-        <!-- JUnit -->  
-        <dependency>  
-            <groupId>junit</groupId>  
-            <artifactId>junit</artifactId>  
-            <version>${junit.version}</version>  
-        </dependency>  
-    </dependencies> 
+		<!-- driver -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc5</artifactId>
+			<version>11.1.0.7</version>
+		</dependency>
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>log4j</groupId> -->
+<!-- 			<artifactId>log4j</artifactId> -->
+<!-- 			<version>1.2.15</version> -->
+<!-- 		</dependency> -->
+
+	</dependencies>
 
 
 	<build>
