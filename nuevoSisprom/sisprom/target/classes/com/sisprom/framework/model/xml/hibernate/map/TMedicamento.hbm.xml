@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sisprom.framework.dominio.Medicamento" table="MEDICAMENTO">
+		<id name="codigoMedicamento" type="integer">
+			<column name="MEDICAMENTO_ID" precision="20" scale="0" />
+			<generator class="increment"/>
+		
+		</id>
+				
+	
+		<property name="nombre" type="string">
+			<column name="MEDICAMENTO_NOMBRE" length="100" />
+		</property>
+		<property name="descripcion" type="string">
+			<column name="MEDICAMENTO_DESCRIPCION" length="200" />
+		</property>
+	
+		
+		
+		
+		<component name="auditoria" class="com.sisprom.framework.dominio.Auditoria">
+			<property name="usuarioCreacion" type="string">
+				<column name="USUARIO_CREACION" length="100" />
+			</property>
+			<property name="fechaCreacion" type="date">
+				<column name="FECHA_CREACION" length="7" />
+			</property>
+			<property name="usuarioModificacion" type="string">
+				<column name="USUARIO_MODIFICACION" length="100" />
+			</property>
+			<property name="fechaModificacion" type="date">
+				<column name="FECHA_MODIFICACION" length="7" />
+			</property>
+		</component>
+		
+		<set name="teaTratamientoMedicamentoMap" table="TRATAMIENTO_MEDICAMENTO" inverse="true" lazy="false"
+			fetch="select">
+			<key>
+				<column name="MEDICAMENTO_ID" precision="20" scale="0" />
+			</key>
+			<one-to-many class="com.sisprom.framework.dominio.TeaTratamientoMedicamento" />
+		</set>
+	</class>
+</hibernate-mapping>
