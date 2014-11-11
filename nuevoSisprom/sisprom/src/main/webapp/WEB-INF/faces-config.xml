@@ -8,13 +8,23 @@
 		<managed-bean-class>com.sisprom.framework.managedBean.MasterManagedBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	<!-- Navigation rules -->
 	
+	<managed-bean>
+		<managed-bean-name>medicoManagedBean</managed-bean-name>
+		<managed-bean-class>com.sisprom.framework.managedBean.MedicoManagedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<!-- Navigation rules -->
 	<navigation-rule>
 		<from-view-id>/index.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>homeMedico</from-outcome>
 			<to-view-id>/views/medico/homeMedico.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>errorHome</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>

@@ -7,6 +7,8 @@
    <PROCESS-ITEM-OUTPUT ID="homeMedico::#views#medico#homeMedico.xhtml"
     NAME="output" PATH="/views/medico/homeMedico.xhtml"
     TARGET="rules:#views#medico#homeMedico.xhtml" TITLE="homeMedico" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="errorHome::#index.xhtml" NAME="output1"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="errorHome" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#medico#homeMedico.xhtml"

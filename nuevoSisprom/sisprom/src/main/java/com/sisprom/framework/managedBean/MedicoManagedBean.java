@@ -11,8 +11,8 @@ import com.sisprom.framework.dominio.Auditoria;
 @SessionScoped
 public class MedicoManagedBean extends MasterManagedBean {
 	
-	public static String VALIDATE_USER="home";
-	public static String VALIDATE_USER_ERROR = "error";
+	public static String VALIDATE_USER="homeMedico";
+	public static String VALIDATE_USER_ERROR = "errorHome";
 	
 	public String usertmp = "eflores";
 	public String passtmp = "naruto";
