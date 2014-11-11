@@ -3,6 +3,8 @@ package com.sisprom.framework.managedBean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.hibernate.loader.custom.Return;
+
 import com.sisprom.framework.dominio.Antecedente;
 import com.sisprom.framework.dominio.Auditoria;
 import com.sisprom.framework.dominio.Consulta;
@@ -25,6 +27,10 @@ public class MasterManagedBean {
 
 	private Services services = Context.getBeanFacade();
 
+	public String llamada(){
+		
+		return "index2.xhtml";
+	}
 	public String redireccionar() {
 		Auditoria audi = new Auditoria(null, null, null, null);
 		Secretaria secre = new Secretaria(1, "sole", "camus", "Los ceibos",

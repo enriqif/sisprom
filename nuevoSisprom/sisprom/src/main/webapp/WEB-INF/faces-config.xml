@@ -7,5 +7,11 @@
 
 	<!-- Navigation rules -->
 
+
+	<managed-bean>
+		<managed-bean-name>masterManagedBean</managed-bean-name>
+		<managed-bean-class>com.sisprom.framework.managedBean.MasterManagedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
 </faces-config>
