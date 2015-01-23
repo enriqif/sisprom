@@ -4,36 +4,37 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
-<title><ui:insert name="windowTitle">
-	   SiSProM
-	</ui:insert></title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css"
-	href="#{resource['css:style.css']}" />
-<link rel="stylesheet" type="text/css"
-	href="#{resource['css:coin-slider.css']}" />
-<script type="text/javascript"
-	src="#{resource['javascript:cufon-yui.js']}"></script>
-<script type="text/javascript"
-	src="#{resource['javascript:cufon-titillium-600.js']}"></script>
-<script type="text/javascript"
-	src="#{resource['javascript:jquery-1.4.2.min.js']}"></script>
-<script type="text/javascript" src="#{resource['javascript:script.js']}"></script>
-<script type="text/javascript"
-	src="#{resource['javascript:coin-slider.min.js']}"></script>
+	<title>
+		<ui:insert name="windowTitle">
+	   		SiSProM
+		</ui:insert>
+	</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" 	href="#{resource['css:style.css']}" />
+	<link rel="stylesheet" type="text/css"	href="#{resource['css:coin-slider.css']}" />
+	<!-- <script type="text/javascript"	src="#{resource['javascript:cufon-yui.js']}"></script> -->
+	<!-- <script type="text/javascript"	src="#{resource['javascript:cufon-titillium-600.js']}"></script> -->
+	<script type="text/javascript"	src="#{resource['javascript:jquery-1.4.2.min.js']}"></script>
+	<script type="text/javascript"  src="#{resource['javascript:script.js']}"></script>
+	<script type="text/javascript"	src="#{resource['javascript:coin-slider.min.js']}"></script>
+
 </head>
 <body>
 	<div class="main">
 		<ui:include src="/sections/common/header.xhtml" />
+		<div class="clr"></div>
 		<div class="content">
 			<div class="content_resize">
 				<div class="mainbar">
-					<ui:insert name="content"></ui:insert>
+					<ui:insert name="content">
+					
+					</ui:insert>
 				</div>
 				<div class="sidebar">
-					<ui:insert name="sponsors">
-						<ui:include src="/sections/common/sponsors.xhtml" />
-					</ui:insert>
+<!-- 					<ui:insert name="sponsors"> -->
+<!-- 						<ui:include src="/sections/common/sponsors.xhtml" /> -->
+<!-- 					</ui:insert> -->
 				</div>
 				<div class="clr"></div>
 			</div>
