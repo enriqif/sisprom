@@ -11,8 +11,11 @@
     PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="errorHome" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#medico#altaMedico.xhtml"
+  PATH="/views/medico/altaMedico.xhtml" SHAPE="488,120,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
  <PROCESS-ITEM NAME="rules:#views#medico#homeMedico.xhtml"
-  PATH="/views/medico/homeMedico.xhtml" SHAPE="266,108,0,0" model-entity="JSFProcessGroup">
+  PATH="/views/medico/homeMedico.xhtml" SHAPE="240,401,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#medico#homeMedico.xhtml:0" NAME="item"
    PATH="/views/medico/homeMedico.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="altaMedico::#views#medico#altaMedico.xhtml"
@@ -20,7 +23,4 @@
     TARGET="rules:#views#medico#altaMedico.xhtml" TITLE="altaMedico" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#views#medico#altaMedico.xhtml"
-  PATH="/views/medico/altaMedico.xhtml" SHAPE="488,120,50,25"
-  model-entity="JSFProcessGroup" persistent="true"/>
 </PROCESS>
