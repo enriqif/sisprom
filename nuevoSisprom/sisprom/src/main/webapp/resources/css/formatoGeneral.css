@@ -12,26 +12,26 @@
 
 #header {
 	width: 1024px;
-	height: 220px;
+	height: 180px;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
 #functions {
-	width: 240px;
+	width: 220px;
 	height: 380px;
 	position: absolute;
-	top: 250px;
+	top: 170px;
 	left: 0;
 }
 
 #content {
-	width: 350px;
+	width: 790px;
 	height: 410px;
 	position: absolute;
-	top: 250px;
-	left: 300px;
+	top: 170px;
+	left: 230px;
 }
 
 #footer {
