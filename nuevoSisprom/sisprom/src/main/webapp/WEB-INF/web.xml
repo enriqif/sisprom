@@ -3,7 +3,7 @@
   <display-name>sisprom</display-name>
   
   <welcome-file-list>
-    <welcome-file>index.xhtml</welcome-file>
+    <welcome-file>/views/medico/homeMedico.xhtml</welcome-file>
   </welcome-file-list>
   
   <servlet>

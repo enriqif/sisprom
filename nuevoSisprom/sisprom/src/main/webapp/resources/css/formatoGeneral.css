@@ -1,5 +1,10 @@
 @CHARSET "utf-8";
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #main {
 	position: relative;
 	width: 1024px;
@@ -12,7 +17,7 @@
 
 #header {
 	width: 1024px;
-	height: 180px;
+	height: 100px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -48,7 +53,6 @@ body {
 }
 
 
-
 /* .content { */
 /* 	padding: 0; */
 /* } */
@@ -80,7 +84,7 @@ body {
 /* } */
 
 /* .content .mainbar img { */
-	
+
 /* } */
 
 /* .content .mainbar img.fl { */
@@ -94,7 +98,7 @@ body {
 /* } */
 
 /* .content .mainbar .post_content { */
-	
+
 /* } */
 
 /* .content .mainbar .post_content strong { */
@@ -115,8 +119,6 @@ body {
 /* .content .sidebar h2 { */
 /* 	color: black; */
 /* } */
-
-
 
 /* h2 { */
 /* 	margin: 8px 0; */
@@ -204,7 +206,9 @@ body {
 /* 	border-radius: 10px; */
 /* } */
 
-/* /*ubica la imagen de la lupa*/ */
+/* /*ubica la imagen de la lupa*/
+*
+/
 /* #formsearch input.button_search { */
 /* 	margin: 0; */
 /* 	margin-left: 300px; */

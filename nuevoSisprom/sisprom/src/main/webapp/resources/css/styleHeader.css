@@ -1,0 +1,64 @@
+@CHARSET "ISO-8859-1";
+.content,.menu_nav
+,.fbg,.footer,form,ol,ol li,ul,.content .mainbar,.content .sidebar
+	{
+	margin: 0 auto;
+	padding: 0;
+}
+
+.ikaroLogo {
+	padding: 100 0 0 0;
+	float: none;
+	float: left;
+	width: auto;
+	height: 140px;
+	top: 0;
+	left: 0;
+}
+
+#menu_nav {
+	margin: 0 auto;
+	padding: 100%;
+}
+
+#menu_nav {
+	background-color: #8BB9C7;
+	margin: 0 auto;
+	padding: 7px 0 0 150px;
+	height: 57px;
+	text-align: center;	
+}
+
+#menu_nav ul {
+	list-style: none;
+	padding: 0;
+	height: 57px;
+	float: left;
+}
+
+#menu_nav ul li {
+ 	margin: 0;
+ 	padding: 0 2px 0 0;
+ 	float: left; 
+ 	background: url("#{resources['images:menu_split.gif']}") no-repeat right 
+ 		center;
+} 
+
+#menu_nav ul li a{
+	display: block;
+	margin: 0 auto;
+	padding: 19px 24px;
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#menu_nav ul li a:hover {
+	text-decoration: none;
+	color: #3183bf;
+}
+
