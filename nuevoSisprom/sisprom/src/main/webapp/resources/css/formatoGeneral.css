@@ -27,7 +27,7 @@
 	width: 220px;
 	height: 380px;
 	position: absolute;
-	top: 170px;
+	top: 110px;
 	left: 0;
 }
 
@@ -35,12 +35,12 @@
 	width: 790px;
 	height: 410px;
 	position: absolute;
-	top: 170px;
+	top: 110px;
 	left: 230px;
 }
 
 #footer {
-	width: 760px;
+	width: 1024px;
 	height: 150px;
 	position: absolute;
 	left: 0;

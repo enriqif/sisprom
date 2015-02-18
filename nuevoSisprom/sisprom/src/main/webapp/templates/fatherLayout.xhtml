@@ -6,9 +6,11 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="resources/css/formatoGeneral.css" />
-	<link rel="stylesheet" href="resources/css/styleHeader.css" />
-	<link rel="stylesheet" href="resources/css/styleFunctions.css" />
+	
+	<link rel="stylesheet" href="#{resource['css:formatoGeneral.css']}" />
+	<link rel="stylesheet" href="#{resource['css:styleHeader.css']}" />
+	<link rel="stylesheet" href="#{resource['css:styleFunctions.css']}" />
+	<link rel="stylesheet" href="#{resource['css:styleContent.css']}" />
 </h:head>
 
 <h:body>
@@ -21,8 +23,8 @@
 
 		<div id="functions">
 			<div class="sidebar">
-				<ui:insert name="funciones">
-					<ui:include src="/sections/common/funciones.xhtml" />
+				<ui:insert name="functions">
+					<ui:include src="/sections/common/commonfunciones.xhtml" />
 				</ui:insert>
 			</div>
 		</div>

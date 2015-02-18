@@ -15,7 +15,7 @@
   PATH="/views/medico/altaMedico.xhtml" SHAPE="488,120,50,25"
   model-entity="JSFProcessGroup" persistent="true"/>
  <PROCESS-ITEM NAME="rules:#views#medico#homeMedico.xhtml"
-  PATH="/views/medico/homeMedico.xhtml" SHAPE="240,401,0,0" model-entity="JSFProcessGroup">
+  PATH="/views/medico/homeMedico.xhtml" SHAPE="248,208,50,41" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#medico#homeMedico.xhtml:0" NAME="item"
    PATH="/views/medico/homeMedico.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="altaMedico::#views#medico#altaMedico.xhtml"

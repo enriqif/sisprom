@@ -24,7 +24,7 @@
 #menu_nav {
 	background-color: #8BB9C7;
 	margin: 0 auto;
-	padding: 7px 0 0 150px;
+	padding: 7px 0 0 80px;
 	height: 57px;
 	text-align: center;	
 }
@@ -59,6 +59,6 @@
 
 #menu_nav ul li a:hover {
 	text-decoration: none;
-	color: #3183bf;
+	background-color:#7DA6B3; 
 }
 

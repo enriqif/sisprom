@@ -8,14 +8,30 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <head>
-<link rel="stylesheet" href="resources/css/estiloHeader.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="resources/css/styleContent.css"
+	type="text/css" />
 </head>
 
 <h:body>
 	<ui:composition template="/templates/fatherLayout.xhtml">
+		<ui:define name="functions">
+			<div class="subMenu">
+				<h1>
+					<span>SisProM</span>
+				</h1>
+			</div>
+		</ui:define>
 		<ui:define name="content">
-			<hr align="center"/>
-			
+			<div class="subMenu">
+				<h1>
+					<span>Bienvenido</span>
+				</h1>
+			</div>
+			<div class="textoExplicativo">
+				<p>En esta seccion podra realizar todas las operaciones
+					disponibles en el panel lateral izquierdo</p>
+			</div>
 		</ui:define>
 	</ui:composition>
 </h:body>
