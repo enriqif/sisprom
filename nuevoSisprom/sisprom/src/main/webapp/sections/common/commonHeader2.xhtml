@@ -1,33 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div>
+		<h3>Ikaro SisProM</h3>
+	</div>
+	<hr align="center" />
+	<div id="menu_nav">
+		<ul class="nav">
+			<li><a href="views/paciente/nuevoPaciente.xhtml">Pacientes</a></li>
 
-<h:head>
-	<title>Dashboard</title>
-</h:head>
-<h:body>
-	<ui:composition>
 
-		<div >
-			<h3>Ikaro SisProM</h3>
-		</div>
-		<hr align="center" />
-  		<div id="menu_nav">
-			<ul class="nav">
-				<li><a href="views/paciente/nuevoPaciente.xhtml">Pacientes</a></li>
-				
-				
-				<li><a href="./faces/views/medicos.xhtml">Medicos</a></li>
-				<li><a href="./faces/views/turnos.xhtml">Turnos</a></li>
-				<li><a href="./faces/views/tratamientos.xhtml">Tratamientos</a></li>
-				<li><a href="./faces/views/informes.xhtml">Informes y
+			<li><a href="./faces/views/medicos.xhtml">Medicos</a></li>
+			<li><a href="./faces/views/turnos.xhtml">Turnos</a></li>
+			<li><a href="./faces/views/tratamientos.xhtml">Tratamientos</a></li>
+			<li><a href="./faces/views/informes.xhtml">Informes y
 					Estadisticas</a></li>
-				<li><a href="./faces/views/informes.xhtml">Personal</a></li>
-			</ul>
-		</div>
-		<hr align="center" />
-	</ui:composition>
-</h:body>
-</html>
+			<li><a href="./faces/views/informes.xhtml">Personal</a></li>
+		</ul>
+	</div>
+	<hr align="center" />
+</ui:composition>
