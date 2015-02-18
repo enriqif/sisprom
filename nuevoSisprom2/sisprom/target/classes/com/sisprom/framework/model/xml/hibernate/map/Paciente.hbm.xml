@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-feb-2015 11:06:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sisprom.framework.dominio.Paciente" table="PACIENTE">
+        <id name="pacienteId" type="int">
+            <column name="PACIENTE_ID" precision="8" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="pacienteNombre" type="string">
+            <column name="PACIENTE_NOMBRE" length="100" />
+        </property>
+        <property name="pacienteApellido" type="string">
+            <column name="PACIENTE_APELLIDO" length="100" />
+        </property>
+        <property name="pacienteDni" type="string">
+            <column name="PACIENTE_DNI" length="50" />
+        </property>
+        <property name="pacienteTelefono" type="string">
+            <column name="PACIENTE_TELEFONO" length="50" />
+        </property>
+        <property name="pacienteDomicilioCalle" type="string">
+            <column name="PACIENTE_DOMICILIO_CALLE" length="50" />
+        </property>
+        <property name="pacienteObraSocial" type="string">
+            <column name="PACIENTE_OBRA_SOCIAL" length="100" />
+        </property>
+        <property name="pacienteEdad" type="string">
+            <column name="PACIENTE_EDAD" length="3" />
+        </property>
+        <property name="usuarioCreacion" type="string">
+            <column name="USUARIO_CREACION" length="100" />
+        </property>
+        <property name="fechaCreacion" type="date">
+            <column name="FECHA_CREACION" length="7" />
+        </property>
+        <property name="usuarioModificacion" type="string">
+            <column name="USUARIO_MODIFICACION" length="100" />
+        </property>
+        <property name="fechaModificacion" type="date">
+            <column name="FECHA_MODIFICACION" length="7" />
+        </property>
+        <property name="pacienteEstadoCivil" type="string">
+            <column name="PACIENTE_ESTADO_CIVIL" length="20" />
+        </property>
+        <property name="pacienteFechaNacimiento" type="date">
+            <column name="PACIENTE_FECHA_NACIMIENTO" length="7" />
+        </property>
+        <property name="pacienteSexo" type="string">
+            <column name="PACIENTE_SEXO" length="20" />
+        </property>
+        <property name="pacienteLugarNacimiento" type="string">
+            <column name="PACIENTE_LUGAR_NACIMIENTO" length="50" />
+        </property>
+        <property name="pacienteProfesion" type="string">
+            <column name="PACIENTE_PROFESION" length="50" />
+        </property>
+        <property name="pacienteNumeroAfiliado" type="string">
+            <column name="PACIENTE_NUMERO_AFILIADO" length="20" />
+        </property>
+        <property name="pacienteDomicilioNumero" type="string">
+            <column name="PACIENTE_DOMICILIO_NUMERO" length="50" />
+        </property>
+        <property name="pacienteDomicilioBarrio" type="string">
+            <column name="PACIENTE_DOMICILIO_BARRIO" length="50" />
+        </property>
+        <set name="historiaClinicas" table="HISTORIA_CLINICA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PACIENTE_ID" precision="8" scale="0" />
+            </key>
+            <one-to-many class="com.sisprom.framework.dominio.HistoriaClinica" />
+        </set>
+        <set name="turnos" table="TURNO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PACIENTE_ID" precision="8" scale="0" />
+            </key>
+            <one-to-many class="com.sisprom.framework.dominio.Turno" />
+        </set>
+    </class>
+</hibernate-mapping>

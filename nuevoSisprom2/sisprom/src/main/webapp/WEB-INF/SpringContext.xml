@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/tx 
+     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+     http://www.springframework.org/schema/aop 
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+		
+		<bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+			<property name="username" value="sisprom"/>
+			<property name="password" value="sisprom"/>
+		</bean>
+		
+			<!-- Hibernate Session Factory -->  
+<bean id="mySessionFactory"  
+    class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+    <property name="dataSource" ref="myDataSource" />  
+    <property name="mappingResources"> 
+   		 	<list>
+   		 			<value>com/sisprom/framework/model/xml/hibernate/map/AntecedenteGeneral.hbm.xml</value>
+   		 			<value>com/sisprom/framework/model/xml/hibernate/map/AntecedentePerPatologico.hbm.xml</value>
+   		 			<value>com/sisprom/framework/model/xml/hibernate/map/Consulta.hbm.xml</value>
+   		 			<value>com/sisprom/framework/model/xml/hibernate/map/DetallePatologia.hbm.xml</value>
+   		 			<value>com/sisprom/framework/model/xml/hibernate/map/Diagnostico.hbm.xml</value>
+   		 			<value>com/sisprom/framework/model/xml/hibernate/map/HistoriaClinica.hbm.xml</value>
+   		 			<value>com/sisprom/framework/model/xml/hibernate/map/Medicamento.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/Paciente.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/Patologia.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/Permiso.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/Tratamiento.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/TratamientoMedicamento.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/Turno.hbm.xml</value>
+					<value>com/sisprom/framework/model/xml/hibernate/map/Usuario.hbm.xml</value>
+					
+			</list> 
+  
+    </property>  
+    <property name="hibernateProperties">
+
+				 <props>
+
+			      <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				  <prop key="hibernate.show_sql">false</prop>
+			      </props>
+	</property>
+		</bean> 
+<bean id="myTxManager"
+	class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	<property name="sessionFactory" ref="mySessionFactory" />
+	<property name="dataSource" ref="myDataSource" />
+</bean>
+
+  
+    <bean id="pacienteDao" class="com.sisprom.framework.model.dao.impl.PacienteDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="turnoDao" class="com.sisprom.framework.model.dao.impl.TurnoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="historiaClinicaDao" class="com.sisprom.framework.model.dao.impl.HistoriaClinicaDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+	<bean id="medicamentoDao" class="com.sisprom.framework.model.dao.impl.MedicamentoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    <bean id="tratamientoDao" class="com.sisprom.framework.model.dao.impl.TratamientoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+     <bean id="consultaDao" class="com.sisprom.framework.model.dao.impl.ConsultaDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+      <bean id="diagnosticoDao" class="com.sisprom.framework.model.dao.impl.DiagnosticoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+    
+     <bean id="tratamientoMedicamentoDao" class="com.sisprom.framework.model.dao.impl.TratamientoMedicamentoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+      <bean id="permisoDao" class="com.sisprom.framework.model.dao.impl.PermisoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+     
+      <bean id="usuarioDao" class="com.sisprom.framework.model.dao.impl.UsuarioDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+       <bean id="patologiaDao" class="com.sisprom.framework.model.dao.impl.PatologiaDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+     <bean id="detallePatologiaDao" class="com.sisprom.framework.model.dao.impl.DetallePatologiaDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+     <bean id="antecedentePerPatologicoDao" class="com.sisprom.framework.model.dao.impl.AntecedentePerPatologicoDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+      <bean id="antecedenteGeneralDao" class="com.sisprom.framework.model.dao.impl.AntecedenteGeneralDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
+<!-- 	<bean id="services" class="com.sisprom.framework.model.services.Services"> -->
+<!-- 	  <property name="secretariaDao"><ref bean="secretariaDao"/></property> -->
+<!-- 	  <property name="medicoDao"><ref bean="medicoDao"/></property>	   -->
+<!-- 	</bean> -->
+	
+	<bean id="services" class="com.sisprom.framework.model.services.Services">
+	  <property name="pacienteDao"><ref bean="pacienteDao"/></property>
+	  <property name="turnoDao"><ref bean="turnoDao"/></property>	  	  
+	  <property name="historiaClinicaDao"><ref bean="historiaClinicaDao"/></property>	  	  
+	  <property name="medicamentoDao"><ref bean="medicamentoDao"/></property>
+	  <property name="tratamientoDao"><ref bean="tratamientoDao"/></property>
+	  <property name="consultaDao"><ref bean="consultaDao"/></property>
+	  <property name="diagnosticoDao"><ref bean="diagnosticoDao"/></property>
+	  <property name="tratamientoMedicamentoDao"><ref bean="tratamientoMedicamentoDao"/></property>
+	  <property name="permisoDao"><ref bean="permisoDao"/></property>
+	  <property name="usuarioDao"><ref bean="usuarioDao"/></property>
+	  <property name="patologiaDao"><ref bean="patologiaDao"/></property>	  
+	  <property name="detallePatologiaDao"><ref bean="detallePatologiaDao"/></property>	  
+	  <property name="antecedentePerPatologicoDao"><ref bean="antecedentePerPatologicoDao"/></property>	  
+	  <property name="antecedenteGeneralDao"><ref bean="antecedenteGeneralDao"/></property>	  
+	</bean>
+	
+</beans>
