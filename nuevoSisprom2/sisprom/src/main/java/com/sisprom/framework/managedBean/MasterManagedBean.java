@@ -38,7 +38,7 @@ public class MasterManagedBean {
 	public String redireccionar() {
 //		
 //		
-		Paciente pac = new Paciente(2, "pacienteNombre2", "pacienteApellido2", "Dni", "pacienteTelefono", "pacienteDomicilioCalle", "pacienteObraSocial", "20", "usuarioCreacion", null, "usuarioModificacion", null, "EstadoCivil", null, "Sexo", "pacienteLugarNacimiento", "pacienteProfesion", "NumeroAfiliado", "pacienteDomicilioNumero", "pacienteDomicilioBarrio");
+		Paciente pac = new Paciente(1, "pacienteNombre1", "pacienteApellido1", "Dni", "pacienteTelefono", "pacienteDomicilioCalle", "pacienteObraSocial", "20", "usuarioCreacion", null, "usuarioModificacion", null, "EstadoCivil", null, "Sexo", "pacienteLugarNacimiento", "pacienteProfesion", "NumeroAfiliado", "pacienteDomicilioNumero", "pacienteDomicilioBarrio");
 //		services.savePaciente(pac);
 //
 		Turno turn = new Turno(2, pac, null, null, "usuarioCreacion2", null, "usuarioModificacion1", null);
@@ -47,10 +47,10 @@ public class MasterManagedBean {
 		Medicamento medito = new Medicamento(1, "medicamentoNombre", "medicamentoDescripcion", "usuarioCreacion", null, "usuarioModificacion", null);
 		//services.saveMedicamento(medito);
 		
-		Permiso per = new Permiso(2, "permisoNombre2", "permisoPermiso2", "permisoDescripcion2", null, null, "usuarioCreacion", "usuarioModificacion");
+		Permiso per = new Permiso(1, "permisoNombre1", "permisoPermiso1", "permisoDescripcion1", null, null, "usuarioCreacion", "usuarioModificacion");
 //		services.savePermiso(per);
 		
-		Usuario usu = new Usuario(2,per, "usuarioNombre2", "usuarioApellido2", "usuarioDni", "usuarioTelefono", "usuarioDomicilioBarrio", "usuarioUsuario", "usuarioContrasenia", "usuarioRol", "usuarioObraSocial", "20", "Matricula", "Especialidad", null, null, null, null, "usuarioCreacion", "usuarioModificacion", "usuarioDomicilioCalle", "usuarioDomicilioNumero");
+		Usuario usu = new Usuario(1,per, "usuarioNombre", "usuarioApellido", "usuarioDni", "usuarioTelefono", "usuarioDomicilioBarrio", "usuarioUsuario", "usuarioContrasenia", "usuarioRol", "usuarioObraSocial", "20", "Matricula", "Especialidad", null, null, null, null, "usuarioCreacion", "usuarioModificacion", "usuarioDomicilioCalle", "usuarioDomicilioNumero");
 //		services.saveUsuario(usu);
 		
 		Patologia pato= new Patologia(2, "patologiaNombre2", "patologiaDescripcion2",null, null, "usuarioCreacion", "usuarioModificacion");
@@ -83,22 +83,26 @@ public class MasterManagedBean {
 		TratamientoMedicamento trataMedi= new TratamientoMedicamento(2, trata, medi, "usuarioCreacion2", null, "usuarioModificacion1", null);
 //		services.saveTratamientoMedicamento(trataMedi);	
 		
-//		List<Usuario> lista = services.getAllUsuario();
-//		  for(Usuario p: lista){
+//		List<Usuario> listax = services.getAllUsuario();
+//		  for(Usuario p: listax){
 //			  System.out.println(p.getUsuarioApellido());
 //		  }
 		
 		
-//		List<Patologia> lista = services.findByIdPatologia(1);
-//		for (int i = 0; i < lista.size(); i++) {
-//			System.out.println(lista.get(i).getPatologiaDescripcion());
-//		}
-		
-		Usuario prueba = services.loginUsuario("usuario1", "contrasenia1");
-		System.out.println(prueba.getUsuarioApellido());
-		return "index2.xhtml";
+		List<HistoriaClinica> lista = services.consultarHistoriaClinica(histC);
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println("entro2");
 
-	}
+			System.out.println(lista.get(i).getUsuarioCreacion());
+		}
+		
+//		Usuario prueba = services.loginUsuario("usuario1", "contrasenia1");
+//		System.out.println(prueba.getUsuarioApellido());
+		
+		
+		return "index2.xhtml";
+		}
+
 
 	public Services getServices() {
 		return services;

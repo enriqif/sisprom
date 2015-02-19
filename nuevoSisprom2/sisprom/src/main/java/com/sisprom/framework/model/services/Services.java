@@ -105,7 +105,9 @@ public class Services {
 	public List<HistoriaClinica> getAllHistoriaClinica(){
 		return historiaClinicaDao.getAll();
 	}
-	
+	public List<HistoriaClinica> consultarHistoriaClinica(HistoriaClinica historiaClinica){
+		return historiaClinicaDao.find(historiaClinica);
+	}
 	// servicios Medicamento
 	
 	public void saveMedicamento(Medicamento medicamento){

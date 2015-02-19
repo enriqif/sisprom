@@ -44,7 +44,7 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 		Integer id = usuario.getUsuarioId();
 		String nombre = usuario.getUsuarioApellido();
 		String dni = usuario.getUsuarioDni();
-		
+		int permisoId= usuario.getPermiso().getPermisoId();
 		   if (id!=null && !(id.toString().isEmpty()) && id!=0) 
 			   criteria.add(Restrictions.eq("usuarioId",id));
 		   
@@ -54,6 +54,11 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 		   if (dni!=null && !dni.isEmpty())
 			   criteria.add(Restrictions.ilike("usuarioDni", "%"+dni+"%"));
 		  
+		   if(permisoId > 0){
+				criteria.createAlias("permiso","p").
+						add(Restrictions.eq("p.permisoId", permisoId));
+		   }
+		   
 		   return criteria.list();
 	}
 
