@@ -6,9 +6,9 @@
 	<display-name>sisprom</display-name>
 
 	<welcome-file-list>
-		<welcome-file>/views/medico/homeMedico.xhtml</welcome-file>
+<!-- 		<welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
 <!-- 		<welcome-file>/views/paciente/nuevoPaciente.xhtml</welcome-file> -->
-<!-- 		<welcome-file>views/usuario/loggin.xhtml</welcome-file> -->
+		<welcome-file>views/usuario/loggin.xhtml</welcome-file>
 	</welcome-file-list>
 
 	<servlet>

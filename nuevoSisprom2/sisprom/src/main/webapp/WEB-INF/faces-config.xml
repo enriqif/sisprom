@@ -17,6 +17,12 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
+	<managed-bean>
+		<managed-bean-name>loginManagedBean</managed-bean-name>
+		<managed-bean-class>com.sisprom.framework.managedBean.LoginManagedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
 
 	<!-- reglas de navegacion para el menu -->
 	<navigation-rule>

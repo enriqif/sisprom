@@ -15,16 +15,16 @@
 		<h:form class="formulario">
 			<h2>Acceso de Usuario</h2>
 			<p>
-				<h:inputText pt:placeholder="Usuario" value="#{medicoManagedBean.usuario}" />
+				<h:inputText pt:placeholder="Usuario" value="#{loginManagedBean.usuario}" />
 			</p>
 			<p>
-				<h:inputSecret pt:placeholder="Contraseña" value="#{medicoManagedBean.contrasenia}" />
+				<h:inputSecret pt:placeholder="Contraseña" value="#{loginManagedBean.contrasenia}" />
 			</p>
 			<h:messages infoStyle="color: blue;list-style:none;"
 				errorStyle="color:red;list-style:none;" />
 			<section class="seccionBotones"> 
 				<a href="#">Regístrate</a>
-				<h:commandButton action="#{medicoManagedBean.validateUser}" value="Ingresar" /> 
+				<h:commandButton action="#{loginManagedBean.doLogin}" value="Ingresar" /> 
 			</section>
 		</h:form>
 	</section>
