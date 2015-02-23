@@ -18,7 +18,7 @@ import com.sisprom.framework.dominio.Usuario;
 public class LoginManagedBean extends MasterManagedBean{
 	
 	
-	private Usuario usuario = new Usuario();
+	public Usuario usuario = new Usuario();
         
 	public LoginManagedBean() {
 		
@@ -30,7 +30,7 @@ public class LoginManagedBean extends MasterManagedBean{
 	 * @return
 	 */
 	public String doLogin(){
-		
+		System.out.print("entro"+ usuario.getUsuarioNombre());
 		if (super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioNombre(), usuario.getUsuarioContrasenia())!= null)
 			{
 			System.out.print("exito");
@@ -54,6 +54,14 @@ public class LoginManagedBean extends MasterManagedBean{
 	
 	public String salir() {
 		return "loggin";
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	

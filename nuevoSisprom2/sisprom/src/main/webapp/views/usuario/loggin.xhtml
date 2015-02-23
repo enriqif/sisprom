@@ -15,10 +15,10 @@
 		<h:form class="formulario">
 			<h2>Acceso de Usuario</h2>
 			<p>
-				<h:inputText pt:placeholder="Usuario" value="#{loginManagedBean.usuario}" />
+				<h:inputText pt:placeholder="Usuario" value="#{loginManagedBean.usuario.usuarioNombre}" />
 			</p>
 			<p>
-				<h:inputSecret pt:placeholder="Contraseña" value="#{loginManagedBean.contrasenia}" />
+				<h:inputSecret pt:placeholder="Contraseña" value="#{loginManagedBean.usuario.usuarioContrasenia}" />
 			</p>
 			<h:messages infoStyle="color: blue;list-style:none;"
 				errorStyle="color:red;list-style:none;" />
