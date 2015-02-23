@@ -19,28 +19,74 @@
 				</h1>
 			</div>
 			<div>
-				<ul class="sb_menu">
-					<li><a href="./views/paciente/nuevoPaciente.xhtml">Nuevo</a></li>
-					<li><a href="/views/medicos.xhtml">Eliminar</a></li>
-					<li><a href="/views/pacientes.xhtml">Actualizar</a></li>
-					<li><a href="/views/turnos.xhtml">Buscar</a></li>
-					<!-- 			<li><a href="./faces/views/tratamientos.xhtml">Tratamientos</a></li> -->
-					<!-- 			<li><a href="./faces/views/informes.xhtml">Informes y -->
-					<!-- 					Estadisticas</a></li> -->
-				</ul>
+				<h:form>
+					<ul class="sb_menu">
+						<li><h:commandLink value="Nuevo" action="nuevoPaciente" /></li>
+						<li><h:commandLink value="Archivar" action="archivarPaciente" /></li>
+						<li><h:commandLink value="Actualizar"
+								action="actualizarPaciente" /></li>
+						<li><h:commandLink value="Buscar" action="buscarPaciente" /></li>
+						<li><h:commandLink value="Historial"
+								action="historialPaciente" /></li>
+					</ul>
+				</h:form>
 			</div>
 		</ui:define>
 		<ui:define name="content">
 			<div class="subMenu">
 				<h1>
-					<span>Pacientes</span>
+					<p>
+						<span>Nuevo</span>
+					</p>
 				</h1>
 			</div>
-			<div class="textoExplicativo">
-				<p>En esta seccion tendra acceso a las funciones que se pueden
-					aplicar a los datos de los pacientes almacenados</p>
+			<div class="form-nuevo">
+				<a4j:form>
+					<h:panelGrid columns="2">
+						<h:outputLabel value="Nombre" for="name" />
+						<h:inputText id="pacienteNombre" value="#{pacienteManagedBean.paciente.pacienteNombre}" required="true" class="pacienteNombre">
+							<a4j:support ajaxSingle="true" event="onblur"
+								reRender="outputContainer" />
+						</h:inputText>
+<!-- 						<h:outputLabel value="Apellidos" for="surname" /> -->
+<!-- 						<h:inputText id="surname" value="#{pacienteManagedBean.pacienteApellido}" required="true"> -->
+<!-- 							<a4j:support ajaxSingle="true" event="onblur" -->
+<!-- 								reRender="outputContainer" /> -->
+<!-- 						</h:inputText> -->
+<!-- 						<h:outputLabel value="DNI" for="dni" /> -->
+<!-- 						<h:inputText id="dni" value="#{pacienteManagedBean.pacienteDni}"> -->
+<!-- 							<a4j:support ajaxSingle="true" event="onblur" -->
+<!-- 								reRender="outputContainer" /> -->
+<!-- 						</h:inputText> -->
+<!-- 						<h:outputLabel value="Fecha de nacimiento" for="birthDay" /> -->
+<!-- 						<rich:calendar id="birthDay" datePattern="d/M/yyyy HH:mm" -->
+<!-- 							value="#{pacienteManagedBean.pacienteFechaNacimiento}"> -->
+<!-- 							<a4j:support ajaxSingle="true" event="onchanged" -->
+<!-- 								reRender="outputContainer" /> -->
+<!-- 						</rich:calendar> -->
+						<h:panelGroup />
+						<h:commandButton action="none" value="Asignar" />
+					</h:panelGrid>
+
+					<rich:messages>
+						<rich:spacer height="10px" />
+						<rich:separator height="5px" />
+						<rich:spacer height="20px" />
+						<h:panelGrid columns="2" id="outputContainer">
+							<h:outputLabel value="Nombre: " />
+							<h:outputText id="pacienteNombre" value="#{pacienteManagedBean.paciente.pacienteNombre}" class="pacienteNombre"/>
+<!-- 							<h:outputLabel value="Apellidos: " /> -->
+<!-- 							<h:outputText value="#{pacienteManagedBean.pacienteApellido}" /> -->
+<!-- 							<h:outputLabel value="DNI: " /> -->
+<!-- 							<h:outputText value="#{pacienteManagedBean.pacienteDni}" /> -->
+<!-- 							<h:outputLabel value="Fecha de nacimiento: " /> -->
+<!-- 							<h:outputText value="#{pacienteManagedBean.pacienteFechaNacimiento}" /> -->
+						</h:panelGrid>
+					</rich:messages>
+				</a4j:form>
 			</div>
 		</ui:define>
 	</ui:composition>
+	
 </body>
 </html>

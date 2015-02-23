@@ -7,17 +7,17 @@
 	</div>
 	<hr align="center" />
 	<div id="menu_nav">
-		<ul class="nav">
-			<li><a href="views/paciente/nuevoPaciente.xhtml">Pacientes</a></li>
+		<h:form>
+			<ul class="nav">
+				<li><h:commandLink value="Paciente" action="paciente" /></li>
+				<li><h:commandLink value="Medicos" action="medicos" /></li>
+				<li><h:commandLink value="Turnos" action="turnos" /></li>
+				<li><h:commandLink value="Tratamientos" action="tratamiento" /></li>
+				<li><h:commandLink value="Informes" action="informes" /></li>
+				<li><h:commandLink value="Personal" action="personal" /></li>
+			</ul>
+		</h:form>
 
-
-			<li><a href="./faces/views/medicos.xhtml">Medicos</a></li>
-			<li><a href="./faces/views/turnos.xhtml">Turnos</a></li>
-			<li><a href="./faces/views/tratamientos.xhtml">Tratamientos</a></li>
-			<li><a href="./faces/views/informes.xhtml">Informes y
-					Estadisticas</a></li>
-			<li><a href="./faces/views/informes.xhtml">Personal</a></li>
-		</ul>
 	</div>
 	<hr align="center" />
 </ui:composition>
