@@ -96,8 +96,8 @@ public class MasterManagedBean {
 			System.out.println(lista.get(i).getUsuarioCreacion());
 		}
 		
-//		Usuario prueba = services.loginUsuario("usuario1", "contrasenia1");
-//		System.out.println(prueba.getUsuarioApellido());
+		Usuario prueba = services.loginUsuario("usuario1", "contrasenia1");
+		System.out.println(prueba.getUsuarioApellido());
 		
 		
 		return "index2.xhtml";
