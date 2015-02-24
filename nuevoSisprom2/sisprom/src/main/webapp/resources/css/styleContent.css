@@ -10,3 +10,16 @@
 textoExplicativo {
 	padding-left: 0, 5em;
 }
+
+p {
+	color:white;
+}
+.texto_ayuda{
+	padding-left: 5%;
+	padding-top: 5%;
+}
+
+.texto_ayuda ul {
+	padding-left: 10%;
+	
+}

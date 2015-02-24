@@ -23,9 +23,11 @@
 					<ul class="sb_menu">
 						<li><h:commandLink value="Nuevo" action="nuevoPaciente" /></li>
 						<li><h:commandLink value="Archivar" action="archivarPaciente" /></li>
-						<li><h:commandLink value="Actualizar" action="actualizarPaciente" /></li>
+						<li><h:commandLink value="Actualizar"
+								action="actualizarPaciente" /></li>
 						<li><h:commandLink value="Buscar" action="buscarPaciente" /></li>
-						<li><h:commandLink value="Historial" action="historialPaciente" /></li>
+						<li><h:commandLink value="Historial"
+								action="historialPaciente" /></li>
 					</ul>
 				</h:form>
 			</div>
@@ -33,15 +35,31 @@
 		<ui:define name="content">
 			<div class="subMenu">
 				<h1>
-					<p><span>Pacientes</span> -> <span>Nuevo</span></p>
+					Pacientes <span>Nuevo</span>
 				</h1>
 			</div>
+
+			<div class="texto_ayuda" style="font: serif;">
+				<h5 style="padding-top: 20px; padding-bottom: 20px">Ayuda!</h5>
+				<p style="padding-bottom: 20px;">
+					Todos los datos una vez creados ya no pueden ser borrados, 
+					para su comodidad, si hay informacion que no desea que sea 
+					incluida en las busquedas realizadas, SisProM le permite archivarlas. 
+					Esto quiere decir que la informacion sigue existiendo para futuras aditorias.</p>
+				<ul style="padding-left: 30px;">
+					<li>Realice busqueda</li>
+					<li>Seleccione el paciente que desea archivar</li>
+					<li>Presione</li>
+				</ul>
+			</div>
+
 			<div class="form-nuevo">
+
 				<a4j:form>
-					<h:outputLabel value="Archivar Paciente!!" />
-					<h:inputText value="#{js.texto2}"/>
-    			    
+
+
 				</a4j:form>
+
 			</div>
 		</ui:define>
 	</ui:composition>

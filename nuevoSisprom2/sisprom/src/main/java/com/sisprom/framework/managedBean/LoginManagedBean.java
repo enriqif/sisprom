@@ -35,10 +35,8 @@ public class LoginManagedBean extends MasterManagedBean{
 			{System.out.print(" entro ");
 			setUsuario(super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia()));
 		
-			return "paciente";
-			
-			
-			
+//			return "paciente";
+			return "bienvenido";
 			
 		} else {
 			System.out.print(" error ");

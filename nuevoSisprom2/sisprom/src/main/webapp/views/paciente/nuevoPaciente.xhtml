@@ -5,7 +5,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,58 +37,119 @@
 		<ui:define name="content">
 			<div class="subMenu">
 				<h1>
-					<p>
-						<span>Nuevo</span>
-					</p>
+					Paciente <span>Nuevo</span>
 				</h1>
 			</div>
 			<div class="form-nuevo">
-				<a4j:form>
-					<h:panelGrid columns="2">
-						<h:outputLabel value="Nombre" for="name" />
-						<h:inputText id="pacienteNombre" value="#{pacienteManagedBean.paciente.pacienteNombre}" required="true" class="pacienteNombre">
-							<a4j:support ajaxSingle="true" event="onblur"
-								reRender="outputContainer" />
-						</h:inputText>
-<!-- 						<h:outputLabel value="Apellidos" for="surname" /> -->
-<!-- 						<h:inputText id="surname" value="#{pacienteManagedBean.pacienteApellido}" required="true"> -->
-<!-- 							<a4j:support ajaxSingle="true" event="onblur" -->
-<!-- 								reRender="outputContainer" /> -->
-<!-- 						</h:inputText> -->
-<!-- 						<h:outputLabel value="DNI" for="dni" /> -->
-<!-- 						<h:inputText id="dni" value="#{pacienteManagedBean.pacienteDni}"> -->
-<!-- 							<a4j:support ajaxSingle="true" event="onblur" -->
-<!-- 								reRender="outputContainer" /> -->
-<!-- 						</h:inputText> -->
-<!-- 						<h:outputLabel value="Fecha de nacimiento" for="birthDay" /> -->
-<!-- 						<rich:calendar id="birthDay" datePattern="d/M/yyyy HH:mm" -->
-<!-- 							value="#{pacienteManagedBean.pacienteFechaNacimiento}"> -->
-<!-- 							<a4j:support ajaxSingle="true" event="onchanged" -->
-<!-- 								reRender="outputContainer" /> -->
-<!-- 						</rich:calendar> -->
-						<h:panelGroup />
-						<h:commandButton action="none" value="Asignar" />
-					</h:panelGrid>
+				<h:form>
 
-					<rich:messages>
-						<rich:spacer height="10px" />
-						<rich:separator height="5px" />
-						<rich:spacer height="20px" />
-						<h:panelGrid columns="2" id="outputContainer">
-							<h:outputLabel value="Nombre: " />
-							<h:outputText id="pacienteNombre" value="#{pacienteManagedBean.paciente.pacienteNombre}" class="pacienteNombre"/>
-<!-- 							<h:outputLabel value="Apellidos: " /> -->
-<!-- 							<h:outputText value="#{pacienteManagedBean.pacienteApellido}" /> -->
-<!-- 							<h:outputLabel value="DNI: " /> -->
-<!-- 							<h:outputText value="#{pacienteManagedBean.pacienteDni}" /> -->
-<!-- 							<h:outputLabel value="Fecha de nacimiento: " /> -->
-<!-- 							<h:outputText value="#{pacienteManagedBean.pacienteFechaNacimiento}" /> -->
+					<a4j:form>
+						<h:panelGrid columns="2" title="Datos Personales">
+							<h:outputLabel value="Nombre" for="nombre" />
+
+							<h:inputText pt:placeholder="Usuario" id="nombre"
+								value="#{pacienteManagedBean.paciente.pacienteNombre}"
+								required="true">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Apellidos" for="surname" />
+							<h:inputText id="surname"
+								value="#{pacienteManagedBean.paciente.pacienteApellido}"
+								required="true">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Edad" for="edad" />
+							<h:inputText id="edad"
+								value="#{pacienteManagedBean.paciente.pacienteEdad}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="DNI" for="dni" />
+							<h:inputText id="dni"
+								value="#{pacienteManagedBean.paciente.pacienteDni}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Telefono" for="telefono" />
+							<h:inputText id="telefono"
+								value="#{pacienteManagedBean.paciente.pacienteTelefono}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+
+							<h:outputLabel value="Obra Social" for="obraSocial" />
+							<h:inputText id="obraSocial"
+								value="#{pacienteManagedBean.paciente.pacienteObraSocial}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputText value="Numero de Afiliado" for="numAfiliado" />
+							<h:inputText id="numAfiliado"
+								value="#{pacienteManagedBean.paciente.pacienteNumeroAfiliado}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Calle" for="calle" />
+							<h:inputText id="calle"
+								value="#{pacienteManagedBean.paciente.pacienteDomicilioCalle}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Numero" for="numero" />
+							<h:inputText id="numero"
+								value="#{pacienteManagedBean.paciente.pacienteDomicilioNumero}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputText value="Barrio" for="barrio" />
+							<h:inputText id="barrio"
+								value="#{pacienteManagedBean.paciente.pacienteDomicilioBarrio}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputText value="Sexo" for="sexo" />
+							<h:selectOneRadio value="Femenino"
+								valueChangeListener="#{calendarBean.selectLocale}">
+								<a4j:support event="onclick" reRender="calendar" />
+								<f:selectItem itemLabel="F" itemValue="Femenino" />
+								<f:selectItem itemLabel="M" itemValue="Masculino" />
+							</h:selectOneRadio>
+
+							<h:outputText value="Lugar de Nacimiento" for="lugarNacimiento" />
+							<h:inputText id="lugarNacimiento"
+								value="#{pacienteManagedBean.paciente.pacienteLugarNacimiento}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputText value="Profesion" for="profesion" />
+							<h:inputText id="profesion"
+								value="#{pacienteManagedBean.paciente.pacienteProfesion}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
 						</h:panelGrid>
-					</rich:messages>
-				</a4j:form>
+						<section class="seccionBotones"> 
+							<h:commandButton action="#{pacienteManagedBean.nuevo()}" 
+							value="Guardar" /> </section>
+					</a4j:form>
+				</h:form>
 			</div>
 		</ui:define>
 	</ui:composition>
-	
+
 </body>
 </html>

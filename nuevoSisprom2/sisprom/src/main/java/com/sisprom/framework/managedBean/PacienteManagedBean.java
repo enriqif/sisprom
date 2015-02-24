@@ -5,6 +5,7 @@ import javax.faces.bean.SessionScoped;
 
 import com.sisprom.framework.dominio.Paciente;
 
+
 @ManagedBean
 @SessionScoped
 public class PacienteManagedBean extends MasterManagedBean {
@@ -18,7 +19,25 @@ public class PacienteManagedBean extends MasterManagedBean {
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
-
 	
+	public String nuevo(){
+		try {
+			paciente.setFechaCreacion(null);
+			paciente.setPacienteSexo("M");
+			paciente.setUsuarioCreacion("eflores");
+			paciente.setPacienteEstadoCivil("soltero");
+			paciente.setUsuarioModificacion(null);
+			paciente.setFechaModificacion(null);
+			paciente.setHistoriaClinicas(null);
+			paciente.setPacienteFechaNacimiento(null);
+			paciente.setPacienteId(11);
+			super.getServices().savePaciente(paciente);
+			return "hecho";			
+		} catch (Exception e) {
+			//TODO
+			//Se debe definir la vista cuando se produce un error
+			return "errorGuardado";
+		}
+	}
 	
 }

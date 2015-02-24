@@ -55,25 +55,26 @@ public class Paciente implements java.io.Serializable {
 			String pacienteDomicilioNumero, String pacienteDomicilioBarrio) {
 		super();
 		this.pacienteId = pacienteId;
-		this.pacienteNombre = pacienteNombre;
-		this.pacienteApellido = pacienteApellido;
-		this.pacienteDni = pacienteDni;
-		this.pacienteTelefono = pacienteTelefono;
-		this.pacienteDomicilioCalle = pacienteDomicilioCalle;
-		this.pacienteObraSocial = pacienteObraSocial;
-		this.pacienteEdad = pacienteEdad;
-		this.usuarioCreacion = usuarioCreacion;
-		this.fechaCreacion = fechaCreacion;
-		this.usuarioModificacion = usuarioModificacion;
-		this.fechaModificacion = fechaModificacion;
-		this.pacienteEstadoCivil = pacienteEstadoCivil;
-		this.pacienteFechaNacimiento = pacienteFechaNacimiento;
-		this.pacienteSexo = pacienteSexo;
-		this.pacienteLugarNacimiento = pacienteLugarNacimiento;
-		this.pacienteProfesion = pacienteProfesion;
-		this.pacienteNumeroAfiliado = pacienteNumeroAfiliado;
-		this.pacienteDomicilioNumero = pacienteDomicilioNumero;
-		this.pacienteDomicilioBarrio = pacienteDomicilioBarrio;
+		this.pacienteNombre = pacienteNombre;//check
+		this.pacienteApellido = pacienteApellido;//check
+		this.pacienteDni = pacienteDni;//check
+		this.pacienteTelefono = pacienteTelefono;//check
+		this.pacienteDomicilioCalle = pacienteDomicilioCalle;//check
+		this.pacienteObraSocial = pacienteObraSocial;//check
+		this.pacienteEdad = pacienteEdad;//check
+		this.usuarioCreacion = usuarioCreacion;//check
+		this.fechaCreacion = fechaCreacion;//check
+		//TODO: usuarioModificacion, ver mas adelante
+		this.usuarioModificacion = usuarioModificacion;//check
+		this.fechaModificacion = fechaModificacion;//check
+		this.pacienteEstadoCivil = pacienteEstadoCivil;//check
+		this.pacienteFechaNacimiento = pacienteFechaNacimiento;//check
+		this.pacienteSexo = pacienteSexo;//check
+		this.pacienteLugarNacimiento = pacienteLugarNacimiento;//check
+		this.pacienteProfesion = pacienteProfesion;//check
+		this.pacienteNumeroAfiliado = pacienteNumeroAfiliado;//check
+		this.pacienteDomicilioNumero = pacienteDomicilioNumero;//check
+		this.pacienteDomicilioBarrio = pacienteDomicilioBarrio;//check
 	}
 
 	public int getPacienteId() {
