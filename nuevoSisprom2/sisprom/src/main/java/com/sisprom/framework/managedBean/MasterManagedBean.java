@@ -83,21 +83,21 @@ public class MasterManagedBean {
 		TratamientoMedicamento trataMedi= new TratamientoMedicamento(2, trata, medi, "usuarioCreacion2", null, "usuarioModificacion1", null);
 //		services.saveTratamientoMedicamento(trataMedi);	
 		
-//		List<Usuario> listax = services.getAllUsuario();
-//		  for(Usuario p: listax){
-//			  System.out.println(p.getUsuarioApellido());
-//		  }
+		List<Usuario> listax = services.getAllUsuario();
+		  for(Usuario p: listax){
+			  System.out.println(p.getUsuarioApellido());
+		  }
 		
 		
-		List<HistoriaClinica> lista = services.consultarHistoriaClinica(histC);
-		for (int i = 0; i < lista.size(); i++) {
-			System.out.println("entro2");
-
-			System.out.println(lista.get(i).getUsuarioCreacion());
-		}
+//		List<HistoriaClinica> lista = services.consultarHistoriaClinica(histC);
+//		for (int i = 0; i < lista.size(); i++) {
+//			System.out.println("entro2");
+//
+//			System.out.println(lista.get(i).getUsuarioCreacion());
+//		}
 		
-		Usuario prueba = services.loginUsuario("usuario1", "contrasenia1");
-		System.out.println(prueba.getUsuarioApellido());
+//		Usuario prueba = services.loginUsuario("mcarrizo", "mcarrizo");
+//		System.out.println(prueba.getUsuarioApellido());
 		
 		
 		return "index2.xhtml";

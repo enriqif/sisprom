@@ -29,52 +29,52 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>paciente</from-outcome>
-			<to-view-id>views/paciente/homePaciente.xhtml</to-view-id>
+			<to-view-id>/views/paciente/homePaciente.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
-			<from-outcome>medicos</from-outcome>
-			<to-view-id>views/medico/homeMedico.xhtml</to-view-id>
+			<from-outcome>medico</from-outcome>
+			<to-view-id>/views/medico/homeMedico.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>turnos</from-outcome>
-			<to-view-id>views/turnos/homeTurno.xhtml</to-view-id>
+			<to-view-id>/views/turnos/homeTurno.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>informes</from-outcome>
-			<to-view-id>views/informes/homeInformes.xhtml</to-view-id>
+			<to-view-id>/views/informes/homeInformes.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
 	<!-- Reglas para navegacion desde el submenu izquierdo -->
 	<!-- ubicado en la vista "/homePaciente.xhtml" -->
 	<navigation-rule>
-		<from-view-id>views/paciente/*</from-view-id>
+		<from-view-id>/views/paciente/*</from-view-id>
 		<navigation-case>
 			<from-outcome>nuevoPaciente</from-outcome>
-			<to-view-id>views/paciente/nuevoPaciente.xhtml</to-view-id>
+			<to-view-id>/views/paciente/nuevoPaciente.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>archivarPaciente</from-outcome>
-			<to-view-id>views/paciente/archivarPaciente.xhtml</to-view-id>
+			<to-view-id>/views/paciente/archivarPaciente.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>actualizarPaciente</from-outcome>
-			<to-view-id>views/paciente/actualizarPaciente.xhtml</to-view-id>
+			<to-view-id>/views/paciente/actualizarPaciente.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>buscarPaciente</from-outcome>
-			<to-view-id>views/paciente/buscarPaciente.xhtml</to-view-id>
+			<to-view-id>/views/paciente/buscarPaciente.xhtml</to-view-id>
 		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>historialPaciente</from-outcome>
-			<to-view-id>views/paciente/historialPaciente.xhtml</to-view-id>
+			<to-view-id>/views/paciente/historialPaciente.xhtml</to-view-id>
 		</navigation-case>
 
 	</navigation-rule>

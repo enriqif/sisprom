@@ -30,19 +30,19 @@ public class LoginManagedBean extends MasterManagedBean{
 	 * @return
 	 */
 	public String doLogin(){
-		System.out.print("entro"+ usuario.getUsuarioNombre());
-		if (super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioNombre(), usuario.getUsuarioContrasenia())!= null)
-			{
-			System.out.print("exito");
-//				setUsuario(super.getServicio().getServicioUsuario().LoginUser(usuario.getUsuario(), usuario.getPassword()));
-			return "index2.xhtml";
+		
+		if (super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia())!= null)
+			{System.out.print(" entro ");
+			setUsuario(super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia()));
+		
+			return "paciente";
 			
 			
 			
 			
 		} else {
-			
-			return "index.xhtml";
+			System.out.print(" error ");
+			return "medico";
 		}
 	}
 	
@@ -52,9 +52,9 @@ public class LoginManagedBean extends MasterManagedBean{
 	 */
 
 	
-	public String salir() {
-		return "loggin";
-	}
+//	public String salir() {
+//		return "loggin";
+//	}
 
 	public Usuario getUsuario() {
 		return usuario;
