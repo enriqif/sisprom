@@ -43,6 +43,10 @@
 			<from-outcome>informes</from-outcome>
 			<to-view-id>/views/informes/homeInformes.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/views/error/error.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 	<!-- Reglas para navegacion desde el submenu izquierdo ubicado en la vista 
 		"/homePaciente.xhtml" -->

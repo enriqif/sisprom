@@ -16,6 +16,9 @@
     ID="informes::#views#informes#homeInformes.xhtml" NAME="output3"
     PATH="/views/informes/homeInformes.xhtml"
     TARGET="rules:#views#informes#homeInformes.xhtml" TITLE="informes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="error::#views#error#error.xhtml"
+    NAME="output4" PATH="/views/error/error.xhtml"
+    TARGET="rules:#views#error#error.xhtml" TITLE="error" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#*" PATH="/views/paciente/*"
