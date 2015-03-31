@@ -68,6 +68,10 @@
 			<from-outcome>historialPaciente</from-outcome>
 			<to-view-id>/views/paciente/historialPaciente.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/views/error/error.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
 		<from-view-id>*</from-view-id>

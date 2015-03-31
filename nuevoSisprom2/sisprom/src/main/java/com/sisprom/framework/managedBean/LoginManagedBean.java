@@ -40,7 +40,7 @@ public class LoginManagedBean extends MasterManagedBean{
 			
 		} else {
 			System.out.print(" error ");
-			return "medico";
+			return "error";
 		}
 	}
 	
