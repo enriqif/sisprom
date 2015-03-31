@@ -39,7 +39,7 @@ public class LoginManagedBean extends MasterManagedBean{
 			return "bienvenido";
 			
 		} else {
-			System.out.print(" error ");
+			System.out.print(" error x ");
 			return "error";
 		}
 	}
