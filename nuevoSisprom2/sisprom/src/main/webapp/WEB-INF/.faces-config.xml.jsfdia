@@ -101,4 +101,17 @@
   PATH="/views/error/error.xhtml" SHAPE="512,785,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#homePersonal.xhtml"
   PATH="/views/personal/homePersonal.xhtml" SHAPE="304,305,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#persoanl#*" PATH="/views/persoanl/*"
+  SHAPE="32,2801,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#views#persoanl#*:0" NAME="item"
+   PATH="/views/persoanl/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="nuevoPersonal::#views#personal#nuevoPersonal.xhtml"
+    NAME="output" PATH="/views/personal/nuevoPersonal.xhtml"
+    TARGET="rules:#views#personal#nuevoPersonal.xhtml"
+    TITLE="nuevoPersonal" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#personal#nuevoPersonal.xhtml"
+  PATH="/views/personal/nuevoPersonal.xhtml" SHAPE="240,2817,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

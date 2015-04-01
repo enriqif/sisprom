@@ -17,6 +17,11 @@
 		<managed-bean-class>com.sisprom.framework.managedBean.LoginManagedBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>personalManagedBean</managed-bean-name>
+		<managed-bean-class>com.sisprom.framework.managedBean.PersonalManagedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
 	<navigation-rule>
 		<from-view-id>/views/usuario/login.xhtml</from-view-id>
@@ -84,6 +89,18 @@
 			<to-view-id>/views/error/error.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<!-- Reglas para navegacion desde el submenu izquierdo ubicado en la vista 
+		"/homePersonal.xhtml" -->
+	<navigation-rule>
+		<from-view-id>/views/persoanl/*</from-view-id>
+		<navigation-case>
+			<from-outcome>nuevoPersonal</from-outcome>
+			<to-view-id>/views/personal/nuevoPersonal.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+		
+	
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
