@@ -1,1 +1,10 @@
-/target
+.classpath
+.proyect
+# Ignores
+\.DS_Store
+\.classpath
+\.project
+\.settings
+\.metadata/
+Servers/
+target/

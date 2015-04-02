@@ -6,7 +6,7 @@
     <class name="com.sisprom.framework.dominio.Usuario" table="USUARIO">
         <id name="usuarioId" type="int">
             <column name="USUARIO_ID" precision="8" scale="0" />
-            <generator class="assigned" />
+			 <generator class="increment"></generator>  
         </id>
         <many-to-one name="permiso" class="com.sisprom.framework.dominio.Permiso" fetch="select">
             <column name="PERMISO_ID" precision="8" scale="0" />

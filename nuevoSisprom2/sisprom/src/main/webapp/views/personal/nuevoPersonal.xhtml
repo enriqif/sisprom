@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="resources/css/styleContent.css"
+	type="text/css" />
+</head>
+
+<h:body>
+	<ui:composition template="/templates/fatherLayout.xhtml">
+		<ui:define name="functions">
+			<div class="subMenu">
+				<h1>
+					<span>Funciones</span>
+				</h1>
+			</div>
+			<div>
+				<h:form>
+					<ul class="sb_menu">
+						<li><h:commandLink value="Nuevo" action="nuevoPersonal" /></li>
+
+					</ul>
+				</h:form>
+			</div>
+		</ui:define>
+		<ui:define name="content">
+			<div class="subMenu">
+				<h1>
+					Personal<span>Nuevo</span>
+				</h1>
+			</div>
+			
+			<div class="form-nuevo">
+				<h:form>
+
+					<a4j:form>
+						<h:panelGrid columns="2" title="Datos Personales">
+							
+							<h:outputLabel value="Nombre" for="nombre" />
+							<h:inputText id="nombre"
+								value="#{personalManagedBean.usuario.usuarioNombre}"
+								required="true">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Apellidos" for="surname" />
+							<h:inputText id="surname"
+								value="#{personalManagedBean.usuario.usuarioApellido}"
+								required="true">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Usuario" for="usuario" />
+							<h:inputText id="usuario"
+								value="#{personalManagedBean.usuario.usuarioUsuario}"
+								required="true">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+							
+							<h:outputLabel value="Contrasenia" for="contrasenia" />
+							<h:inputText id="contrasenia"
+								value="#{personalManagedBean.usuario.usuarioContrasenia}"
+								required="true">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+							
+							<h:outputLabel value="DNI" for="dni" />
+							<h:inputText id="dni"
+								value="#{personalManagedBean.usuario.usuarioDni}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Telefono" for="telefono" />
+							<h:inputText id="telefono"
+								value="#{personalManagedBean.usuario.usuarioTelefono}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+							
+							<h:outputText value="Barrio" for="barrio" />
+							<h:inputText id="barrio"
+								value="#{personalManagedBean.usuario.usuarioDomicilioBarrio}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+							
+							<h:outputText value="Calle" for="calle" />
+							<h:inputText id="calle"
+								value="#{personalManagedBean.usuario.usuarioDomicilioCalle}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+							
+							<h:outputText value="Numero" for="numero" />
+							<h:inputText id="numero"
+								value="#{personalManagedBean.usuario.usuarioDomicilioNumero}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Obra Social" for="obraSocial" />
+							<h:inputText id="obraSocial"
+								value="#{personalManagedBean.usuario.usuarioObraSocial}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+
+							<h:outputLabel value="Edad" for="edad" />
+							<h:inputText id="edad"
+								value="#{personalManagedBean.usuario.usuarioEdad}">
+								<a4j:support ajaxSingle="true" event="onblur"
+									reRender="outputContainer" />
+							</h:inputText>
+							
+									
+						</h:panelGrid>
+						<section class="seccionBotones"> 
+							<h:commandButton action="#{personalManagedBean.nuevo()}" 
+							value="Guardar" /> </section>
+					</a4j:form>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>
