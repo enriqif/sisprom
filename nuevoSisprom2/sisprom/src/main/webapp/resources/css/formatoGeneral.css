@@ -52,6 +52,10 @@ body {
 	font-family: sans-serif;
 }
 
+h4 {
+	padding-top: 0.5em;
+	padding-bottom: 0.85%;
+}
 
 /* .content { */
 /* 	padding: 0; */

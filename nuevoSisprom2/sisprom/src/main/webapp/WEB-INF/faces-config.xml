@@ -36,11 +36,11 @@
 			<to-view-id>/views/medico/homeMedico.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>turnos</from-outcome>
+			<from-outcome>turno</from-outcome>
 			<to-view-id>/views/turnos/homeTurno.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>informes</from-outcome>
+			<from-outcome>informe</from-outcome>
 			<to-view-id>/views/informes/homeInformes.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
