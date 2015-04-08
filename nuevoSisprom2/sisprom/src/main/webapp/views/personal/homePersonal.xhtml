@@ -9,8 +9,8 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="resources/css/styleContent.css"
-	type="text/css" />
+<link rel="stylesheet" href="resources/css/styTable.css" type="text/css" />
+
 </head>
 
 <h:body>
@@ -25,7 +25,6 @@
 				<h:form>
 					<ul class="sb_menu">
 						<li><h:commandLink value="Nuevo" action="nuevoPersonal" /></li>
-
 					</ul>
 				</h:form>
 			</div>
@@ -36,6 +35,42 @@
 					<span>Personal</span>
 				</h1>
 			</div>
+
+
+			<h:form />
+			
+			<h:panelGroup id="body">
+				<h2>Lista de personal</h2>
+				<p:dataTable value="#{personalManagedBean.lista}" var="item"
+					rows="2" border="1" 
+					paginator="true" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                 rowsPerPageTemplate="5,10,15">  
+                 
+        <f:facet name="header">  
+            Ajax Pagination  
+        </f:facet>  
+
+					<p:column>
+				
+						<f:facet name="header">
+							<h:outputText value="Nombre" />
+						</f:facet>
+						<h:outputText value="#{item.usuarioNombre}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Apellido" />
+						</f:facet>
+						<h:outputText value="#{item.usuarioApellido}" />
+					</p:column>
+
+				</p:dataTable>
+
+				<h:commandButton id="submiter" value="go" action="nextPage">
+				</h:commandButton>
+			</h:panelGroup>
+
 			<div class="textoExplicativo">
 				<p>En esta seccion tendra acceso a las funciones que se pueden
 					aplicar a los datos del personal almacenados</p>
@@ -46,6 +81,7 @@
 			</div>
 		</ui:define>
 	</ui:composition>
+	
 </h:body>
 
 </html>
