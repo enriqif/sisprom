@@ -11,6 +11,7 @@ import com.sisprom.framework.dominio.Permiso;
 import com.sisprom.framework.dominio.Usuario;
 
 
+
 @ManagedBean
 @SessionScoped
 public class PersonalManagedBean extends MasterManagedBean {
@@ -43,6 +44,20 @@ public class PersonalManagedBean extends MasterManagedBean {
 			//Se debe definir la vista cuando se produce un error
 			return "errorGuardado";
 		}
+	}
+	
+	public String limpiar() {
+		setUsuario(new Usuario());
+		return "Confirmar";
+	}
+	public String buscar(){
+		lista.clear();
+		System.out.println("entro ");
+//        setLista(super.getServicio().findRubro(rubro.getId(), rubro.getDescripcion().toUpperCase()));
+		System.out.println(usuario.getUsuarioId());
+		setLista(super.getServices().consultarUsuario(usuario));
+		System.out.println("paso ");
+		return limpiar();
 	}
 	public Usuario getUsuario() {
 		return usuario;
