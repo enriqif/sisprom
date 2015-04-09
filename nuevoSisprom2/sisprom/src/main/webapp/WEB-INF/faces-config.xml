@@ -93,11 +93,16 @@
 	<!-- Reglas para navegacion desde el submenu izquierdo ubicado en la vista 
 		"/homePersonal.xhtml" -->
 	<navigation-rule>
-		<from-view-id>/views/persoanl/*</from-view-id>
+		<from-view-id>/views/personal/*</from-view-id>
 		<navigation-case>
 			<from-outcome>nuevoPersonal</from-outcome>
 			<to-view-id>/views/personal/nuevoPersonal.xhtml</to-view-id>
 		</navigation-case>
+		
+		<navigation-case> 
+	      <from-outcome>confirmar</from-outcome> 
+	      <to-view-id>/views/personal/homePersonal.xhtml</to-view-id> 
+	    </navigation-case>
 	</navigation-rule>
 		
 	

@@ -52,7 +52,7 @@
 
 					<h:commandButton action="#{personalManagedBean.buscar}"
 						value="Buscar" />
-					<h:commandButton action="#{personalManagedBean.limpiar}"
+					<h:commandButton action="#{personalManagedBean.limpiarlista}"
 						value="Limpiar" />
 				</h:panelGrid>
 			</h:form>
@@ -83,6 +83,9 @@
 
 				<h:commandButton id="submiter" value="go" action="nextPage">
 				</h:commandButton>
+				<p:fileUpload fileUploadListener="#{item.upload}"
+ allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="100000" description="Select Images"/>
+
 			</h:panelGroup>
 
 			<div class="textoExplicativo">
