@@ -29,15 +29,47 @@ p {
 
 }
 
-.input_text{		
+.input_text{
+	
 	background-color: #E4E4E4;
     border-radius: 2px;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 2px white inset;
 	height: 25px;
     color: black;
-    margin-bottom:5px;
+    margin-right: 2%;
+    margin-bottom: 2px;
     font-size: 16px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
 
+tr td {
+	padding-left: 3%;
+	padding-right: 3%;
+
+}
+
+.out_put_text{
+	width: 100px;		
+}
+tr td input{
+	width: 100%;
+}
+
+.seccionBotones{
+    background-color: #409FBA;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 2px white inset;
+    color: white;
+    font-size: 20px;
+    height: 2em;
+    width: 8em;
+    margin: 4px;
+    min-width: 100px;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -ms-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
