@@ -1,0 +1,97 @@
+.scrollerTable {
+
+            font-family : Tahoma;
+
+            font-size: 11px;
+
+            color: #000000;
+
+    padding: 0;
+
+    cellpading:0;
+
+    cellspacing:0;
+
+    border-style: solid;
+
+    border-width: 1px;
+
+    border-color:#EBEADB;
+
+    width: 600px;
+
+}
+
+.tablapaginacion {
+
+            font-family : Tahoma;
+
+            font-size: 11px;
+
+            color: #000000;
+
+    padding: 0;
+
+    cellpading:0;
+
+    cellspacing:0;
+
+    width: 600px;
+
+    align:center;
+
+}
+
+.standardTable_Header {
+
+            color: #000000;
+
+    background-color: #EBEADB;
+
+    padding: 0;
+
+    cellpading:0px;
+
+    cellspacing:0px;
+
+    text-align: left;
+
+    border-right: #D9D7BB 1px solid;
+
+    border-bottom: #D9D7BB 2px double;
+
+    height:20;
+
+}
+
+.columna_abajoderecha {
+
+    background-color: #FFFFFF;
+
+    border-bottom: #D9D7BB 1px solid;
+
+    border-right: #D9D7BB 1px solid;
+
+}
+
+.columna_abajo {
+
+    background-color: #FFFFFF;
+
+    border-bottom: #D9D7BB 1px solid;
+
+}
+
+.scroller {
+
+    padding-left:150px;
+
+}
+
+.paginator {
+
+            font-family : Tahoma;
+
+            font-size: 11px;
+
+}
