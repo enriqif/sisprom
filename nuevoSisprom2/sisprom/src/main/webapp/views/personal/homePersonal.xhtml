@@ -36,23 +36,25 @@
 				</h1>
 			</div>
 
-
 			<h:form />
 			<h2>Busqueda de Rubros</h2>
 
 			<h:form id="search_content">
 				<h:panelGrid columns="2" class="search">
-					<h:outputLabel for="usuarioId" value="Id Personal: " />
-					<h:inputText id="usuarioId"
+					<h:outputLabel class="out_put_text" for="usuarioId" value="Id Personal: " />
+					<h:inputText class="input_text" id="usuarioId"
 						value="#{personalManagedBean.usuario.usuarioId}" />
 
-					<h:outputLabel for="usuarioApellido" value="Apellido: " />
+					<h:outputLabel class="out_put_text" for="usuarioApellido" value="Apellido: " />
 					<h:inputText id="usuarioApellido"
+						class="input_text"
 						value="#{personalManagedBean.usuario.usuarioApellido}" />
 
-					<h:commandButton action="#{personalManagedBean.buscar}"
+					<h:commandButton class="style_button" action="#{personalManagedBean.buscar}"
 						value="Buscar" />
-					<h:commandButton action="#{personalManagedBean.limpiar}"
+
+					<h:commandButton class="style_button" action="#{personalManagedBean.limpiar}"
+
 						value="Limpiar" />
 				</h:panelGrid>
 			</h:form>
@@ -83,6 +85,9 @@
 
 				<h:commandButton id="submiter" value="go" action="nextPage">
 				</h:commandButton>
+				<p:fileUpload fileUploadListener="#{item.upload}"
+ allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="100000" description="Select Images"/>
+
 			</h:panelGroup>
 
 			<div class="textoExplicativo">

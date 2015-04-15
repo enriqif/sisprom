@@ -6,7 +6,7 @@
     <class name="com.sisprom.framework.dominio.TratamientoMedicamento" table="TRATAMIENTO_MEDICAMENTO">
         <id name="tratamientoMedicamentoId" type="int">
             <column name="TRATAMIENTO_MEDICAMENTO_ID" precision="8" scale="0" />
-            <generator class="assigned" />
+             <generator class="increment"></generator>  
         </id>
         <many-to-one name="tratamiento" class="com.sisprom.framework.dominio.Tratamiento" fetch="select">
             <column name="TRATAMIENTO_ID" precision="8" scale="0" />

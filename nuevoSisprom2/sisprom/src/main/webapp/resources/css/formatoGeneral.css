@@ -8,7 +8,7 @@
 #main {
 	position: relative;
 	width: 1024px;
-	/*height: 800px;*/
+	height: 800px;
 	height:auto;
 	margin-top: 0;
 	margin-right: auto;
@@ -39,7 +39,7 @@
 	height:auto;
     margin:0 auto;
     position: relative;
-    background: #CCC;
+    overflow: auto;
 }
 
 #footer {
@@ -48,11 +48,11 @@
 	bottom: 0;
 	width: auto;
     height: 150px;
-	text-align:center
+	text-align:center;
+	margin-top: 140px;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     box-sizing:border-box;
-
 }
 
 body {

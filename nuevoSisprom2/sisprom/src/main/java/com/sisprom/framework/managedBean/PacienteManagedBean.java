@@ -30,7 +30,6 @@ public class PacienteManagedBean extends MasterManagedBean {
 			paciente.setFechaModificacion(null);
 			paciente.setHistoriaClinicas(null);
 			paciente.setPacienteFechaNacimiento(null);
-			//paciente.setPacienteId(12);
 			super.getServices().savePaciente(paciente);
 			return "hecho";			
 		} catch (Exception e) {
