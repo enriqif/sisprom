@@ -6,7 +6,7 @@
     <class name="com.sisprom.framework.dominio.Turno" table="TURNO">
         <id name="turnoId" type="int">
             <column name="TURNO_ID" precision="8" scale="0" />
-            <generator class="assigned" />
+             <generator class="increment"></generator>  
         </id>
         <many-to-one name="paciente" class="com.sisprom.framework.dominio.Paciente" fetch="select">
             <column name="PACIENTE_ID" precision="8" scale="0" />
