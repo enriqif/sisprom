@@ -1,0 +1,2 @@
+agregar boton salir en la cabecera
+buscar como hacer persistir la informacion del usuario logeado
