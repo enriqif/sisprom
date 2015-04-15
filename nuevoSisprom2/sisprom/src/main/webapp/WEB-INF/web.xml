@@ -6,10 +6,10 @@
 	<display-name>sisprom</display-name>
 
 	<welcome-file-list>
-<!-- 		<welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
+		<!-- <welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
 		<welcome-file>/views/paciente/nuevoPaciente.xhtml</welcome-file>
-<!-- 		<welcome-file>views/usuario/login.xhtml</welcome-file> -->
-<!-- 		<welcome-file>index.xhtml</welcome-file> -->
+		<!-- <welcome-file>views/usuario/login.xhtml</welcome-file> -->
+		<!-- <welcome-file>index.xhtml</welcome-file> -->
 	</welcome-file-list>
 
 	<servlet>
@@ -49,5 +49,13 @@
 		<description>Spring listener</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	<filter>
+		<filter-name>PrimeFaces FileUpload Filter</filter-name>
+		<filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>PrimeFaces FileUpload Filter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+	</filter-mapping>
 
 </web-app>

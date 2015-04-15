@@ -9,29 +9,32 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="resources/css/styleContent.css"
-	type="text/css" />
 </head>
 
 <h:body>
 	<ui:composition template="/templates/fatherLayout.xhtml">
-		
 		<ui:define name="functions">
 			<div class="subMenu">
 				<h1>
-					<span>SisProM</span>
+					<span>Funciones</span>
 				</h1>
 			</div>
-		</ui:define>
+			<div>
+				<h:form>
+					<ul class="sb_menu">
+						<li><h:commandLink value="Modificar Perfil" action="modificarPerfil" /></li>
+					</ul>
+				</h:form>
+			</div>
+			</ui:define>
 		<ui:define name="content">
 			<div class="subMenu">
 				<h1>
-					<span>Bienvenido</span>
+					<span>Medicos</span>
 				</h1>
 			</div>
-			<div class="textoExplicativo">
-				<p>En esta seccion podra realizar todas las operaciones
-					disponibles en el panel lateral izquierdo</p>
+			<div>
+			<p>Aqui se mostrara el perfil del medico</p>
 			</div>
 		</ui:define>
 	</ui:composition>

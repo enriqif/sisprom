@@ -43,6 +43,5 @@ public class PersonalManagedBean extends MasterManagedBean {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	} 
-	
-	
+
 }
