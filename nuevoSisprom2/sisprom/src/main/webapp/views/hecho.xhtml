@@ -41,7 +41,66 @@
 				</h1>
 			</div>
 			<div class="form-nuevo">
-				<h1>Operacion Realizada correctamente!!</h1>
+				<h:panelGrid 
+							class="form-nuevo" 
+							columns="2" 
+							cellpadding="5"
+							title="Datos Personales">
+							
+								<f:facet name="header">
+									<h2>Datos Personales</h2>
+									<p>El paciente ha sido agregado correctamente</p>
+								</f:facet>
+								<h:outputLabel class="out_put_text" value="Nombre: " for="nombre" />
+								<h:outputLabel class="out_put_text" id ="nombre" value="#{pacienteManagedBean.paciente.pacienteNombre}" />	
+						
+								<h:outputLabel class="out_put_text" value="Apellidos:" for="surname" />
+								<h:outputLabel class="out_put_text" id="surname" value="#{pacienteManagedBean.paciente.pacienteApellido}" />
+									
+								<h:outputLabel class="out_put_text" value="Edad:" for="edad" />
+								<h:outputLabel class="out_put_text" id="edad" value="#{pacienteManagedBean.paciente.pacienteEdad}" />
+								
+								<h:outputLabel class="out_put_text" value="DNI:" for="dni" />
+								<h:outputLabel class="out_put_text" id="dni" value="#{pacienteManagedBean.paciente.pacienteDni}" />								
+								
+								<h:outputLabel class="out_put_text" value="Estado Civil:" for="estado_civil" />
+								<h:outputLabel class="out_put_text" id="estado_civil" value="#{pacienteManagedBean.paciente.pacienteEstadoCivil}" />								
+						        						        
+								<h:outputLabel class="out_put_text" value="Telefono:" for="telefono" />
+								<h:outputLabel class="out_put_text" id="telefono" value="#{pacienteManagedBean.paciente.pacienteTelefono}" />
+
+								<h:outputLabel class="out_put_text" value="Obra Social:" for="obraSocial" />
+								<h:outputLabel class="out_put_text" id="obraSocial" value="#{pacienteManagedBean.paciente.pacienteObraSocial}" />
+								
+								<h:outputText class="out_put_text" value="N° de Afiliado" for="numAfiliado" />
+								<h:outputText class="out_put_text" id="numAfiliado" value="#{pacienteManagedBean.paciente.pacienteNumeroAfiliado}" />								
+
+								<h:outputLabel class="out_put_text" value="Calle" for="calle" />
+								<h:outputLabel class="out_put_text" id="calle" value="#{pacienteManagedBean.paciente.pacienteDomicilioCalle}"/>
+																
+								<h:outputLabel class="out_put_text" value="Numero" for="numero" />
+								<h:outputLabel class="out_put_text" id="numero" value="#{pacienteManagedBean.paciente.pacienteDomicilioNumero}"/>
+																
+								<h:outputText class="out_put_text" value="Barrio" for="barrio" />
+								<h:outputText class="out_put_text" id="barrio" value="#{pacienteManagedBean.paciente.pacienteDomicilioBarrio}"/>			
+						
+								<h:outputLabel class="out_put_text" for="sexo" value="Sexo:" />
+								<h:outputLabel class="out_put_text" id="sexo" value="#{pacienteManagedBean.paciente.pacienteSexo}" />
+						        
+								<h:outputLabel class="out_put_text" for="fechaNac" value="Fecha de Nacimiento:" />
+								<h:outputLabel 
+									class="out_put_text" 
+									id="fechaNac" 
+									value="#{pacienteManagedBean.paciente.pacienteFechaNacimiento}"> 
+									<f:convertDateTime pattern="dd-MM-yyyy" />
+								</h:outputLabel>
+								
+								<h:outputText class="out_put_text" value="Lugar de Nacimiento" for="lugarNacimiento"/>
+								<h:outputText class="out_put_text" id="lugarNacimiento" value="#{pacienteManagedBean.paciente.pacienteLugarNacimiento}"/>
+
+								<h:outputText class="out_put_text" value="Profesion" for="profesion" />
+								<h:outputText class="out_put_text" id="profesion" value="#{pacienteManagedBean.paciente.pacienteProfesion}" />								
+						</h:panelGrid>
 			</div>
 		</ui:define>
 	</ui:composition>

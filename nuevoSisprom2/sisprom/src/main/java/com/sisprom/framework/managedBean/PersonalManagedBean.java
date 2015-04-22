@@ -1,5 +1,6 @@
 package com.sisprom.framework.managedBean;
 
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,14 +13,14 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 
 import org.primefaces.event.FileUploadEvent;
 
 import com.sisprom.framework.dominio.Permiso;
 import com.sisprom.framework.dominio.Usuario;
-
-
 
 @ManagedBean
 @SessionScoped
@@ -29,46 +30,11 @@ public class PersonalManagedBean extends MasterManagedBean {
 	private Permiso permiso = new Permiso();
 	private List<Usuario> lista = new ArrayList<Usuario>();
 	
-	private String destination="D:\\tmp\\";
-	
+	 
 	public PersonalManagedBean(){
 		setLista(super.getServices().getAllUsuario());
 	}
 	
-	 public void upload(FileUploadEvent event) {  
-	        FacesMessage msg = new FacesMessage("Success! ", event.getFile().getFileName() + " is uploaded.");  
-	        FacesContext.getCurrentInstance().addMessage(null, msg);
-	        // Do what you want with the file        
-	        try {
-	            copyFile(event.getFile().getFileName(), event.getFile().getInputstream());
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	 
-	    }  
-	 public void copyFile(String fileName, InputStream in) {
-         try {
-            
-            
-              // write the inputStream to a FileOutputStream
-              OutputStream out = new FileOutputStream(new File(destination + fileName));
-            
-              int read = 0;
-              byte[] bytes = new byte[1024];
-            
-              while ((read = in.read(bytes)) != -1) {
-                  out.write(bytes, 0, read);
-              }
-            
-              in.close();
-              out.flush();
-              out.close();
-            
-              System.out.println("New file created!");
-              } catch (IOException e) {
-              System.out.println(e.getMessage());
-              }
-  }
 	public String nuevo(){
 		try {
 			permiso.setPermisoId(3);
@@ -104,6 +70,17 @@ public class PersonalManagedBean extends MasterManagedBean {
 		setLista(super.getServices().consultarUsuario(usuario));
 		return limpiar();
 	}
+	
+	
+	
+	//Metodos de Validacion
+	
+	
+	
+	
+	
+	// getters and setters
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -122,7 +99,7 @@ public class PersonalManagedBean extends MasterManagedBean {
 	}
 	public void setLista(List<Usuario> lista) {
 		this.lista = lista;
-	} 
-	
-	
+	}
+
+
 }

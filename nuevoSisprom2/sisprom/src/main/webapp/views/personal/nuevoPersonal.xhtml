@@ -24,7 +24,7 @@
 			<div>
 				<h:form>
 					<ul class="sb_menu">
-						<li><h:commandLink value="Nuevo" action="nuevoPersonal" /></li>
+						<li><h:commandLink value="Nuevo" action="Nuevo Personal" /></li>
 
 					</ul>
 				</h:form>
@@ -36,73 +36,79 @@
 					Personal<span>Nuevo</span>
 				</h1>
 			</div>
-			
+
 			<div class="form-nuevo">
 				<h:form>
 
 					<a4j:form>
-						<h:panelGrid columns="2" title="Datos Personales">
-							
-							<h:outputLabel value="Nombre" for="nombre" />
-							<h:inputText id="nombre"
-								value="#{personalManagedBean.usuario.usuarioNombre}"
-								required="true">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+						<h:panelGrid columns="3" title="Datos Personales">
 
-							<h:outputLabel value="Apellidos" for="surname" />
-							<h:inputText id="surname"
-								value="#{personalManagedBean.usuario.usuarioApellido}"
-								required="true">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+							<h:outputLabel value="Nombres" for="usuarioNombre" />
+							<p:inputText id="usuarioNombre" label="Nombre" required="true"
+								requiredMessage="Ingrese su Nombre."
+								validatorMessage="Formato de nombre invalido. Ejemplo: Migule Angel"
+								value="#{personalManagedBean.usuario.usuarioNombre}">
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+							</p:inputText>
+							<p:message for="usuarioNombre" display="text" />
 
-							<h:outputLabel value="Usuario" for="usuario" />
-							<h:inputText id="usuario"
-								value="#{personalManagedBean.usuario.usuarioUsuario}"
-								required="true">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
-							
-							<h:outputLabel value="Contrasenia" for="contrasenia" />
-							<h:inputText id="contrasenia"
-								value="#{personalManagedBean.usuario.usuarioContrasenia}"
-								required="true">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
-							
-							<h:outputLabel value="DNI" for="dni" />
-							<h:inputText id="dni"
+
+							<h:outputLabel value="Apellido" for="usuarioApellido" />
+							<p:inputText id="usuarioApellido" label="usuario" required="true"
+								requiredMessage="Ingrese su Apellido."
+								validatorMessage="Formato de Apellido invalido. Ejemplo: Perez"
+								value="#{personalManagedBean.usuario.usuarioApellido}">
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+							</p:inputText>
+							<p:message for="usuarioApellido" display="text" />
+
+							<h:outputLabel value="Usuario" for="usuarioUsuario" />
+							<p:inputText id="usuarioUsuario" label="Usuario"	required="true"
+								requiredMessage="Ingrese su Usuario. Ejemplo: maPerez"
+								value="#{personalManagedBean.usuario.usuarioUsuario}">
+							</p:inputText>
+							<p:message for="usuarioUsuario" display="text" />
+
+
+							<h:outputLabel value="Contrasenia" for="usuarioContrasenia" />
+							<p:inputText id="usuarioContrasenia" label="Contrasenia" required="true"
+								requiredMessage="Ingrese su Contrasenia. Ejemplo: perez123"
+								value="#{personalManagedBean.usuario.usuarioContrasenia}">
+							</p:inputText>
+							<p:message for="usuarioContrasenia" display="text" />
+
+
+							<h:outputLabel value="DNI" for="usuarioDni" />
+					
+							<p:inputText id="usuarioDni" label="Dni" 							
+								validatorMessage="Formato de Dni invalido. Ejemplo: 39636183"
 								value="#{personalManagedBean.usuario.usuarioDni}">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
-
+								<f:validateRegex pattern="[1-9]+" />
+							</p:inputText>
+							<p:message for="usuarioDni" display="text" />
+							
+							
 							<h:outputLabel value="Telefono" for="telefono" />
 							<h:inputText id="telefono"
 								value="#{personalManagedBean.usuario.usuarioTelefono}">
 								<a4j:support ajaxSingle="true" event="onblur"
 									reRender="outputContainer" />
 							</h:inputText>
-							
+
 							<h:outputText value="Barrio" for="barrio" />
 							<h:inputText id="barrio"
 								value="#{personalManagedBean.usuario.usuarioDomicilioBarrio}">
 								<a4j:support ajaxSingle="true" event="onblur"
 									reRender="outputContainer" />
 							</h:inputText>
-							
+
 							<h:outputText value="Calle" for="calle" />
 							<h:inputText id="calle"
 								value="#{personalManagedBean.usuario.usuarioDomicilioCalle}">
 								<a4j:support ajaxSingle="true" event="onblur"
 									reRender="outputContainer" />
 							</h:inputText>
-							
+
 							<h:outputText value="Numero" for="numero" />
 							<h:inputText id="numero"
 								value="#{personalManagedBean.usuario.usuarioDomicilioNumero}">
@@ -123,12 +129,11 @@
 								<a4j:support ajaxSingle="true" event="onblur"
 									reRender="outputContainer" />
 							</h:inputText>
-							
-									
+
+
 						</h:panelGrid>
-						<section class="seccionBotones"> 
-							<h:commandButton action="#{personalManagedBean.nuevo()}" 
-							value="Guardar" /> </section>
+						<section class="seccionBotones"> <h:commandButton
+							action="#{personalManagedBean.nuevo()}" value="Guardar" /> </section>
 					</a4j:form>
 				</h:form>
 			</div>

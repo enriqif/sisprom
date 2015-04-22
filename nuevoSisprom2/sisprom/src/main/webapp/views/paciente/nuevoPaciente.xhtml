@@ -44,9 +44,17 @@
 			<div>
 				<h:form class="formulario">
 					<a4j:form>
-						<h4>Datos Personales</h4>
-						<h:panelGrid class="form-nuevo" columns="3" title="Datos Personales">
-
+						<h:panelGrid 
+							class="form-nuevo" 
+							columns="3" 
+							cellpadding="5"
+							title="Datos Personales">
+							
+								<f:facet name="header">
+									<h2>Datos Personales</h2>
+									<p>Ingrese la informacion correspondiente para 
+									crear un nuevo paciente en el sistema</p>
+								</f:facet>
 								<h:outputLabel 
 									class="out_put_text" 
 									id ="component_form" 
@@ -78,7 +86,7 @@
 								<h:message 
 									for="surname" 
 									errorStyle="color:red" 
-									infoStyle="color:green" />
+									infoStyle="color:green"/>
 									
 								<h:outputLabel 
 									class="out_put_text" 
@@ -94,10 +102,11 @@
 										event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="edad" errorStyle="color:red" infoStyle="color:green" />
 
 								<h:outputLabel 
 									class="out_put_text" 
-									value="DNI" 
+									value="DNI:" 
 									for="dni" />
 								<h:inputText 
 									id="dni" 
@@ -107,7 +116,44 @@
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="dni" errorStyle="color:red" infoStyle="color:green" />
 
+								<h:outputLabel 
+									class="out_put_text"
+									value="Estado Civil:"
+									for="estado_civil" />
+						        <p:selectOneMenu 
+						        	id="estado_civil"
+						        	styleClass="custom" 
+						        	value="#{pacienteManagedBean.paciente.pacienteEstadoCivil}"
+						        	required="true">
+						            <f:selectItem 
+						            	itemLabel="Seleccione" 
+						            	itemValue="" />
+						            <f:selectItem 
+						            	itemLabel="soltero" 
+						            	itemValue="soltero" />
+						            <f:selectItem 
+						            	itemLabel="Casado" 
+						            	itemValue="casado" />
+						            <f:selectItem 
+						            	itemLabel="Separado Legal" 
+						            	itemValue="separadoLegal"/>
+						            <f:selectItem 
+						            	itemLabel="Separado de Hecho" 
+						            	itemValue="separadoDeHecho"/>
+						            <f:selectItem 
+						            	itemLabel="Divorciado" 
+						            	itemValue="divorciado" />
+						            <f:selectItem 
+						            	itemLabel="Viudo" 
+						            	itemValue="viudo" />
+						            <f:selectItem 
+						            	itemLabel="Conviviente" 
+						            	itemValue="conviviente" />						            
+						        </p:selectOneMenu>
+						        <h:message for="estado_civil" errorStyle="color:red" infoStyle="color:green" />
+						        
 								<h:outputLabel 
 									class="out_put_text"
 									value="Telefono" 
@@ -122,6 +168,7 @@
 										event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="telefono" errorStyle="color:red" infoStyle="color:green" />
 
 								<h:outputLabel class="out_put_text" value="Obra Social" for="obraSocial" />
 								<h:inputText id="obraSocial" class="input_text"
@@ -130,6 +177,7 @@
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="obraSocial" errorStyle="color:red" infoStyle="color:green" />
 
 								<h:outputText class="out_put_text" value="N° de Afiliado" for="numAfiliado" />
 								<h:inputText id="numAfiliado" class="input_text"
@@ -138,6 +186,7 @@
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="numAfiliado" errorStyle="color:red" infoStyle="color:green" />
 
 								<h:outputLabel class="out_put_text" value="Calle" for="calle" />
 								<h:inputText id="calle" class="input_text"
@@ -146,6 +195,7 @@
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="calle" errorStyle="color:red" infoStyle="color:green" />
 
 								<h:outputLabel class="out_put_text" value="Numero" for="numero" />
 								<h:inputText id="numero" class="input_text"
@@ -154,42 +204,73 @@
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>						
+								<h:message for="numero" errorStyle="color:red" infoStyle="color:green" />
 
-								<h:outputText class="out_put_text" value="Barrio" for="barrio" />
-								<h:inputText id="barrio" class="input_text"
+								<h:outputText 
+									class="out_put_text" 
+									value="Barrio" for="barrio" />
+								<h:inputText 
+									id="barrio" 
+									class="input_text"
 									value="#{pacienteManagedBean.paciente.pacienteDomicilioBarrio}"
 									required="true">
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="barrio" errorStyle="color:red" infoStyle="color:green" />
+						
+								<p:outputLabel for="sexo" value="Sexo:" />
+						        <p:selectOneRadio id="sexo" value="#{pacienteManagedBean.paciente.pacienteSexo}">
+						            <f:selectItem itemLabel="Femenino" itemValue="f" />
+						            <f:selectItem itemLabel="Masculino" itemValue="m" />
+						        </p:selectOneRadio>
+   								<h:message for="nombre" errorStyle="color:red" infoStyle="color:green" />
 
-								<h:outputText class="out_put_text" value="Sexo" for="sexo" />
-								<h:selectOneRadio value="Femenino"
-									valueChangeListener="#{calendarBean.selectLocale}">
-									<a4j:support event="onclick" reRender="calendar" />
-									<f:selectItem itemLabel="F" itemValue="Femenino" />
-									<f:selectItem itemLabel="M" itemValue="Masculino" />
-								</h:selectOneRadio>
-
-								<h:outputText class="out_put_text" value="Lugar de Nacimiento" for="lugarNacimiento" />
-								<h:inputText id="lugarNacimiento" class="input_text"
+								<h:outputLabel
+									class="out_put_text" 
+									for="fechaNac" 
+									value="Fecha de Nacimiento:" />
+							    <p:calendar
+							    	styleClass="custom"
+							    	mode="popup"
+							    	id="fechaNac"
+							    	showOn="button" 
+							    	locale="fr"
+							    	value="#{pacienteManagedBean.paciente.pacienteFechaNacimiento}"> 
+								    	<p:ajax event="dateSelect" listener="#{pacienteManagedBean.dateSelectedAction}"></p:ajax>
+							    	</p:calendar>
+								<h:message for="calendar" errorStyle="color:red" infoStyle="color:green" />
+								
+								<h:outputText 
+									class="out_put_text" 
+									value="Lugar de Nacimiento" 
+									for="lugarNacimiento"/>
+								<h:inputText 
+									id="lugarNacimiento" 
+									class="input_text"
 									value="#{pacienteManagedBean.paciente.pacienteLugarNacimiento}"
 									required="true">
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
+								<h:message for="lugarNaciemiento" errorStyle="color:red" infoStyle="color:green" />
 
-								<h:outputText class="out_put_text" value="Profesion" for="profesion" />
-								<h:inputText id="profesion" class="input_text"
+								<h:outputText 
+									class="out_put_text" 
+									value="Profesion" 
+									for="profesion" />
+								<h:inputText 
+									id="profesion" 
+									class="input_text"
 									value="#{pacienteManagedBean.paciente.pacienteProfesion}"
 									required="true">
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
-
+								<h:message for="profesion" errorStyle="color:red" infoStyle="color:green" />
+								
 						</h:panelGrid>
 
-						
 						<section > 
 							<h:commandButton 
 							class="style_button"
