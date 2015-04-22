@@ -6,7 +6,7 @@
     <class name="com.sisprom.framework.dominio.Patologia" table="PATOLOGIA">
         <id name="patologiaId" type="int">
             <column name="PATOLOGIA_ID" precision="8" scale="0" />
-            <generator class="assigned" />
+             <generator class="increment"></generator>  
         </id>
         <property name="patologiaNombre" type="string">
             <column name="PATOLOGIA_NOMBRE" length="50" />

@@ -6,7 +6,7 @@
     <class name="com.sisprom.framework.dominio.Permiso" table="PERMISO">
         <id name="permisoId" type="int">
             <column name="PERMISO_ID" precision="8" scale="0" />
-            <generator class="assigned" />
+             <generator class="increment"></generator>  
         </id>
         <property name="permisoNombre" type="string">
             <column name="PERMISO_NOMBRE" length="20" />

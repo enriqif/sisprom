@@ -6,7 +6,7 @@
     <class name="com.sisprom.framework.dominio.AntecedenteGeneral" table="ANTECEDENTE_GENERAL">
         <id name="antecedenteGralId" type="int">
             <column name="ANTECEDENTE_GRAL_ID" precision="8" scale="0" />
-            <generator class="assigned" />
+             <generator class="increment"></generator>  
         </id>
         <many-to-one name="historiaClinica" class="com.sisprom.framework.dominio.HistoriaClinica" fetch="select">
             <column name="HISTORIA_CLINICA_ID" precision="8" scale="0" />
