@@ -23,6 +23,7 @@
 				<h:form>
 					<ul class="sb_menu">
 						<li><h:commandLink value="Modificar Perfil" action="modificarPerfil" /></li>
+						<li><h:commandLink value="Buscar Medico" action="modificarPerfil" /></li>
 					</ul>
 				</h:form>
 			</div>
@@ -34,7 +35,71 @@
 				</h1>
 			</div>
 			<div>
-			<p>Aqui se mostrara el perfil del medico</p>
+
+
+				<table id="tablaMedico" border="1" cellspacing="10" width="100%">
+					<col span="2" />
+					<tbody align="center">
+						<tr>
+							<td><h:graphicImage id="image_profile" alt="profile picture"
+									value="../../resources/image/medico.jpg"
+									style="width : 181px; height : 135px;">
+								</h:graphicImage></td>
+							<td><h:outputLabel class="out_put_text" id="username"
+									value="#{loginManagedBean.usuario.usuarioNombre}" /> <h:outputLabel
+									class="out_put_text" id="apellido"
+									value="#{loginManagedBean.usuario.usuarioApellido}" />
+								<table border="1" cellspacing="10">
+									<caption><h3>Contacto</h3></caption>
+									<col span="2" />
+									<tbody align="right">
+										<tr>
+											<td><h4>Telefono:</h4></td>
+											<td><h:outputLabel class="out_put_text" id="telefono"
+													value="#{loginManagedBean.usuario.usuarioTelefono}" /></td>
+										</tr>
+										<tr>
+											<td><h4>Email:</h4></td>
+											<td><h:outputLabel class="out_put_text" id="email"
+													value="medico@gmail.com" /></td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+						<tr>
+							<td colspan="2"><h4>Especialidad:</h4>  <h:outputLabel class="out_put_text" id="especialidad"
+									value="#{loginManagedBean.usuario.usuarioEspecialidad}" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><h4>Matricula Numero:</h4> <h:outputLabel class="out_put_text" id="matricula"
+									value="#{loginManagedBean.usuario.usuarioMatricula}" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><h4>Lugar de Atención:</h4> 
+							<table border="1" cellspacing="10">
+									<col span="2" />
+									<tbody align="right">
+										<tr>
+											<td><h5>Barrio:</h5></td>
+											<td><h:outputLabel class="out_put_text" id="domicilioB"
+													value="#{loginManagedBean.usuario.usuarioDomicilioBarrio}" /></td>
+										</tr>
+										<tr>
+											<td><h5>Calle:</h5></td>
+											<td><h:outputLabel class="out_put_text" id="domicilioC"
+													value="#{loginManagedBean.usuario.usuarioDomicilioCalle}" /></td>
+										</tr>
+										<tr>
+											<td><h5>Numero:</h5></td>
+											<td><h:outputLabel class="out_put_text" id="domicilioN"
+													value="#{loginManagedBean.usuario.usuarioDomicilioNumero}" /></td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+					</tbody>
+				</table>
+
 			</div>
 		</ui:define>
 	</ui:composition>

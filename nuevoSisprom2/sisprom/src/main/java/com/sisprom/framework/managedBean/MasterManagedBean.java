@@ -111,5 +111,6 @@ public class MasterManagedBean {
 	public void setServices(Services services) {
 		this.services = services;
 	}
-
+	
+	
 }
