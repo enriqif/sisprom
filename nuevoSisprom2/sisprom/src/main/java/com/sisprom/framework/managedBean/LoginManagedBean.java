@@ -1,13 +1,9 @@
 package com.sisprom.framework.managedBean;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.component.html.HtmlDataTable;
+
+import org.apache.log4j.Logger;
 
 import com.sisprom.framework.dominio.Usuario;
 
@@ -17,7 +13,7 @@ import com.sisprom.framework.dominio.Usuario;
 @SessionScoped
 public class LoginManagedBean extends MasterManagedBean{
 	
-	
+    final static Logger logger = Logger.getLogger(LoginManagedBean.class);
 	public Usuario usuario = new Usuario();
         
 	public LoginManagedBean() {
@@ -31,15 +27,18 @@ public class LoginManagedBean extends MasterManagedBean{
 	 */
 	public String doLogin(){
 		
-		if (super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia())!= null)
-			{System.out.print(" entro ");
+		if (super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia())!= null){
+
+			logger.info(" entro ");
+			logger.info("INFO TEST");
+			logger.debug("DEBUG TEST");
+			logger.error("ERROR TEST");
 			setUsuario(super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia()));
 		
-//			return "paciente";
 			return "bienvenido";
 			
 		} else {
-			System.out.print(" error x ");
+			logger.info("error x");
 			return "error";
 		}
 	}

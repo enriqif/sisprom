@@ -6,10 +6,10 @@
 	<display-name>sisprom</display-name>
 
 	<welcome-file-list>
-<!-- 		<welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
-		<welcome-file>/views/paciente/nuevoPaciente.xhtml</welcome-file>
-<!-- 		<welcome-file>views/usuario/login.xhtml</welcome-file> -->
-<!-- 		<welcome-file>index.xhtml</welcome-file> -->
+		<!-- <welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
+		<!-- <welcome-file>/views/paciente/nuevoPaciente.xhtml</welcome-file> -->
+		<welcome-file>views/usuario/login.xhtml</welcome-file>
+		<!-- <welcome-file>index.xhtml</welcome-file> -->
 	</welcome-file-list>
 
 	<servlet>
@@ -22,15 +22,15 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
-	
-<filter>
-  <filter-name>PrimeFaces FileUpload Filter</filter-name>
-  <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
-</filter>
-<filter-mapping>
-  <filter-name>PrimeFaces FileUpload Filter</filter-name>
-  <servlet-name>Faces Servlet</servlet-name>
-</filter-mapping>
+
+	<filter>
+		<filter-name>PrimeFaces FileUpload Filter</filter-name>
+		<filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>PrimeFaces FileUpload Filter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+	</filter-mapping>
 
 	<!-- Spring-Bean -->
 
@@ -58,5 +58,10 @@
 		<description>Spring listener</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<context-param>
+        <param-name>log4j-config-location</param-name>
+        <param-value>WEB-INF/log4j.properties</param-value>
+    </context-param>
 
 </web-app>

@@ -11,9 +11,6 @@ textoExplicativo {
 	padding-left: 0, 5em;
 }
 
-p {
-	color: white;
-}
 
 .texto_ayuda {
 	padding-left: 5%;
@@ -26,11 +23,9 @@ p {
 
 .form-nuevo {
 	padding-left: 1%;
-
 }
 
 .input_text{
-	
 	background-color: #E4E4E4;
     border-radius: 2px;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 2px white inset;
@@ -43,6 +38,33 @@ p {
 	-webkit-border-radius: 5px;
 }
 
+.custom .ui-inputfield{
+	width:165px;
+	background-color: #E4E4E4;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 2px white inset;
+	height: 25px;
+    color: black;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    font-size: 16px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+}
+
+.custom .ui-selectonemenu{
+	width:165px;
+	background-color: #E4E4E4;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 2px white inset;
+	height: 25px;
+    color: black;
+    margin-right: 2%;
+    margin-bottom: 2px;
+    font-size: 16px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+}
 tr td {
 	padding-left: 3%;
 	padding-right: 3%;
@@ -77,6 +99,8 @@ tr td input{
     display: block;
 }
 
-.style_button{
-	
+p {
+	float:left; 
+	padding-bottom:3%; 
+	color:black;
 }
