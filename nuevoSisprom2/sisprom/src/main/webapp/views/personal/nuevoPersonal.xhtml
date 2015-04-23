@@ -63,7 +63,7 @@
 							<p:message for="usuarioApellido" display="text" />
 
 							<h:outputLabel value="Usuario" for="usuarioUsuario" />
-							<p:inputText id="usuarioUsuario" label="Usuario"	required="true"
+							<p:inputText id="usuarioUsuario" label="Usuario" required="true"
 								requiredMessage="Ingrese su Usuario. Ejemplo: maPerez"
 								value="#{personalManagedBean.usuario.usuarioUsuario}">
 							</p:inputText>
@@ -71,7 +71,8 @@
 
 
 							<h:outputLabel value="Contrasenia" for="usuarioContrasenia" />
-							<p:inputText id="usuarioContrasenia" label="Contrasenia" required="true"
+							<p:inputText id="usuarioContrasenia" label="Contrasenia"
+								required="true"
 								requiredMessage="Ingrese su Contrasenia. Ejemplo: perez123"
 								value="#{personalManagedBean.usuario.usuarioContrasenia}">
 							</p:inputText>
@@ -79,56 +80,62 @@
 
 
 							<h:outputLabel value="DNI" for="usuarioDni" />
-					
-							<p:inputText id="usuarioDni" label="Dni" 							
+							<p:inputText id="usuarioDni" label="Dni"
 								validatorMessage="Formato de Dni invalido. Ejemplo: 39636183"
 								value="#{personalManagedBean.usuario.usuarioDni}">
 								<f:validateRegex pattern="[1-9]+" />
 							</p:inputText>
 							<p:message for="usuarioDni" display="text" />
-							
-							
-							<h:outputLabel value="Telefono" for="telefono" />
-							<h:inputText id="telefono"
+
+
+							<h:outputLabel value="Telefono" for="usuarioTelefono" />
+							<p:inputText id="usuarioTelefono" label="Telefono"
+								validatorMessage="Formato de Telefono invalido. Ejemplo: 03884335036"
 								value="#{personalManagedBean.usuario.usuarioTelefono}">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+								<f:validateRegex pattern="[1-9]+" />
+							</p:inputText>
+							<p:message for="usuarioTelefono" display="text" />
 
-							<h:outputText value="Barrio" for="barrio" />
-							<h:inputText id="barrio"
+
+							<h:outputText value="Barrio" for="usuarioDomicilioBarrio" />
+							<p:inputText id="usuarioDomicilioBarrio" label="Barrio"
+								validatorMessage="Formato de Barrio invalido. Ejemplo: San Pedrito"
 								value="#{personalManagedBean.usuario.usuarioDomicilioBarrio}">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+							</p:inputText>
+							<p:message for="usuarioDomicilioBarrio" display="text" />
 
-							<h:outputText value="Calle" for="calle" />
-							<h:inputText id="calle"
+							<h:outputText value="Calle" for="usuarioDomicilioCalle" />
+							<p:inputText id="usuarioDomicilioCalle" label="Calle"
+								validatorMessage="Formato de Calle invalido. Ejemplo: Alberdi"
 								value="#{personalManagedBean.usuario.usuarioDomicilioCalle}">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+							</p:inputText>
+							<p:message for="usuarioDomicilioCalle" display="text" />
 
-							<h:outputText value="Numero" for="numero" />
-							<h:inputText id="numero"
+							<h:outputText value="Numero" for="usuarioDomicilioNumero" />
+							<p:inputText id="usuarioDomicilioNumero" label="Numero"
+								validatorMessage="Formato de Numero invalido. Ejemplo: 164"
 								value="#{personalManagedBean.usuario.usuarioDomicilioNumero}">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+								<f:validateRegex pattern="[1-9]+" />
+							</p:inputText>
+							<p:message for="usuarioDomicilioNumero" display="text" />
 
-							<h:outputLabel value="Obra Social" for="obraSocial" />
-							<h:inputText id="obraSocial"
+							<h:outputLabel value="Obra Social" for="usuarioObraSocial" />
+							<p:inputText id="usuarioObraSocial" label="Obra Social"
+								validatorMessage="Formato de Obra Social invalido. Ejemplo: Osecac"
 								value="#{personalManagedBean.usuario.usuarioObraSocial}">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+							</p:inputText>
+							<p:message for="usuarioObraSocial" display="text" />
 
-							<h:outputLabel value="Edad" for="edad" />
-							<h:inputText id="edad"
+							<h:outputLabel value="Edad" for="usuarioEdad" />
+							<p:inputText id="usuarioEdad" label="Edad"
+								validatorMessage="Formato de Edad invalido. Ejemplo: 34"
 								value="#{personalManagedBean.usuario.usuarioEdad}">
-								<a4j:support ajaxSingle="true" event="onblur"
-									reRender="outputContainer" />
-							</h:inputText>
+								<f:validateRegex pattern="[1-9]+" />
+							</p:inputText>
+							<p:message for="usuarioEdad" display="text" />
 
 
 						</h:panelGrid>
