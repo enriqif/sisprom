@@ -18,6 +18,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
 import org.primefaces.event.FileUploadEvent;
+import org.primefaces.event.SelectEvent;
+import org.primefaces.event.UnselectEvent;
 
 import com.sisprom.framework.dominio.Permiso;
 import com.sisprom.framework.dominio.Usuario;
@@ -75,7 +77,23 @@ public class PersonalManagedBean extends MasterManagedBean {
 	
 	//Metodos de Validacion
 	
-	
+	 public void onRowSelect(SelectEvent event) {  
+	        FacesMessage msg = new FacesMessage("Car Selected", ((Usuario) event.getObject()).getUsuarioDni());  
+	  
+	        FacesContext.getCurrentInstance().addMessage(null, msg);  
+	    }  
+	  
+	    public void onRowUnselect(UnselectEvent event) {  
+	        FacesMessage msg = new FacesMessage("Car Unselected", ((Usuario) event.getObject()).getUsuarioDni());  
+	  
+	        FacesContext.getCurrentInstance().addMessage(null, msg);  
+	    }  
+	  
+	    public String onRowSelectNavigate(SelectEvent event) {  
+	        FacesContext.getCurrentInstance().getExternalContext().getFlash().put("selectedCar", event.getObject());  
+	  
+	        return "carDetail?faces-redirect=true";  
+	    }  
 	
 	
 	
