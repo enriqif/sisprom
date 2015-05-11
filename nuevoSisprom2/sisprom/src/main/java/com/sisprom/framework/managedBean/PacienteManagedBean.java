@@ -32,11 +32,11 @@ public class PacienteManagedBean extends MasterManagedBean {
 	
 	public String nuevo(){
 		try {
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
-	        String today = new Date().toString();
-	        Date hoy = formatter.parse(today);
-			paciente.setFechaCreacion(hoy);
-			logger.info(hoy);
+//			SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
+//	        String today = new Date().toString();
+//	        Date hoy = formatter.parse(today);
+			paciente.setFechaCreacion(null);
+//			logger.info(hoy);
 			logger.info("este mensaje se muestra con el log4j");
 	        paciente.setUsuarioCreacion("eflores");
 			paciente.setUsuarioModificacion(null);

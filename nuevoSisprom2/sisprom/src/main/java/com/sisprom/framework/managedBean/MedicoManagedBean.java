@@ -16,7 +16,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.apache.log4j.Logger;
 import org.primefaces.event.FileUploadEvent;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 
 import com.sisprom.framework.dominio.Permiso;
 import com.sisprom.framework.dominio.Usuario;
@@ -28,6 +32,8 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	
 	public static String VALIDATE_USER="home";
 	public static String VALIDATE_USER_ERROR = "error";
+	final static Logger logger = Logger.getLogger(LoginManagedBean.class);
+	
 	
 //	public String usertmp = "eflores";
 //	public String passtmp = "naruto";
@@ -143,4 +149,35 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	        this.text = text;
 	    }
 	
+	    public String actualizar(){
+			try {
+//				SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
+//		        String today = new Date().toString();
+//		        Date hoy = formatter.parse(today);
+//				@SuppressWarnings("deprecation")
+				//BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("/WEB-INF/faces-config.xml"));
+				
+//				LoginManagedBean loginBean = beanFactory.getBean("loginManagedBean", LoginManagedBean.class);
+//				logger.info(loginBean.usuario.getUsuarioUsuario());
+				
+				
+				medico.setFechaCreacion(null);
+				
+				
+                
+//				logger.info("este mensaje se muestra con el log4j");
+		        medico.setUsuarioCreacion(null);
+				medico.setUsuarioModificacion("eflores");
+				medico.setFechaModificacion(null);
+				medico.setHistoriaClinicas(null);
+
+//				logger.info("Continuar con la siguiente ventana");
+				super.getServices().updateUsuario(medico);
+				return "hechoMedico";			
+			} catch (Exception e) {
+				//TODO
+				//Se debe definir la vista cuando se produce un error
+				return "errorGuardado";
+			}
+		}
 }

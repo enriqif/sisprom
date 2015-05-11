@@ -30,7 +30,7 @@ import com.sisprom.framework.model.xml.context.Context;
 public class MasterManagedBean {
 
 	private Services services = Context.getBeanFacade();
-
+	public Usuario usu;
 	public String llamada(){
 		
 		return "index2.xhtml";
@@ -110,6 +110,12 @@ public class MasterManagedBean {
 
 	public void setServices(Services services) {
 		this.services = services;
+	}
+	public Usuario getUsu() {
+		return usu;
+	}
+	public void setUsu(Usuario usu) {
+		this.usu = usu;
 	}
 	
 	

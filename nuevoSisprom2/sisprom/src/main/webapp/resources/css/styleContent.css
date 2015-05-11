@@ -99,18 +99,13 @@ tr td input{
     display: block;
 }
 
-<<<<<<< HEAD
-.style_button{
-	
-}
-
-#tablaMedico{
+.tablaMedico{
 	border-style: none;
 }
-=======
+
 p {
 	float:left; 
 	padding-bottom:3%; 
 	color:black;
 }
->>>>>>> e8f56a48c466eff5090403cedc3b812d99ff7ce6
+

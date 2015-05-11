@@ -6,17 +6,12 @@
 	<display-name>sisprom</display-name>
 
 	<welcome-file-list>
-<<<<<<< HEAD
+
 <!-- 		<welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
 <!-- 		<welcome-file>/views/paciente/nuevoPaciente.xhtml</welcome-file> -->
 		<welcome-file>views/usuario/login.xhtml</welcome-file>
 <!-- 		<welcome-file>index.xhtml</welcome-file> -->
-=======
-		<!-- <welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
-		<!-- <welcome-file>/views/paciente/nuevoPaciente.xhtml</welcome-file> -->
-		<welcome-file>views/usuario/login.xhtml</welcome-file>
-		<!-- <welcome-file>index.xhtml</welcome-file> -->
->>>>>>> e8f56a48c466eff5090403cedc3b812d99ff7ce6
+
 	</welcome-file-list>
 
 	<servlet>
