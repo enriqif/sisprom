@@ -239,7 +239,7 @@
 							    	value="#{pacienteManagedBean.paciente.pacienteFechaNacimiento}"> 
 								    	<p:ajax event="dateSelect" listener="#{pacienteManagedBean.dateSelectedAction}"></p:ajax>
 							    	</p:calendar>
-								<h:message for="calendar" errorStyle="color:red" infoStyle="color:green" />
+								<h:message for="fechaNac" errorStyle="color:red" infoStyle="color:green" />
 								
 								<h:outputText 
 									class="out_put_text" 
@@ -253,7 +253,7 @@
 									<a4j:support ajaxSingle="true" event="onblur"
 										reRender="outputContainer" />
 								</h:inputText>
-								<h:message for="lugarNaciemiento" errorStyle="color:red" infoStyle="color:green" />
+								<h:message for="lugarNacimiento" errorStyle="color:red" infoStyle="color:green" />
 
 								<h:outputText 
 									class="out_put_text" 
