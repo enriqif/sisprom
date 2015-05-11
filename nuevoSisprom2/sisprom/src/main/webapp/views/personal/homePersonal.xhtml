@@ -72,17 +72,13 @@
 					<p:message for="usuarioApellido" display="text" />
 
 
-
-
-
-
 					<h:commandButton class="style_button"
 						action="#{personalManagedBean.buscar}" value="Buscar" />
 
 					<h:commandButton class="style_button"
 						action="#{personalManagedBean.limpiarlista}" value="Limpiar" />
 
-					<p:commandButton value="Submit" update="grid" />
+					
 
 				</h:panelGrid>
 
@@ -90,8 +86,21 @@
 
 			<h:panelGroup id="body">
 				<h2>Lista de personal</h2>
+				  
+              <p:growl id="growl" showDetail="true"/>  
+              
+           
+              
 				<p:dataTable value="#{personalManagedBean.lista}" var="item"
-					rows="2" border="1" paginator="true"
+					rows="3" border="1" paginator="true" 
+					selection="#{personalManagedBean.usuario}"
+						 selectionMode="single"
+				rowKey="#{item.usuarioId}"
+				rowSelectListener="#{personalManagedBean.onRowSelect}"  
+                 onRowSelectUpdate="display growl"  
+                 onRowSelectComplete="carDialog.show()"  
+                 rowUnselectListener="#{personalManagedBean.onRowUnselect}"  
+                 onRowUnselectUpdate="growl"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15">
 
@@ -111,10 +120,12 @@
 					</p:column>
 
 				</p:dataTable>
-
-				<h:commandButton id="submiter" value="go" action="nextPage">
-				</h:commandButton>
-
+   <p:dialog header="Car Detail" widgetVar="carDialog" resizable="false"  
+              width="200" showEffect="explode" hideEffect="explode">
+              
+              </p:dialog>
+              
+				
 
 			</h:panelGroup>
 

@@ -1,17 +1,20 @@
 package com.sisprom.framework.managedBean;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import org.apache.log4j.Logger;
 import org.primefaces.event.SelectEvent;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 
 import com.sisprom.framework.dominio.Paciente;
+import com.sisprom.framework.dominio.Usuario;
 
 
 @ManagedBean
@@ -19,8 +22,10 @@ import com.sisprom.framework.dominio.Paciente;
 public class PacienteManagedBean extends MasterManagedBean {
 
     final static Logger logger = Logger.getLogger(PacienteManagedBean.class);
-    
 	private Paciente paciente = new Paciente();
+
+	@ManagedProperty("#{loginManagedBean}")
+	private LoginManagedBean currentLogedUser;
 
 	public Paciente getPaciente() {
 		return paciente;
@@ -32,13 +37,12 @@ public class PacienteManagedBean extends MasterManagedBean {
 	
 	public String nuevo(){
 		try {
-//			SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
-//	        String today = new Date().toString();
-//	        Date hoy = formatter.parse(today);
-			paciente.setFechaCreacion(null);
-//			logger.info(hoy);
-			logger.info("este mensaje se muestra con el log4j");
-	        paciente.setUsuarioCreacion("eflores");
+			Usuario userTemp = (Usuario) currentLogedUser.getSessionMap().get("usuario");
+			
+	        Date ahora = new Date();
+	        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+		    paciente.setFechaCreacion(formateador.parse(formateador.format(ahora)));
+			paciente.setUsuarioCreacion(userTemp.getUsuarioUsuario());
 			paciente.setUsuarioModificacion(null);
 			paciente.setFechaModificacion(null);
 			paciente.setHistoriaClinicas(null);
@@ -49,13 +53,15 @@ public class PacienteManagedBean extends MasterManagedBean {
 		} catch (Exception e) {
 			//TODO
 			//Se debe definir la vista cuando se produce un error
-			return "errorGuardado";
+			logger.error(e);
+			logger.error("se produjo un error al guardar");			
+			return "error";
 		}
 	}
 	
 	 public void dateSelectedAction(SelectEvent e){
 	        Date date = (Date)e.getObject();
-	        System.out.println("Date Selected Is ::"+date);
+	        logger.info("Date Selected Is:"+date);
 	    }
 	
 }

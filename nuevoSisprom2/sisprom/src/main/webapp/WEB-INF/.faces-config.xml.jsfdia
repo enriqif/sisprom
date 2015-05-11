@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PROCESS model-entity="JSFProcess">
- <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,88,53,122" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
     ID="paciente::#views#paciente#homePaciente.xhtml" NAME="output"
@@ -25,7 +25,7 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#*" PATH="/views/paciente/*"
-  SHAPE="240,689,0,0" model-entity="JSFProcessGroup">
+  SHAPE="56,680,53,122" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#paciente#*:0" NAME="item"
    PATH="/views/paciente/*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
@@ -59,34 +59,37 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#nuevoPaciente.xhtml"
-  PATH="/views/paciente/nuevoPaciente.xhtml" SHAPE="512,785,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#views#paciente#actualizarPaciente.xhtml"
-  PATH="/views/paciente/actualizarPaciente.xhtml" SHAPE="512,1137,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#views#paciente#buscarPaciente.xhtml"
-  PATH="/views/paciente/buscarPaciente.xhtml" SHAPE="512,1249,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#views#paciente#archivarPaciente.xhtml"
-  PATH="/views/paciente/archivarPaciente.xhtml" SHAPE="512,785,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#views#paciente#historialPaciente.xhtml"
-  PATH="/views/paciente/historialPaciente.xhtml" SHAPE="512,785,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:*:1" PATH="*" SHAPE="32,1585,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:*:1" NAME="item" PATH="*" model-entity="JSFProcessItem">
+  PATH="/views/paciente/nuevoPaciente.xhtml" SHAPE="368,672,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#views#paciente#nuevoPaciente.xhtml:0"
+   NAME="item" PATH="/views/paciente/nuevoPaciente.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="hecho::#views#hecho.xhtml" NAME="output"
     PATH="/views/hecho.xhtml" TARGET="rules:#views#hecho.xhtml"
     TITLE="hecho" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="error::#views#paciente#error.xhtml"
+    NAME="output1" PATH="/views/paciente/error.xhtml"
+    TARGET="rules:#views#paciente#error.xhtml" TITLE="error" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#paciente#actualizarPaciente.xhtml"
+  PATH="/views/paciente/actualizarPaciente.xhtml" SHAPE="368,856,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#paciente#buscarPaciente.xhtml"
+  PATH="/views/paciente/buscarPaciente.xhtml" SHAPE="368,920,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#paciente#archivarPaciente.xhtml"
+  PATH="/views/paciente/archivarPaciente.xhtml" SHAPE="368,736,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#paciente#historialPaciente.xhtml"
+  PATH="/views/paciente/historialPaciente.xhtml" SHAPE="368,800,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#informes#homeInformes.xhtml"
-  PATH="/views/informes/homeInformes.xhtml" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/informes/homeInformes.xhtml" SHAPE="288,240,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#medico#homeMedico.xhtml"
-  PATH="/views/medico/homeMedico.xhtml" SHAPE="288,241,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/medico/homeMedico.xhtml" SHAPE="288,152,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#homePaciente.xhtml"
-  PATH="/views/paciente/homePaciente.xhtml" SHAPE="288,33,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/paciente/homePaciente.xhtml" SHAPE="288,104,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#turnos#homeTurno.xhtml"
-  PATH="/views/turnos/homeTurno.xhtml" SHAPE="288,353,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/turnos/homeTurno.xhtml" SHAPE="288,192,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#hecho.xhtml" PATH="/views/hecho.xhtml"
-  SHAPE="240,1825,0,0" model-entity="JSFProcessGroup"/>
+  SHAPE="496,608,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#usuario#login.xhtml"
-  PATH="/views/usuario/login.xhtml" SHAPE="32,2145,0,0" model-entity="JSFProcessGroup">
+  PATH="/views/usuario/login.xhtml" SHAPE="32,-16,50,41" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#usuario#login.xhtml:0" NAME="item"
    PATH="/views/usuario/login.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="bienvenido::#views#usuario#bienvenido.xhtml"
@@ -95,15 +98,15 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#usuario#bienvenido.xhtml"
-  PATH="/views/usuario/bienvenido.xhtml" SHAPE="240,2385,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/usuario/bienvenido.xhtml" SHAPE="240,8,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#error#error.xhtml"
-  PATH="/views/error/error.xhtml" SHAPE="512,785,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/error/error.xhtml" SHAPE="232,456,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#nuevoPersonal.xhtml"
-  PATH="/views/personal/nuevoPersonal.xhtml" SHAPE="240,2817,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/personal/nuevoPersonal.xhtml" SHAPE="232,400,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#homePersonal.xhtml"
-  PATH="/views/personal/homePersonal.xhtml" SHAPE="304,305,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/personal/homePersonal.xhtml" SHAPE="320,320,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#*" PATH="/views/personal/*"
-  SHAPE="32,401,0,0" model-entity="JSFProcessGroup">
+  SHAPE="48,328,53,58" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#personal#*:0" NAME="item"
    PATH="/views/personal/*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
@@ -117,4 +120,6 @@
     TARGET="rules:#views#personal#homePersonal.xhtml" TITLE="confirmar" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#paciente#error.xhtml"
+  PATH="/views/paciente/error.xhtml" SHAPE="576,632,50,25" model-entity="JSFProcessGroup"/>
 </PROCESS>
