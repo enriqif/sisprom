@@ -7,13 +7,15 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:p="http://primefaces.org/ui">
 
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="resources/css/styTable.css" type="text/css" />
 
 </head>
-
 <h:body>
+
+
 	<ui:composition template="/templates/fatherLayout.xhtml">
 		<ui:define name="functions">
 			<div class="subMenu">
@@ -39,39 +41,75 @@
 			<h:form />
 			<h2>Busqueda de Rubros</h2>
 
+
+
 			<h:form id="search_content">
-				<h:panelGrid columns="2" class="search">
-					<h:outputLabel class="out_put_text" for="usuarioId" value="Id Personal: " />
-					<h:inputText class="input_text" id="usuarioId"
-						value="#{personalManagedBean.usuario.usuarioId}" />
 
-					<h:outputLabel class="out_put_text" for="usuarioApellido" value="Apellido: " />
-					<h:inputText id="usuarioApellido"
-						class="input_text"
-						value="#{personalManagedBean.usuario.usuarioApellido}" />
+				<h:panelGrid columns="3" class="search" id="grid">
 
-					<h:commandButton class="style_button" action="#{personalManagedBean.buscar}"
-						value="Buscar" />
+					<h:outputLabel class="out_put_text" for="usuarioId"		value="Id Personal: " />
 
-					<h:commandButton class="style_button" action="#{personalManagedBean.limpiar}"
+					<!-- 					<h:inputText class="input_text" id="usuarioId" -->
 
-						value="Limpiar" />
+					<p:inputText id="usuarioId" label="usuarioId" size="4"
+						requiredMessage="Ingrese su Id"
+						validatorMessage="Formato de Id invalido"
+						value="#{personalManagedBean.usuario.usuarioId}">
+						<!-- 						<f:validateRegex pattern="[1-9]+" /> -->
+					</p:inputText>
+
+					<p:message for="usuarioId" display="text" />
+
+
+					<h:outputLabel class="out_put_text" for="usuarioApellido"
+						value="Apellido: " />
+					<p:inputText id="usuarioApellido" label="usuarioApellido" size="4"
+						requiredMessage="Ingrese su apellido."
+						validatorMessage="Formato de nombre invalido"
+						value="#{personalManagedBean.usuario.usuarioApellido}">
+						<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+					</p:inputText>
+					<p:message for="usuarioApellido" display="text" />
+
+
+					<h:commandButton class="style_button"
+						action="#{personalManagedBean.buscar}" value="Buscar" />
+
+					<h:commandButton class="style_button"
+						action="#{personalManagedBean.limpiarlista}" value="Limpiar" />
+
+					
+
 				</h:panelGrid>
+
 			</h:form>
 
 			<h:panelGroup id="body">
 				<h2>Lista de personal</h2>
+				  
+              <p:growl id="growl" showDetail="true"/>  
+              
+           
+              
 				<p:dataTable value="#{personalManagedBean.lista}" var="item"
-					rows="2" border="1" paginator="true"
+					rows="3" border="1" paginator="true" 
+					selection="#{personalManagedBean.usuario}"
+						 selectionMode="single"
+				rowKey="#{item.usuarioId}"
+				rowSelectListener="#{personalManagedBean.onRowSelect}"  
+                 onRowSelectUpdate="display growl"  
+                 onRowSelectComplete="carDialog.show()"  
+                 rowUnselectListener="#{personalManagedBean.onRowUnselect}"  
+                 onRowUnselectUpdate="growl"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15">
 
 
 					<p:column>
-					<f:facet name="header">
-						<h:outputText value="Nombre" />
-					</f:facet>
-					<h:outputText value="#{item.usuarioNombre}" />
+						<f:facet name="header">
+							<h:outputText value="Nombre" />
+						</f:facet>
+						<h:outputText value="#{item.usuarioNombre}" />
 					</p:column>
 
 					<p:column>
@@ -82,11 +120,12 @@
 					</p:column>
 
 				</p:dataTable>
-
-				<h:commandButton id="submiter" value="go" action="nextPage">
-				</h:commandButton>
-				<p:fileUpload fileUploadListener="#{item.upload}"
- allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="100000" description="Select Images"/>
+   <p:dialog header="Car Detail" widgetVar="carDialog" resizable="false"  
+              width="200" showEffect="explode" hideEffect="explode">
+              
+              </p:dialog>
+              
+				
 
 			</h:panelGroup>
 
