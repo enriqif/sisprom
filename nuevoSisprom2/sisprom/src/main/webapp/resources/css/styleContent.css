@@ -99,8 +99,13 @@ tr td input{
     display: block;
 }
 
+.tablaMedico{
+	border-style: none;
+}
+
 p {
 	float:left; 
 	padding-bottom:3%; 
 	color:black;
 }
+
