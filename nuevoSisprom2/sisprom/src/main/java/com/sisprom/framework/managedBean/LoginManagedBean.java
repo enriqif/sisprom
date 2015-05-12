@@ -1,11 +1,7 @@
 package com.sisprom.framework.managedBean;
 
-import java.util.Map;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
 
 import org.apache.log4j.Logger;
 
@@ -30,32 +26,17 @@ public class LoginManagedBean extends MasterManagedBean {
 	public String doLogin() {
 		String user = usuario.getUsuarioUsuario();
 		String contr = usuario.getUsuarioContrasenia();
-		
-
-		if (super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia())!= null){
-
-			logger.info(" entro ");
-			logger.info("INFO TEST");
-			logger.debug("DEBUG TEST");
-			logger.error("ERROR TEST");
-			setUsuario(super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia()));
-				
-
 
 		Usuario userIn = super.getServices().getUsuarioDao().LoginUser(user, contr);
 		
 		if ( userIn!= null) {
-		
 			setUsuario(userIn);
 			logger.info("mensaje: "+ userIn.getUsuarioUsuario());
-
 			return "bienvenido";
-
 		} else {
 			logger.info("error x");
 			return "error";
 		}
-	}
 	}
 
 	// public String salir() {
@@ -69,7 +50,6 @@ public class LoginManagedBean extends MasterManagedBean {
 	}
 
 	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+		LoginManagedBean.usuario = usuario;
 	}
-
 }
