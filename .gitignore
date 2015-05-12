@@ -1,8 +1,7 @@
 *.class
 nuevoSisprom2/sisprom/.classpath
-nuevoSisprom2/sisprom/.classpath
-nuevoSisprom2/sisprom/.classpath
-nuevoSisprom2/sisprom/.classpath
-nuevoSisprom2/sisprom/.classpath
-nuevoSisprom2/sisprom/.classpath
-nuevoSisprom2/sisprom/.classpath
+nuevoSisprom2/sisprom/.settings/org.eclipse.wst.common.component
+nuevoSisprom2/sisprom/.project
+nuevoSisprom2/sisprom/target/m2e-wtp/web-resources/META-INF/maven/com/sisprom/pom.properties
+
+
