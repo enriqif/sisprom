@@ -1,32 +1,37 @@
 package com.sisprom.framework.managedBean;
 
+import java.util.Map;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 
 import org.apache.log4j.Logger;
 
 import com.sisprom.framework.dominio.Usuario;
 
-
-
 @ManagedBean
 @SessionScoped
-public class LoginManagedBean extends MasterManagedBean{
-	
-    final static Logger logger = Logger.getLogger(LoginManagedBean.class);
-	public Usuario usuario = new Usuario();
-        
-	public LoginManagedBean() {
+public class LoginManagedBean extends MasterManagedBean {
+
+	final static Logger logger = Logger.getLogger(LoginManagedBean.class);
+	static Usuario usuario = new Usuario();
 		
+	public LoginManagedBean() {
+		// Exists only to defeat instantiation.
 	}
 	
-	/**
-	 * verifica que el log se haya realizado con exito para enviarlo al home
-	 * o volver a intentarlo
+	/**verifica que el log se haya realizado con exito para enviarlo al home o
+	 * volver a intentarlo
+	 * 
 	 * @return
 	 */
-	public String doLogin(){
+	public String doLogin() {
+		String user = usuario.getUsuarioUsuario();
+		String contr = usuario.getUsuarioContrasenia();
 		
+
 		if (super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia())!= null){
 
 			logger.info(" entro ");
@@ -36,23 +41,28 @@ public class LoginManagedBean extends MasterManagedBean{
 			setUsuario(super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia()));
 				
 
+
+		Usuario userIn = super.getServices().getUsuarioDao().LoginUser(user, contr);
+		
+		if ( userIn!= null) {
+		
+			setUsuario(userIn);
+			logger.info("mensaje: "+ userIn.getUsuarioUsuario());
+
 			return "bienvenido";
-			
+
 		} else {
 			logger.info("error x");
 			return "error";
 		}
 	}
-	
-	/**
-	 * devuelve Fecha en una cadena
-	 * @return
-	 */
+	}
 
-	
-//	public String salir() {
-//		return "loggin";
-//	}
+	// public String salir() {
+	//TODO
+	// return "loggin";
+	// }
+
 
 	public Usuario getUsuario() {
 		return usuario;
@@ -61,13 +71,5 @@ public class LoginManagedBean extends MasterManagedBean{
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	/**
-	 * Verifica los permisos del usuario loggeado
-	 * @return
-	 */
 
-		
-	
 }

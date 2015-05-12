@@ -31,7 +31,7 @@ import com.sisprom.framework.model.xml.context.Context;
 public class MasterManagedBean implements Serializable{
 
 	private Services services = Context.getBeanFacade();
-
+	public Usuario usu;
 	public String llamada(){
 		
 		return "index2.xhtml";
@@ -112,5 +112,12 @@ public class MasterManagedBean implements Serializable{
 	public void setServices(Services services) {
 		this.services = services;
 	}
-
+	public Usuario getUsu() {
+		return usu;
+	}
+	public void setUsu(Usuario usu) {
+		this.usu = usu;
+	}
+	
+	
 }

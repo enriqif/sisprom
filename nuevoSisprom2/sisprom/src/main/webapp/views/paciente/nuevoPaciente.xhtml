@@ -146,7 +146,7 @@
 							<p:message for="pacienteNumeroAfiliado" display="text" />
 							
 															
-								<h:outputText value="Calle" for="pacienteDomicilioCalle" />
+							<h:outputText value="Calle" for="pacienteDomicilioCalle" />
 							<p:inputText id="pacienteDomicilioCalle" label="Calle"
 								styleClass="input_text"
 								validatorMessage="Formato de Calle invalido. Ejemplo: Alberdi"
@@ -156,7 +156,7 @@
 							<p:message for="pacienteDomicilioCalle" display="text" />
 
 															
-								<h:outputText value="Numero" for="pacienteDomicilioNumero" />
+							<h:outputText value="Numero" for="pacienteDomicilioNumero" />
 							<p:inputText id="pacienteDomicilioNumero" label="Numero"
 								styleClass="input_text"
 								validatorMessage="Formato de Numero invalido. Ejemplo: 164"
@@ -164,10 +164,8 @@
 								<f:validateRegex pattern="[1-9]+" />
 							</p:inputText>
 							<p:message for="pacienteDomicilioNumero" display="text" />
-
-					
 								
-								<h:outputText value="Barrio" for="pacienteDomicilioBarrio" />
+							<h:outputText value="Barrio" for="pacienteDomicilioBarrio" />
 							<p:inputText id="pacienteDomicilioBarrio" label="Barrio"
 								styleClass="input_text"
 								validatorMessage="Formato de Barrio invalido. Ejemplo: San Pedrito"
@@ -182,7 +180,7 @@
 								<f:selectItem itemLabel="Femenino" itemValue="f" />
 								<f:selectItem itemLabel="Masculino" itemValue="m" />
 							</p:selectOneRadio>
-							<h:message for="nombre" errorStyle="color:red"
+							<h:message for="sexo" errorStyle="color:red"
 								infoStyle="color:green" />
 
 							<h:outputLabel class="out_put_text" for="fechaNac"
@@ -193,11 +191,10 @@
 								<p:ajax event="dateSelect"
 									listener="#{pacienteManagedBean.dateSelectedAction}"></p:ajax>
 							</p:calendar>
-							<h:message for="calendar" errorStyle="color:red"
+							<h:message for="fechaNac" errorStyle="color:red"
 								infoStyle="color:green" />
-
 															
-								<h:outputText value="Lugar de Nacimiento" for="pacienteLugarNacimiento" />
+							<h:outputText value="Lugar de Nacimiento" for="pacienteLugarNacimiento" />
 							<p:inputText id="pacienteLugarNacimiento" label="Lugar de Nacimiento"
 								styleClass="input_text"
 								validatorMessage="Formato de lugar de Nacimiento invalido. Ejemplo: L.G.S.M. Ledesma Jujuy"
@@ -206,9 +203,7 @@
 							</p:inputText>
 							<p:message for="pacienteLugarNacimiento" display="text" />
 
-							
-								
-								<h:outputText value="Profesion" for="pacienteProfesion" />
+							<h:outputText value="Profesion" for="pacienteProfesion" />
 							<p:inputText id="pacienteProfesion" label="Profesion"
 								styleClass="input_text"
 								validatorMessage="Formato de Profesion invalido. Ejemplo: San Pedrito"
@@ -218,7 +213,6 @@
 							<p:message for="pacienteProfesion" display="text" />
 
 						</h:panelGrid>
-
 						<section> <h:commandButton class="style_button"
 							action="#{pacienteManagedBean.nuevo()}" value="Guardar" /> </section>
 					</a4j:form>

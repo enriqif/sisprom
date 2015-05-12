@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</h:head>
+<body>
+	<ui:composition template="/templates/fatherLayout.xhtml">
+		<ui:define name="functions">
+			<div class="subMenu">
+				<h1>
+					<span>Funciones</span>
+				</h1>
+			</div>
+			<div>
+				<h:form>
+					<ul class="sb_menu">
+						<li><h:commandLink value="Guardar" action="#{medicoManagedBean.actualizar()}" /></li>
+						<li><h:commandLink value="Volver" action="homeMedico" /></li>
+					</ul>
+				</h:form>
+			</div>
+		</ui:define>
+		<ui:define name="content">
+			<div class="subMenu">
+				<h1>Modificar Perfil</h1>
+			</div>
+			<div class="form-nuevo">
+				<h:form>	
+					<h:form enctype="multipart/form-data">
+
+						<p:growl id="messages" showDetail="true" />
+						<p:fileUpload value="#{fileUploadView.file}" mode="simple"
+							skinSimple="true" />
+						<p:commandButton value="Submit" ajax="false"
+							actionListener="#{fileUploadView.upload}" disabled="false" />
+					</h:form>
+				</h:form>
+
+				<hr />
+				<table cellspacing="10" width="100%">
+					<tr>
+						<td align="center">Especialidad: <h:outputLabel
+								class="out_put_text" id="especialidad1"
+								value="#{loginManagedBean.usuario.usuarioEspecialidad}" /></td>
+					</tr>
+				</table>
+				<hr />
+
+				<h:outputLabel class="out_put_text" id="component_form"
+					value="Nombre" for="nombre" />
+
+				<h:inputText class="input_text" id="nombre"
+					value="#{medicoManagedBean.medico.usuarioNombre}"
+					required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="nombre" errorStyle="color:red"
+					infoStyle="color:green" />
+
+				<h:outputLabel class="out_put_text" value="Apellidos" for="surname" />
+				<h:inputText id="surname" class="input_text"
+					value="#{loginManagedBean.usuario.usuarioApellido}"
+					required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="surname" errorStyle="color:red"
+					infoStyle="color:green" />
+
+				<h:outputLabel class="out_put_text" value="Edad" for="edad" />
+				<h:inputText id="edad" class="input_text"
+					value="#{usuarioManagedBean.usuario.usuarioEdad}"
+					required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="edad" errorStyle="color:red" infoStyle="color:green" />
+
+				<h:outputLabel class="out_put_text" value="DNI:" for="dni" />
+				<h:inputText id="dni" class="input_text"
+					value="#{medicoManagedBean.medico.usuarioDni}" required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="dni" errorStyle="color:red" infoStyle="color:green" />
+				
+				<h:outputLabel class="out_put_text" value="Especialidad" for="especialidad" />
+				<h:inputText id="especialidad" class="input_text"
+					value="#{medicoManagedBean.medico.usuarioEspecialidad}" required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="especialidad" errorStyle="color:red" infoStyle="color:green" />
+
+				
+				<h:outputLabel class="out_put_text" value="Telefono" for="telefono" />
+				<h:inputText id="telefono" class="input_text"
+					value="#{medicoManagedBean.medico.usuarioTelefono}"
+					required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="telefono" errorStyle="color:red"
+					infoStyle="color:green" />
+
+
+				<h:outputLabel class="out_put_text" value="Calle" for="calle" />
+				<h:inputText id="calle" class="input_text"
+					value="#{medicoManagedBean.medico.usuarioDomicilioCalle}"
+					required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="calle" errorStyle="color:red"
+					infoStyle="color:green" />
+
+				<h:outputLabel class="out_put_text" value="Numero" for="numero" />
+				<h:inputText id="numero" class="input_text"
+					value="#{medicoManagedBean.medico.usuarioDomicilioNumero}"
+					required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="numero" errorStyle="color:red"
+					infoStyle="color:green" />
+
+				<h:outputText class="out_put_text" value="Barrio" for="barrio" />
+				<h:inputText id="barrio" class="input_text"
+					value="#{medicoManagedBean.medico.usuarioDomicilioBarrio}"
+					required="true">
+					<a4j:support ajaxSingle="true" event="onblur"
+						reRender="outputContainer" />
+				</h:inputText>
+				<h:message for="barrio" errorStyle="color:red"
+					infoStyle="color:green" />
+
+
+				<h:outputLabel class="out_put_text" for="fechaAtmin"
+					value="Horario de Atencion Min:" />
+				<p:calendar styleClass="custom" mode="popup" id="fechaAtmin"
+					showOn="button" locale="fr"
+					value="#{medicoManagedBean.medico.usuarioHoraAtencionMin}">
+					<p:ajax event="dateSelect"
+						listener="#{pacienteManagedBean.dateSelectedAction}"></p:ajax>
+				</p:calendar>
+				<h:message for="calendar" errorStyle="color:red"
+					infoStyle="color:green" />
+					
+					<h:outputLabel class="out_put_text" for="fechaAtmax"
+					value="Horario de Atencion Max:" />
+				<p:calendar styleClass="custom" mode="popup" id="fechaAtmax"
+					showOn="button" locale="fr"
+					value="#{medicoManagedBean.medico.usuarioHoraAtencionMax}">
+					<p:ajax event="dateSelect"
+						listener="#{pacienteManagedBean.dateSelectedAction}"></p:ajax>
+				</p:calendar>
+				<h:message for="calendar" errorStyle="color:red"
+					infoStyle="color:green" />
+								
+			</div>
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>
