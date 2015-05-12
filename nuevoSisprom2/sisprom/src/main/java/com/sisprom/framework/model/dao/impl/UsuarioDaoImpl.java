@@ -43,7 +43,7 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 	@Override
 	public List<Usuario> find(Usuario usuario) {
 		System.out.print("Entro al metodos 3");
-		
+		List<Usuario> usuarios=null;
 		Criteria criteria = getSession().createCriteria(Usuario.class);
 		Integer id = usuario.getUsuarioId();
 		String nombre = usuario.getUsuarioApellido();
@@ -59,7 +59,11 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 		   if (nombre!=null && !nombre.isEmpty() )
 			   criteria.add(Restrictions.ilike("usuarioApellido", "%"+nombre+"%"));
 		   
-			
+//		   if(criteria.list().size()!=0){
+//				 Usuario userAux= (Usuario) criteria.list().get(0);
+//				 if(userAux.getUsuarioVisible().equals(true)){
+//					 usuarios=userAux;
+//				 }
 		
 		   if (dni!=null && !dni.isEmpty())
 			   criteria.add(Restrictions.ilike("usuarioDni", nombre+"%"));
