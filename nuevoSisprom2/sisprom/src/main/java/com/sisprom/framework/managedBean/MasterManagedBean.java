@@ -1,5 +1,6 @@
 package com.sisprom.framework.managedBean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -27,7 +28,7 @@ import com.sisprom.framework.model.xml.context.Context;
 
 @ManagedBean
 @SessionScoped
-public class MasterManagedBean {
+public class MasterManagedBean implements Serializable{
 
 	private Services services = Context.getBeanFacade();
 

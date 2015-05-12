@@ -71,6 +71,9 @@
         <property name="usuarioDomicilioNumero" type="string">
             <column name="USUARIO_DOMICILIO_NUMERO" length="50" />
         </property>
+        <property name="usuarioVisible" type="java.lang.Boolean">
+            <column name="USUARIO_VISIBLE" precision="1" scale="0" />
+        </property>
         <set name="historiaClinicas" table="HISTORIA_CLINICA" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="USUARIO_ID" precision="8" scale="0" />

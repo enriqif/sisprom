@@ -34,7 +34,7 @@ public class Usuario implements java.io.Serializable {
 	private String usuarioDomicilioCalle;
 	private String usuarioDomicilioNumero;
 	private Set historiaClinicas = new HashSet(0);
-
+	private Boolean usuarioVisible;
 	public Usuario() {
 	}
 
@@ -294,6 +294,14 @@ public class Usuario implements java.io.Serializable {
 
 	public void setHistoriaClinicas(Set historiaClinicas) {
 		this.historiaClinicas = historiaClinicas;
+	}
+
+	public Boolean getUsuarioVisible() {
+		return usuarioVisible;
+	}
+
+	public void setUsuarioVisible(Boolean usuarioVisible) {
+		this.usuarioVisible = usuarioVisible;
 	}
 
 }

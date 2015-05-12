@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,14 +27,19 @@ import com.sisprom.framework.dominio.Usuario;
 
 @ManagedBean
 @SessionScoped
-public class PersonalManagedBean extends MasterManagedBean {
+public class PersonalManagedBean  extends MasterManagedBean {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Usuario usuario = new Usuario();
 	private Permiso permiso = new Permiso();
 	private List<Usuario> lista = new ArrayList<Usuario>();
 	
 	 
 	public PersonalManagedBean(){
+		usuario = new Usuario();
 		setLista(super.getServices().getAllUsuario());
 	}
 	
@@ -69,6 +75,7 @@ public class PersonalManagedBean extends MasterManagedBean {
 	}
 	public String buscar(){
 		lista.clear();
+	
 		setLista(super.getServices().consultarUsuario(usuario));
 		return limpiar();
 	}
@@ -77,24 +84,24 @@ public class PersonalManagedBean extends MasterManagedBean {
 	
 	//Metodos de Validacion
 	
-	 public void onRowSelect(SelectEvent event) {  
-	        FacesMessage msg = new FacesMessage("Car Selected", ((Usuario) event.getObject()).getUsuarioDni());  
-	  
-	        FacesContext.getCurrentInstance().addMessage(null, msg);  
-	    }  
-	  
-	    public void onRowUnselect(UnselectEvent event) {  
-	        FacesMessage msg = new FacesMessage("Car Unselected", ((Usuario) event.getObject()).getUsuarioDni());  
-	  
-	        FacesContext.getCurrentInstance().addMessage(null, msg);  
-	    }  
-	  
-	    public String onRowSelectNavigate(SelectEvent event) {  
-	        FacesContext.getCurrentInstance().getExternalContext().getFlash().put("selectedCar", event.getObject());  
-	  
-	        return "carDetail?faces-redirect=true";  
-	    }  
-	
+//	 public void onRowSelect(SelectEvent event) {  
+//	        FacesMessage msg = new FacesMessage("Car Selected", ((Usuario) event.getObject()).getUsuarioDni());  
+//	  
+//	        FacesContext.getCurrentInstance().addMessage(null, msg);  
+//	    }  
+//	  
+//	    public void onRowUnselect(UnselectEvent event) {  
+//	        FacesMessage msg = new FacesMessage("Car Unselected", ((Usuario) event.getObject()).getUsuarioDni());  
+//	  
+//	        FacesContext.getCurrentInstance().addMessage(null, msg);  
+//	    }  
+//	  
+//	    public String onRowSelectNavigate(SelectEvent event) {  
+//	        FacesContext.getCurrentInstance().getExternalContext().getFlash().put("selectedCar", event.getObject());  
+//	  
+//	        return "carDetail?faces-redirect=true";  
+//	    }  
+//	
 	
 	
 	// getters and setters

@@ -34,7 +34,8 @@ public class LoginManagedBean extends MasterManagedBean{
 			logger.debug("DEBUG TEST");
 			logger.error("ERROR TEST");
 			setUsuario(super.getServices().getUsuarioDao().LoginUser(usuario.getUsuarioUsuario(), usuario.getUsuarioContrasenia()));
-		
+				
+
 			return "bienvenido";
 			
 		} else {

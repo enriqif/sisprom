@@ -33,7 +33,7 @@ public class Paciente implements java.io.Serializable {
 	private String pacienteDomicilioBarrio;
 	private Set historiaClinicas = new HashSet(0);
 	private Set turnos = new HashSet(0);
-
+	private Boolean pacienteVisible;
 	public Paciente() {
 	}
 
@@ -251,6 +251,14 @@ public class Paciente implements java.io.Serializable {
 
 	public void setTurnos(Set turnos) {
 		this.turnos = turnos;
+	}
+
+	public Boolean getPacienteVisible() {
+		return pacienteVisible;
+	}
+
+	public void setPacienteVisible(Boolean pacienteVisible) {
+		this.pacienteVisible = pacienteVisible;
 	}
 
 }

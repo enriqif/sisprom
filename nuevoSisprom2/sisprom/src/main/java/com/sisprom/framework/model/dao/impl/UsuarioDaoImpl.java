@@ -2,6 +2,7 @@ package com.sisprom.framework.model.dao.impl;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -9,10 +10,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.sisprom.framework.dominio.Permiso;
 import com.sisprom.framework.dominio.Usuario;
+import com.sisprom.framework.managedBean.LoginManagedBean;
 import com.sisprom.framework.model.dao.UsuarioDao;
 
 public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
-
+    final static Logger logger = Logger.getLogger(UsuarioDaoImpl.class);
 	@Override
 	public void save(Usuario usuario) {
 		
@@ -40,19 +42,28 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 
 	@Override
 	public List<Usuario> find(Usuario usuario) {
+		System.out.print("Entro al metodos 3");
+		
 		Criteria criteria = getSession().createCriteria(Usuario.class);
 		Integer id = usuario.getUsuarioId();
 		String nombre = usuario.getUsuarioApellido();
 		String dni = usuario.getUsuarioDni();
 //		Integer permisoId= usuario.getPermiso().getPermisoId();
+		
+		
+		
+		
 		   if (id!=null && !(id.toString().isEmpty()) && id!=0) 
 			   criteria.add(Restrictions.eq("usuarioId",id));
 		   
-		   if (nombre!=null && !nombre.isEmpty())
+		   if (nombre!=null && !nombre.isEmpty() )
 			   criteria.add(Restrictions.ilike("usuarioApellido", "%"+nombre+"%"));
 		   
+			
+		
 		   if (dni!=null && !dni.isEmpty())
-			   criteria.add(Restrictions.ilike("usuarioDni", "%"+dni+"%"));
+			   criteria.add(Restrictions.ilike("usuarioDni", nombre+"%"));
+		   
 		  
 //		   if(permisoId > 0){
 //				criteria.createAlias("permisoId","p").
