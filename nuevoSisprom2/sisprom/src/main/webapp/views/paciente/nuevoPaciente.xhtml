@@ -180,7 +180,7 @@
 								<f:selectItem itemLabel="Femenino" itemValue="f" />
 								<f:selectItem itemLabel="Masculino" itemValue="m" />
 							</p:selectOneRadio>
-							<h:message for="nombre" errorStyle="color:red"
+							<h:message for="sexo" errorStyle="color:red"
 								infoStyle="color:green" />
 
 							<h:outputLabel class="out_put_text" for="fechaNac"
@@ -191,7 +191,7 @@
 								<p:ajax event="dateSelect"
 									listener="#{pacienteManagedBean.dateSelectedAction}"></p:ajax>
 							</p:calendar>
-							<h:message for="calendar" errorStyle="color:red"
+							<h:message for="fechaNac" errorStyle="color:red"
 								infoStyle="color:green" />
 															
 							<h:outputText value="Lugar de Nacimiento" for="pacienteLugarNacimiento" />

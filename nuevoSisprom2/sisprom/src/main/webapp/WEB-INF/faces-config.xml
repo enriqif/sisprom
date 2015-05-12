@@ -3,11 +3,6 @@
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
  <managed-bean>
-  <managed-bean-name>masterManagedBean</managed-bean-name>
-  <managed-bean-class>com.sisprom.framework.managedBean.MasterManagedBean</managed-bean-class>
-  <managed-bean-scope>session</managed-bean-scope>
- </managed-bean>
- <managed-bean>
   <managed-bean-name>pacienteManagedBean</managed-bean-name>
   <managed-bean-class>com.sisprom.framework.managedBean.PacienteManagedBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
@@ -20,6 +15,11 @@
  <managed-bean>
   <managed-bean-name>personalManagedBean</managed-bean-name>
   <managed-bean-class>com.sisprom.framework.managedBean.PersonalManagedBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>masterManagedBean</managed-bean-name>
+  <managed-bean-class>src.main.java.com.sisprom.framework.managedBean.MasterManagedBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  <navigation-rule>
