@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -36,43 +38,33 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 	@Override
 	public List<Usuario> getAll() {
 		Criteria criteria = getSession().createCriteria(Usuario.class);
-		   criteria.addOrder(Order.asc("usuarioId"));
-		   return criteria.list();
+		
+			criteria.add(Restrictions.eq("usuarioVisible",true));
+			criteria.addOrder(Order.asc("usuarioId"));
+			return criteria.list();
 	}
 
 	@Override
 	public List<Usuario> find(Usuario usuario) {
-		System.out.print("Entro al metodos 3");
-		List<Usuario> usuarios=null;
+			
 		Criteria criteria = getSession().createCriteria(Usuario.class);
-		Integer id = usuario.getUsuarioId();
-		String nombre = usuario.getUsuarioApellido();
-		String dni = usuario.getUsuarioDni();
-//		Integer permisoId= usuario.getPermiso().getPermisoId();
-		
-		
-		
-		
-		   if (id!=null && !(id.toString().isEmpty()) && id!=0) 
-			   criteria.add(Restrictions.eq("usuarioId",id));
-		   
-		   if (nombre!=null && !nombre.isEmpty() )
-			   criteria.add(Restrictions.ilike("usuarioApellido", "%"+nombre+"%"));
-		   
-//		   if(criteria.list().size()!=0){
-//				 Usuario userAux= (Usuario) criteria.list().get(0);
-//				 if(userAux.getUsuarioVisible().equals(true)){
-//					 usuarios=userAux;
-//				 }
-		
-		   if (dni!=null && !dni.isEmpty())
-			   criteria.add(Restrictions.ilike("usuarioDni", nombre+"%"));
-		   
-		  
-//		   if(permisoId > 0){
-//				criteria.createAlias("permisoId","p").
-//						add(Restrictions.eq("p.permisoId", permisoId));
-//		   }
+		String palabra = usuario.getUsuarioApellido();
+					
+		   if (palabra!=null && !palabra.isEmpty() ){
+			   if (!palabra.matches("[0-9]*")) {
+				   criteria.add(Restrictions.eq("usuarioVisible",true));
+				   Criterion apellido = Restrictions.ilike("usuarioApellido", "%"+palabra+"%");
+			        Criterion nombre = Restrictions.ilike("usuarioNombre", "%"+palabra+"%");
+			        LogicalExpression orExp = Restrictions.or(apellido,nombre);
+			        criteria.add(orExp);
+			        
+				} else{
+				   criteria.add(Restrictions.like("usuarioDni", "%"+palabra+"%"));
+				   criteria.add(Restrictions.eq("usuarioVisible",true));
+			   }
+		   }else {
+			   criteria.add(Restrictions.eq("usuarioVisible",true));
+		}
 		   
 		   return criteria.list();
 	}
