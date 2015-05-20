@@ -23,11 +23,10 @@
 			<div>
 				<h:form>
 					<ul class="sb_menu">
-						<li><h:commandLink value="Nuevo" action="nuevoPaciente" /></li>
 						<li><h:commandLink value="Archivar" action="archivarPaciente" /></li>
 						<li><h:commandLink value="Actualizar"
 								action="actualizarPaciente" /></li>
-						<li><h:commandLink value="Buscar" action="buscarPaciente" /></li>
+						<li><h:commandLink value="Buscar" action="homePaciente" /></li>
 						<li><h:commandLink value="Historial"
 								action="historialPaciente" /></li>
 					</ul>
@@ -52,7 +51,7 @@
 								<p>Ingrese la informacion correspondiente para crear un
 									nuevo paciente en el sistema</p>
 							</f:facet>
-
+							<p:focus />
 						
 							<h:outputLabel value="Nombres" for="pacienteNombre" />
 							<p:inputText id="pacienteNombre" label="Nombre" required="true"

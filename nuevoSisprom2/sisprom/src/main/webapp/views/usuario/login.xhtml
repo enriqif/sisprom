@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
 	
 <h:head>
 	<title>Sisprom</title>
@@ -13,6 +14,7 @@
 <h:body>
 	<section class="contenedorLogin"> 
 		<h:form class="formulario">
+			<p:focus />
 			<h2>Acceso de Usuario</h2>
 			<p>
 				<h:inputText pt:placeholder="Usuario" value="#{loginManagedBean.usuario.usuarioUsuario}" />

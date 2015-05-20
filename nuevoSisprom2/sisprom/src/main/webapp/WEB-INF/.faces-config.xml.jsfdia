@@ -25,9 +25,9 @@
     NAME="output3" PATH="/views/informes/homeInformes.xhtml"
     TARGET="rules:#views#informes#homeInformes.xhtml" TITLE="informe" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="personal::#views#personal#homePersonal2.xhtml" NAME="output4"
-    PATH="/views/personal/homePersonal2.xhtml"
-    TARGET="rules:#views#personal#homePersonal2.xhtml" TITLE="personal" model-entity="JSFProcessItemOutput"/>
+    ID="personal::#views#personal#homePersonal.xhtml" NAME="output4"
+    PATH="/views/personal/homePersonal.xhtml"
+    TARGET="rules:#views#personal#homePersonal.xhtml" TITLE="personal" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT ID="error::#views#error#error.xhtml"
     NAME="output5" PATH="/views/error/error.xhtml"
     TARGET="rules:#views#error#error.xhtml" TITLE="error" model-entity="JSFProcessItemOutput"/>
@@ -65,6 +65,10 @@
    <PROCESS-ITEM-OUTPUT ID="error::#views#error#error.xhtml"
     NAME="output5" PATH="/views/error/error.xhtml"
     TARGET="rules:#views#error#error.xhtml" TITLE="error" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="confirmar::#views#paciente#homePaciente.xhtml" NAME="output6"
+    PATH="/views/paciente/homePaciente.xhtml"
+    TARGET="rules:#views#paciente#homePaciente.xhtml" TITLE="confirmar" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#personal#*" PATH="/views/personal/*"
@@ -77,9 +81,14 @@
     TARGET="rules:#views#personal#nuevoPersonal.xhtml"
     TITLE="nuevoPersonal" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="confirmar::#views#personal#homePersonal2.xhtml" NAME="output1"
-    PATH="/views/personal/homePersonal2.xhtml"
-    TARGET="rules:#views#personal#homePersonal2.xhtml" TITLE="confirmar" model-entity="JSFProcessItemOutput"/>
+    ID="confirmar::#views#personal#homePersonal.xhtml" NAME="output1"
+    PATH="/views/personal/homePersonal.xhtml"
+    TARGET="rules:#views#personal#homePersonal.xhtml" TITLE="confirmar" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="testPersonal::#views#personal#homePersonal.xhtml" NAME="output2"
+    PATH="/views/personal/homePersonal.xhtml"
+    TARGET="rules:#views#personal#homePersonal.xhtml"
+    TITLE="testPersonal" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#nuevoPaciente.xhtml"
@@ -108,8 +117,6 @@
   PATH="/views/personal/nuevoPersonal.xhtml" SHAPE="304,897,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#historialPaciente.xhtml"
   PATH="/views/paciente/historialPaciente.xhtml" SHAPE="304,2017,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#views#personal#homePersonal2.xhtml"
-  PATH="/views/personal/homePersonal2.xhtml" SHAPE="304,753,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#error#error.xhtml"
   PATH="/views/error/error.xhtml" SHAPE="304,1153,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#error.xhtml"
@@ -122,4 +129,6 @@
   PATH="/views/usuario/bienvenido.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#turnos#homeTurno.xhtml"
   PATH="/views/turnos/homeTurno.xhtml" SHAPE="304,529,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#personal#homePersonal.xhtml"
+  PATH="/views/personal/homePersonal.xhtml" SHAPE="304,1041,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

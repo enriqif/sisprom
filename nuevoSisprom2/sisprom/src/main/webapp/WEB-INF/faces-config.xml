@@ -50,7 +50,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>personal</from-outcome>
-			<to-view-id>/views/personal/homePersonal2.xhtml</to-view-id>
+			<to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>error</from-outcome>
@@ -85,6 +85,10 @@
    <from-outcome>error</from-outcome>
    <to-view-id>/views/error/error.xhtml</to-view-id>
   </navigation-case>
+  <navigation-case>
+  	<from-outcome>confirmar</from-outcome>
+  	<to-view-id>/views/paciente/homePaciente.xhtml</to-view-id>
+  </navigation-case>
  </navigation-rule>
  <!-- Reglas para navegacion desde el submenu izquierdo ubicado en la vista 
 		"/homePersonal.xhtml" -->
@@ -96,8 +100,13 @@
   </navigation-case>
   <navigation-case>
    <from-outcome>confirmar</from-outcome>
-   <to-view-id>/views/personal/homePersonal2.xhtml</to-view-id>
+   <to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
   </navigation-case>
+  <navigation-case>
+     <from-outcome>testPersonal</from-outcome>
+   <to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
+  </navigation-case>
+  
  </navigation-rule>
  <navigation-rule>
   <from-view-id>/views/paciente/nuevoPaciente.xhtml</from-view-id>

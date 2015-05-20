@@ -7,15 +7,13 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:p="http://primefaces.org/ui">
 
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="resources/css/styTable.css" type="text/css" />
 
 </head>
+
 <h:body>
-
-
 	<ui:composition template="/templates/fatherLayout.xhtml">
 		<ui:define name="functions">
 			<div class="subMenu">
@@ -39,63 +37,85 @@
 			</div>
 
 			<h:form />
-			<h2>Busqueda de Rubros</h2>
+			<h2>Test de Personal</h2>
 
-			<h:form id="search_content">
-				<h:panelGrid columns="2" class="search">
-					<h:outputLabel class="out_put_text" for="usuarioId" value="Id Personal: " />
-					<h:inputText class="input_text" id="usuarioId"
-						value="#{personalManagedBean.usuario.usuarioId}" />
+			<p:growl id="msgs" showDetail="true" />
 
-					<h:outputLabel class="out_put_text" for="usuarioApellido" value="Apellido: " />
-					<h:inputText id="usuarioApellido"
-						class="input_text"
-						value="#{personalManagedBean.usuario.usuarioApellido}" />
+			<p:dataTable id="users" value="#{personalManagedBean.lista}"
+				var="user" rows="20" paginator="true">
 
-					<h:commandButton class="style_button" action="#{personalManagedBean.buscar}"
-						value="Buscar" />
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Nombre" />
+					</f:facet>
+					<h:outputText value="#{user.usuarioNombre}" />
+				</p:column>
 
-					<h:commandButton class="style_button" action="#{personalManagedBean.limpiar}"
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Apellido" />
+					</f:facet>
+					<h:outputText value="#{user.usuarioApellido}" />
+				</p:column>
 
-						value="Limpiar" />
-				</h:panelGrid>
-			</h:form>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Dni" />
+					</f:facet>
+					<h:outputText value="#{user.usuarioDni}" />
+				</p:column>
 
-			<h:panelGroup id="body">
-				
-				  
-          
-           
-              
-				<p:dataTable value="#{personalManagedBean.lista}" var="item"
-					rows="2" border="1" paginator="true" 
-					selection="#{personalManagedBean.usuario}"
-						
-					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-					rowsPerPageTemplate="5,10,15">
+				<p:column>
+					<h:panelGrid columns="3" cellpadding="2" styleClass="actions">
+
+						<p:commandButton id="selecButton" oncomplete="carDialog.show()"
+							title="view" value="Detalle" update="carDig">
+							<f:setPropertyActionListener
+								target="#{personalManagedBean.usuarioSelect}" value="#{user}" />
+							<p:dialog header="Info Personal" widgetVar="carDialog"
+								resizable="false" id="carDig" modal="true" showEffect="fade"
+								hideEffect="fade">
+
+								<h:panelGrid id="display" columns="2" cellpadding="4">
+									<h:outputText value="Apellido:" />
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioApellido}" />
+									<h:outputText value="Nombre:" />
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioNombre}" />
+									<h:outputText value="Dni:" />
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioDni}" />
+									<h:outputText value="Usuario:" />
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioUsuario}" />
+									<h:outputText value="Rol:" />
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioRol}" />
+									<h:outputText value="Obra Social:" />										
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioObraSocial}" />										
+									<h:outputText value="Edad:" />
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioEdad}" />
+									<h:outputText value="Telefono:" />										
+									<h:outputText
+										value="#{personalManagedBean.usuarioSelect.usuarioTelefono}" />
+									<h:outputText value="Domicilio:" />										
+									<h:outputText
+										value="Barrio: #{personalManagedBean.usuarioSelect.usuarioDomicilioBarrio}, Nº #{personalManagedBean.usuarioSelect.usuarioDomicilioNumero}, Calle: #{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}" />
 
 
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Nombre" />
-						</f:facet>
-						<h:outputText value="#{item.usuarioNombre}" />
-					</p:column>
 
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Apellido" />
-						</f:facet>
-						<h:outputText value="#{item.usuarioApellido}" />
-					</p:column>
-					
+								</h:panelGrid>
 
-				</p:dataTable>
-   
-              
-				
+							</p:dialog>
+						</p:commandButton>
+					</h:panelGrid>
+				</p:column>
 
-			</h:panelGroup>
+			</p:dataTable>
+
 
 			<div class="textoExplicativo">
 				<p>En esta seccion tendra acceso a las funciones que se pueden
