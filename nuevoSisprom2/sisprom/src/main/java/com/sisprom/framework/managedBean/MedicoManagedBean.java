@@ -41,6 +41,7 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	private String mensajeError = "";
 	
 	private Usuario medico = new Usuario();
+	private Usuario u = new Usuario();
 	private Permiso permiso = new Permiso();
 	
 	private String destination="D:\\tmp\\";
@@ -150,29 +151,10 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	    }
 	
 	    public String actualizar(){
-			try {
-//				SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
-//		        String today = new Date().toString();
-//		        Date hoy = formatter.parse(today);
-//				@SuppressWarnings("deprecation")
-				//BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("/WEB-INF/faces-config.xml"));
-				
-//				LoginManagedBean loginBean = beanFactory.getBean("loginManagedBean", LoginManagedBean.class);
-//				logger.info(loginBean.usuario.getUsuarioUsuario());
-				
-				
-				medico.setFechaCreacion(null);
-				
-				
-                
-//				logger.info("este mensaje se muestra con el log4j");
-		        medico.setUsuarioCreacion(null);
-				medico.setUsuarioModificacion("eflores");
-				medico.setFechaModificacion(null);
-				medico.setHistoriaClinicas(null);
-
-//				logger.info("Continuar con la siguiente ventana");
-				super.getServices().updateUsuario(medico);
+			try {				
+				u=LoginManagedBean.usuario;
+				u.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
+				super.getServices().updateUsuario(u);
 				return "hechoMedico";			
 			} catch (Exception e) {
 				//TODO
