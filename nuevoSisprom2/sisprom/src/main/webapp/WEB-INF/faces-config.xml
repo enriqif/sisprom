@@ -50,7 +50,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>personal</from-outcome>
-			<to-view-id>/views/personal/homePersonal2.xhtml</to-view-id>
+			<to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>error</from-outcome>
@@ -96,8 +96,13 @@
   </navigation-case>
   <navigation-case>
    <from-outcome>confirmar</from-outcome>
-   <to-view-id>/views/personal/homePersonal2.xhtml</to-view-id>
+   <to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
   </navigation-case>
+  <navigation-case>
+     <from-outcome>testPersonal</from-outcome>
+   <to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
+  </navigation-case>
+  
  </navigation-rule>
  <navigation-rule>
   <from-view-id>/views/paciente/nuevoPaciente.xhtml</from-view-id>

@@ -111,7 +111,7 @@ public class Usuario implements java.io.Serializable {
 		this.usuarioDomicilioCalle = usuarioDomicilioCalle;
 		this.usuarioDomicilioNumero = usuarioDomicilioNumero;
 	}
-
+	public int getRowKey() { return this.hashCode(); }
 	public int getUsuarioId() {
 		return this.usuarioId;
 	}

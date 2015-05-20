@@ -25,6 +25,7 @@
 				<h:form>
 					<ul class="sb_menu">
 						<li><h:commandLink value="Nuevo" action="nuevoPersonal" /></li>
+						<li><h:commandLink value="Test" action="testPersonal" /></li>
 					</ul>
 				</h:form>
 			</div>
@@ -56,12 +57,20 @@
 			</h:form>
 
 			<h:panelGroup id="body">
-			
-				<p:dataTable value="#{personalManagedBean.lista}" var="item"
+				<p:growl id="growl" showDetail="true"/>
+				
+				<p:dataTable id="tablaPersonal" value="#{personalManagedBean.lista}" var="item"
+					selectionMode="single" 	
+					
+					selection="#{personalManagedBean.usuarioSelect}"
+						rowKey="#{item.usuarioId}"
+					
+					 
 					rows="10" border="1" paginator="true"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-					rowsPerPageTemplate="5,10,15">
-
+					>
+        
+     
 
 					<p:column>
 					<f:facet name="header">
@@ -83,8 +92,27 @@
 						</f:facet>
 						<h:outputText value="#{item.usuarioDni}" />
 					</p:column>
-				</p:dataTable>
+					
+					        <f:facet name="footer">
+					
+				
+				<p:commandButton process="tablaPersonal" update="carDig"  value="View" oncomplete="carDialog.show()" >
+				
+				<p:dialog header="Info Personal" widgetVar="carDialog" id="carDig" 
+								resizable="false"  modal="true" showEffect="fade"
+								hideEffect="fade">
+												
+						<h:panelGrid id="display" columns="2" cellpadding="4">
+							<h:outputText value="Model:" />
+							<h:outputText value="#{personalManagedBean.usuarioSelect.usuarioDni}" />
+						</h:panelGrid>
 
+					
+					</p:dialog>
+				</p:commandButton>
+				</f:facet>
+				</p:dataTable>
+				
 				
 			</h:panelGroup>
 

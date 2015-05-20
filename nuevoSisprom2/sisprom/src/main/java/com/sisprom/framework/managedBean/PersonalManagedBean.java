@@ -14,6 +14,7 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
@@ -27,6 +28,7 @@ import com.sisprom.framework.dominio.Usuario;
 
 @ManagedBean
 @SessionScoped
+@ViewScoped
 public class PersonalManagedBean  extends MasterManagedBean {
 
 	/**
@@ -34,6 +36,8 @@ public class PersonalManagedBean  extends MasterManagedBean {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Usuario usuario = new Usuario();
+	public Usuario usuarioSelect  = new Usuario();
+	public String nombre;
 	private Permiso permiso = new Permiso();
 	private List<Usuario> lista = new ArrayList<Usuario>();
 	
@@ -84,25 +88,18 @@ public class PersonalManagedBean  extends MasterManagedBean {
 	
 	//Metodos de Validacion
 	
-//	 public void onRowSelect(SelectEvent event) {  
-//	        FacesMessage msg = new FacesMessage("Car Selected", ((Usuario) event.getObject()).getUsuarioDni());  
-//	  
-//	        FacesContext.getCurrentInstance().addMessage(null, msg);  
-//	    }  
-//	  
-//	    public void onRowUnselect(UnselectEvent event) {  
-//	        FacesMessage msg = new FacesMessage("Car Unselected", ((Usuario) event.getObject()).getUsuarioDni());  
-//	  
-//	        FacesContext.getCurrentInstance().addMessage(null, msg);  
-//	    }  
-//	  
-//	    public String onRowSelectNavigate(SelectEvent event) {  
-//	        FacesContext.getCurrentInstance().getExternalContext().getFlash().put("selectedCar", event.getObject());  
-//	  
-//	        return "carDetail?faces-redirect=true";  
-//	    }  
-//	
-	
+	 public void onRowSelect(SelectEvent event) {  
+	        FacesMessage msgs = new FacesMessage("Element Selected", ((Usuario) event.getObject()).getUsuarioDni());  
+	  
+	        FacesContext.getCurrentInstance().addMessage(null, msgs);  
+	    }  
+	  
+	 public void onRowUnselect(UnselectEvent event) {  
+		 FacesMessage msgs = new FacesMessage("Element Selected", ( (Usuario) event.getObject()).getUsuarioDni());  
+	  
+	        FacesContext.getCurrentInstance().addMessage(null, msgs);  
+	    }  
+
 	
 	// getters and setters
 	
@@ -125,6 +122,23 @@ public class PersonalManagedBean  extends MasterManagedBean {
 	public void setLista(List<Usuario> lista) {
 		this.lista = lista;
 	}
+
+	public Usuario getUsuarioSelect() {
+		return usuarioSelect;
+	}
+
+	public void setUsuarioSelect(Usuario usuarioSelect) {
+		this.usuarioSelect = usuarioSelect;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 
 
 }
