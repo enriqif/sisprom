@@ -89,7 +89,16 @@ public class PacienteManagedBean extends MasterManagedBean {
 		Date date = (Date) e.getObject();
 		logger.info("Date Selected Is:" + date);
 	}
+	
+	public void actualizarPaciente(){
+		logger.debug("se actualizará los datos del paciente seleccionado");
+	}
 
+	/**
+	 * Methods getters and setters
+	 * define functions above this comment ^^
+	 */
+	
 	public Paciente getPaciente() {
 		return paciente;
 	}
