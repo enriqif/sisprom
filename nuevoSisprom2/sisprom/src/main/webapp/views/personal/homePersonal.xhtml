@@ -42,7 +42,7 @@
 			<p:growl id="msgs" showDetail="true" />
 
 			<p:dataTable id="users" value="#{personalManagedBean.lista}"
-				var="user" rows="20" paginator="true">
+				var="user" rows="20" paginator="true" >
 
 				<p:column>
 					<f:facet name="header">
@@ -65,13 +65,13 @@
 					<h:outputText value="#{user.usuarioDni}" />
 				</p:column>
 
-				<p:column>
-					<h:panelGrid columns="3" cellpadding="2" styleClass="actions">
-
+				<p:column >
+				
 						<p:commandButton id="selecButton" oncomplete="carDialog.show()"
-							title="view" value="Detalle" update="carDig">
+							title="view" value="Detalle" update="carDig"  >
 							<f:setPropertyActionListener
 								target="#{personalManagedBean.usuarioSelect}" value="#{user}" />
+								
 							<p:dialog header="Info Personal" widgetVar="carDialog"
 								resizable="false" id="carDig" modal="true" showEffect="fade"
 								hideEffect="fade">
@@ -104,14 +104,19 @@
 									<h:outputText value="Domicilio:" />										
 									<h:outputText
 										value="Barrio: #{personalManagedBean.usuarioSelect.usuarioDomicilioBarrio}, Nº #{personalManagedBean.usuarioSelect.usuarioDomicilioNumero}, Calle: #{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}" />
-
-
-
+<f:facet name="footer">
+<p:commandButton id="buttonDelete"
+						 value="Borrar"   >
+</p:commandButton>
+<p:commandButton id="buttonUpdate"
+						 value="Modificar"   >
+</p:commandButton>
+</f:facet>
 								</h:panelGrid>
 
 							</p:dialog>
 						</p:commandButton>
-					</h:panelGrid>
+					
 				</p:column>
 
 			</p:dataTable>
