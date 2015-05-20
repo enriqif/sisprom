@@ -244,8 +244,14 @@ public class Services {
 	public List<Usuario> getAllUsuario(){
 		return usuarioDao.getAll();
 	}
+	public List<Usuario> getAllPersonal(){
+		return usuarioDao.getAllPersonal();
+	}
 	public List<Usuario> consultarUsuario(Usuario usuario){
 		return usuarioDao.find(usuario);
+	}
+	public List<Usuario> consultarPersonal(Usuario usuario){
+		return usuarioDao.findPersonal(usuario);
 	}
 	public Usuario loginUsuario(String usuario, String contrasenia){
 		return usuarioDao.LoginUser(usuario, contrasenia);

@@ -85,4 +85,36 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 		return unUsuario;
 	}
 
+	@Override
+	public List<Usuario> findPersonal(Usuario usuario) {
+		
+		Criteria criteria = getSession().createCriteria(Usuario.class);
+		String palabra = usuario.getUsuarioApellido();
+		 criteria.add(Restrictions.eq("usuarioVisible",true));
+			criteria.add(Restrictions.not(Restrictions.eq("permiso.permisoId",1)));
+			
+		   if (palabra!=null && !palabra.isEmpty() ){
+			   if (!palabra.matches("[0-9]*")) {
+				   Criterion apellido = Restrictions.ilike("usuarioApellido", "%"+palabra+"%");
+			        Criterion nombre = Restrictions.ilike("usuarioNombre", "%"+palabra+"%");
+			        LogicalExpression orExp = Restrictions.or(apellido,nombre);
+			        criteria.add(orExp);
+			        
+				} else{
+				   criteria.add(Restrictions.like("usuarioDni", "%"+palabra+"%"));
+			   }
+		   }
+		   
+		   return criteria.list();
+	}
+
+	@Override
+	public List<Usuario> getAllPersonal() {
+		Criteria criteria = getSession().createCriteria(Usuario.class);
+		criteria.add(Restrictions.not(Restrictions.eq("permiso.permisoId",1)));
+		criteria.add(Restrictions.eq("usuarioVisible",true));
+		criteria.addOrder(Order.asc("usuarioId"));
+		
+		return criteria.list();
+	}
 }
