@@ -72,14 +72,15 @@ public class PersonalManagedBean  extends MasterManagedBean {
 		setUsuario(new Usuario());
 		return "confirmar";
 	}
+	
 	public String limpiarlista() {
 		setLista(super.getServices().getAllUsuario());
 
 		return "confirmar";
 	}
+
 	public String buscar(){
 		lista.clear();
-	
 		setLista(super.getServices().consultarUsuario(usuario));
 		return limpiar();
 	}

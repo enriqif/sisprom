@@ -65,6 +65,10 @@
    <PROCESS-ITEM-OUTPUT ID="error::#views#error#error.xhtml"
     NAME="output5" PATH="/views/error/error.xhtml"
     TARGET="rules:#views#error#error.xhtml" TITLE="error" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="confirmar::#views#paciente#homePaciente.xhtml" NAME="output6"
+    PATH="/views/paciente/homePaciente.xhtml"
+    TARGET="rules:#views#paciente#homePaciente.xhtml" TITLE="confirmar" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#personal#*" PATH="/views/personal/*"

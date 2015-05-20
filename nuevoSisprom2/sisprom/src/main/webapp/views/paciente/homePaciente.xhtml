@@ -21,11 +21,11 @@
 			<div>
 				<h:form>
 					<ul class="sb_menu">
-						<li><h:commandLink value="Nuevo" action="nuevoPaciente" /></li>
 						<li><h:commandLink value="Archivar" action="archivarPaciente" /></li>
-						<li><h:commandLink value="Actualizar" action="actualizarPaciente" /></li>
-						<li><h:commandLink value="Buscar" action="buscarPaciente" /></li>
-						<li><h:commandLink value="Historial" action="historialPaciente" /></li>
+						<li><h:commandLink value="Actualizar"
+								action="actualizarPaciente" /></li>
+						<li><h:commandLink value="Historial"
+								action="historialPaciente" /></li>
 					</ul>
 				</h:form>
 			</div>
@@ -33,13 +33,65 @@
 		<ui:define name="content">
 			<div class="subMenu">
 				<h1>
-					<span>Pacientes</span>
+					<span> Pacientes</span>
 				</h1>
 			</div>
-			<div class="textoExplicativo">
-				<p>En esta seccion tendra acceso a las funciones que se pueden
-					aplicar a los datos de los pacientes almacenados</p>
-			</div>
+
+			<h:form id="search_content">
+				<p:focus context="search_content" />
+				<h:panelGrid columns="4" class="search">
+					<h:inputText id="pacienteApellido" class="input_text" size="40"
+						value="#{pacienteManagedBean.paciente.pacienteApellido}" />
+					<p:watermark for="pacienteApellido" value="Ej. Alcantara "
+						id="watermark" />
+					<h:commandButton class="style_button"
+						action="#{pacienteManagedBean.buscar()}" value="Buscar" />
+					<h:commandButton 
+						class="squareButton" 
+						action="#{pacienteManagedBean.nuevoPaciente()}" 
+						value="Nuevo" />
+				</h:panelGrid>
+			</h:form>
+
+				
+			<h:panelGroup id="body">
+				<p:dataTable value="#{pacienteManagedBean.listaPacientes}"
+					var="item" rows="10" border="1" paginator="true"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15">
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="numAfiliado" />
+						</f:facet>
+						<h:outputText value="#{item.pacienteNumeroAfiliado}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Apellido" />
+						</f:facet>
+						<h:outputText value="#{item.pacienteApellido}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Nombre" />
+						</f:facet>
+						<h:outputText value="#{item.pacienteNombre}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="DNI" />
+						</f:facet>
+						<h:outputText value="#{item.pacienteDni}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="obraSocial" />
+						</f:facet>
+						<h:outputText value="#{item.pacienteObraSocial}" />
+					</p:column>
+				</p:dataTable>
+			</h:panelGroup>
 		</ui:define>
 	</ui:composition>
 </body>

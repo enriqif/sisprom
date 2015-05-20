@@ -85,6 +85,10 @@
    <from-outcome>error</from-outcome>
    <to-view-id>/views/error/error.xhtml</to-view-id>
   </navigation-case>
+  <navigation-case>
+  	<from-outcome>confirmar</from-outcome>
+  	<to-view-id>/views/paciente/homePaciente.xhtml</to-view-id>
+  </navigation-case>
  </navigation-rule>
  <!-- Reglas para navegacion desde el submenu izquierdo ubicado en la vista 
 		"/homePersonal.xhtml" -->
