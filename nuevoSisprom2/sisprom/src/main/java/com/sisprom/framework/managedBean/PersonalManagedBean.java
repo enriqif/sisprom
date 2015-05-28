@@ -44,7 +44,8 @@ public class PersonalManagedBean  extends MasterManagedBean {
 	 
 	public PersonalManagedBean(){
 		usuario = new Usuario();
-		setLista(super.getServices().getAllUsuario());
+		lista.clear();
+		setLista(super.getServices().getAllPersonal());
 	}
 	
 	public String nuevo(){
@@ -69,19 +70,21 @@ public class PersonalManagedBean  extends MasterManagedBean {
 	}
 	
 	public String limpiar() {
+		
 		setUsuario(new Usuario());
 		return "confirmar";
 	}
 	
 	public String limpiarlista() {
-		setLista(super.getServices().getAllUsuario());
+		lista.clear();
+		setLista(super.getServices().getAllPersonal());
 
 		return "confirmar";
 	}
 
 	public String buscar(){
 		lista.clear();
-		setLista(super.getServices().consultarUsuario(usuario));
+		setLista(super.getServices().consultarPersonal(usuario));
 		return limpiar();
 	}
 	
