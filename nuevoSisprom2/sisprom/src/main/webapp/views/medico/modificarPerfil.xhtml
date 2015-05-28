@@ -56,16 +56,16 @@
 				<hr />
 
 				<h:outputLabel class="out_put_text" id="component_form"
-					value="Nombre" for="nombre" />
-
-				<h:inputText class="input_text" id="nombre"
-					value="#{loginManagedBean.usuario.usuarioNombre}"
-					required="true">
+					value="Nombre" for="usuarioNombre" />
+				<p:inputText id="usuarioNombre" size="40"
+						value="#{medicoManagedBean.u.usuarioNombre}" />
+						
 					<a4j:support ajaxSingle="true" event="onblur"
 						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="nombre" errorStyle="color:red"
+				<h:message for="usuarioNombre" errorStyle="color:red"
 					infoStyle="color:green" />
+					<p:commandButton 
+						action="#{medicoManagedBean.actualizar()}" value="Actualizar" />
 
 				<h:outputLabel class="out_put_text" value="Apellidos" for="surname" />
 				<h:inputText id="surname" class="input_text"

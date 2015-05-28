@@ -37,20 +37,17 @@
 			</div>
 
 			<h:form />
-			<h2>Busqueda  Personal</h2>
-<h:form id="search_content">
+			<h2>Busqueda Personal</h2>
+			<h:form id="search_content">
 				<h:panelGrid columns="3" class="search">
-
-
-			
-					<h:inputText id="usuarioApellido"
-						class="input_text" size="40"
+					<h:inputText id="usuarioApellido" class="input_text" size="40"
 						value="#{personalManagedBean.usuario.usuarioApellido}" />
-					<p:watermark for="usuarioApellido" value="Ej. Alcantara o 31356973" id="watermark" />
-					<h:commandButton class="style_button" action="#{personalManagedBean.buscar}"
-						value="Buscar" />
+					<p:watermark for="usuarioApellido" value="Ej. Alcantara o 31356973"
+						id="watermark" />
+					<h:commandButton class="style_button"
+						action="#{personalManagedBean.buscar}" value="Buscar" />
 
-					
+
 				</h:panelGrid>
 			</h:form>
 			<p:growl id="msgs" showDetail="true" />
@@ -79,58 +76,56 @@
 					<h:outputText value="#{user.usuarioDni}" />
 				</p:column>
 
-				<p:column >
-				
-						<p:commandButton id="selecButton" oncomplete="carDialog.show()"
-							title="view" value="Detalle" update="carDig"  >
-							<f:setPropertyActionListener
-								target="#{personalManagedBean.usuarioSelect}" value="#{user}" />
-								
-							<p:dialog header="Info Personal" widgetVar="carDialog"
-								resizable="false" id="carDig" modal="true" showEffect="fade"
-								hideEffect="fade">
+				<p:column>
 
-								<h:panelGrid id="display" columns="2" cellpadding="4">
-									<h:outputText value="Apellido:" />
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioApellido}" />
-									<h:outputText value="Nombre:" />
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioNombre}" />
-									<h:outputText value="Dni:" />
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioDni}" />
-									<h:outputText value="Usuario:" />
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioUsuario}" />
-									<h:outputText value="Rol:" />
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioRol}" />
-									<h:outputText value="Obra Social:" />										
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioObraSocial}" />										
-									<h:outputText value="Edad:" />
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioEdad}" />
-									<h:outputText value="Telefono:" />										
-									<h:outputText
-										value="#{personalManagedBean.usuarioSelect.usuarioTelefono}" />
-									<h:outputText value="Domicilio:" />										
-									<h:outputText
-										value="Barrio: #{personalManagedBean.usuarioSelect.usuarioDomicilioBarrio}, Nº #{personalManagedBean.usuarioSelect.usuarioDomicilioNumero}, Calle: #{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}" />
-<f:facet name="footer">
-<p:commandButton id="buttonDelete"
-						 value="Borrar"   >
-</p:commandButton>
-<p:commandButton id="buttonUpdate"
-						 value="Modificar"   >
-</p:commandButton>
-</f:facet>
-								</h:panelGrid>
+					<p:commandButton id="selecButton" oncomplete="carDialog.show()"
+						title="view" value="Detalle" update="carDig">
+						<f:setPropertyActionListener
+							target="#{personalManagedBean.usuarioSelect}" value="#{user}" />
 
-							</p:dialog>
-						</p:commandButton>
-					
+						<p:dialog header="Info Personal" widgetVar="carDialog"
+							resizable="false" id="carDig" modal="true" showEffect="fade"
+							hideEffect="fade">
+
+							<h:panelGrid id="display" columns="2" cellpadding="4">
+								<h:outputText value="Apellido:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioApellido}" />
+								<h:outputText value="Nombre:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioNombre}" />
+								<h:outputText value="Dni:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioDni}" />
+								<h:outputText value="Usuario:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioUsuario}" />
+								<h:outputText value="Rol:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioRol}" />
+								<h:outputText value="Obra Social:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioObraSocial}" />
+								<h:outputText value="Edad:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioEdad}" />
+								<h:outputText value="Telefono:" />
+								<h:outputText
+									value="#{personalManagedBean.usuarioSelect.usuarioTelefono}" />
+								<h:outputText value="Domicilio:" />
+								<h:outputText
+									value="Barrio: #{personalManagedBean.usuarioSelect.usuarioDomicilioBarrio}, Nº #{personalManagedBean.usuarioSelect.usuarioDomicilioNumero}, Calle: #{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}" />
+								<f:facet name="footer">
+									<p:commandButton id="buttonDelete" value="Borrar">
+									</p:commandButton>
+									<p:commandButton id="buttonUpdate" value="Modificar">
+									</p:commandButton>
+								</f:facet>
+							</h:panelGrid>
+
+						</p:dialog>
+					</p:commandButton>
+
 				</p:column>
 
 			</p:dataTable>

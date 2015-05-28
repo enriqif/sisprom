@@ -1,5 +1,6 @@
 package com.sisprom.framework.model.services;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.sisprom.framework.dominio.AntecedenteGeneral;
@@ -32,9 +33,12 @@ import com.sisprom.framework.model.dao.TurnoDao;
 import com.sisprom.framework.model.dao.UsuarioDao;
 
 
-public class Services {
+public class Services{
 
 	
+	/**
+	 * 
+	 */
 	private PacienteDao pacienteDao;
 	private TurnoDao turnoDao;
 	private HistoriaClinicaDao historiaClinicaDao;

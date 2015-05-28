@@ -14,6 +14,7 @@ import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import org.apache.log4j.Logger;
@@ -28,12 +29,26 @@ import com.sisprom.framework.dominio.Usuario;
 
 @ManagedBean
 @SessionScoped
+@ViewScoped
 public class MedicoManagedBean extends MasterManagedBean implements Serializable{
 	
-	public static String VALIDATE_USER="home";
-	public static String VALIDATE_USER_ERROR = "error";
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+/**
+	 * 
+	 */
+
+	//	public static String VALIDATE_USER="home";
+//	public static String VALIDATE_USER_ERROR = "error";
 	final static Logger logger = Logger.getLogger(LoginManagedBean.class);
 	
+	private Usuario usuario = new Usuario();
+	public Usuario usuarioSelect  = new Usuario();
+	public String nombre;
+	private List<Usuario> lista = new ArrayList<Usuario>();
 	
 //	public String usertmp = "eflores";
 //	public String passtmp = "naruto";
@@ -46,6 +61,11 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	
 	private String destination="D:\\tmp\\";
 	
+	public MedicoManagedBean(){
+		usuario = new Usuario();
+		u = new Usuario();
+		setLista(super.getServices().getAllUsuario());
+	}
 	
 	 
 	public String nuevo(){
@@ -152,9 +172,9 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	
 	    public String actualizar(){
 			try {				
-				u=LoginManagedBean.usuario;
-				u.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
-				super.getServices().updateUsuario(u);
+				u.setUsuarioModificacion("ahora");
+				usuario.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
+//				super.getServices().saveUsuario(u);
 				return "hechoMedico";			
 			} catch (Exception e) {
 				//TODO
@@ -162,4 +182,35 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 				return "errorGuardado";
 			}
 		}
+	    public String buscar(){
+			lista.clear();
+			setLista(super.getServices().consultarUsuario(usuario));
+			return limpiar();
+		}
+	    public String limpiar() {
+			setUsuario(new Usuario());
+			return "confirmar";
+		}
+	    public Usuario getU() {
+			return u;
+		}
+
+		public void setU(Usuario usuario) {
+			this.u = usuario;
+		}
+	    
+	    public Usuario getUsuario() {
+			return usuario;
+		}
+
+		public void setUsuario(Usuario usuario) {
+			this.usuario = usuario;
+		}
+	    public List<Usuario> getLista() {
+			return lista;
+		}
+		public void setLista(List<Usuario> lista) {
+			this.lista = lista;
+		}
+		
 }
