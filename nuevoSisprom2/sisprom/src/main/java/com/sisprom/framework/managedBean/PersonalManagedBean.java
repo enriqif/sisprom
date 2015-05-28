@@ -1,6 +1,5 @@
 package com.sisprom.framework.managedBean;
 
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,7 +8,9 @@ import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -29,26 +30,25 @@ import com.sisprom.framework.dominio.Usuario;
 @ManagedBean
 @SessionScoped
 @ViewScoped
-public class PersonalManagedBean  extends MasterManagedBean {
+public class PersonalManagedBean extends MasterManagedBean {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private Usuario usuario = new Usuario();
-	public Usuario usuarioSelect  = new Usuario();
-	public String nombre;
+	public Usuario usuarioSelect = new Usuario();
 	private Permiso permiso = new Permiso();
 	private List<Usuario> lista = new ArrayList<Usuario>();
-	
-	 
-	public PersonalManagedBean(){
+
+	public PersonalManagedBean() {
 		usuario = new Usuario();
+		usuarioSelect = new Usuario();
 		lista.clear();
 		setLista(super.getServices().getAllPersonal());
 	}
-	
-	public String nuevo(){
+
+	public String nuevo() {
 		try {
 			permiso.setPermisoId(3);
 			usuario.setFechaCreacion(null);
@@ -59,22 +59,84 @@ public class PersonalManagedBean  extends MasterManagedBean {
 			usuario.setUsuarioMatricula("Nulo");
 			usuario.setUsuarioRol("Personal");
 			usuario.setPermiso(permiso);
+			usuario.setUsuarioVisible(true);
 			super.getServices().saveUsuario(usuario);
-			
-			return "hecho";			
+
+			return "homePersonal";
 		} catch (Exception e) {
-			//TODO
-			//Se debe definir la vista cuando se produce un error
+			// TODO
+			// Se debe definir la vista cuando se produce un error
 			return "errorGuardado";
 		}
 	}
-	
-	public String limpiar() {
+
+	public void archivar() {
+		try {
+			usuario.setUsuarioId(usuarioSelect.getUsuarioId());			
+			Permiso per = new Permiso(usuarioSelect.getPermiso().getPermisoId());
+			usuario.setPermiso(per);
+			
+			usuario.setUsuarioNombre(usuarioSelect.getUsuarioNombre());
+			usuario.setUsuarioApellido(usuarioSelect.getUsuarioApellido());
+			usuario.setUsuarioDni(usuarioSelect.getUsuarioDni());
+			usuario.setUsuarioTelefono(usuarioSelect.getUsuarioTelefono());
+			usuario.setUsuarioDomicilioBarrio(usuarioSelect.getUsuarioDomicilioBarrio());
+			usuario.setUsuarioUsuario(usuarioSelect.getUsuarioUsuario());
+			usuario.setUsuarioContrasenia(usuarioSelect.getUsuarioContrasenia());
+			usuario.setUsuarioRol(usuarioSelect.getUsuarioRol());
+			usuario.setUsuarioObraSocial(usuarioSelect.getUsuarioObraSocial());
+			usuario.setUsuarioEdad(usuarioSelect.getUsuarioEdad());
+			usuario.setUsuarioMatricula("Nulo");
+			usuario.setUsuarioEspecialidad("Nulo");
 		
+			usuario.setUsuarioHoraAtencionMax(usuarioSelect.getUsuarioHoraAtencionMax());
+			usuario.setUsuarioHoraAtencionMin(usuarioSelect.getUsuarioHoraAtencionMin());			
+			usuario.setFechaCreacion(usuarioSelect.getFechaCreacion());
+			usuario.setFechaModificacion(usuarioSelect.getFechaModificacion());
+						
+			usuario.setUsuarioCreacion(usuarioSelect.getUsuarioCreacion());
+			usuario.setUsuarioModificacion(usuarioSelect.getUsuarioModificacion());
+			usuario.setUsuarioDomicilioCalle(usuarioSelect.getUsuarioDomicilioCalle());
+			usuario.setUsuarioDomicilioNumero(usuarioSelect.getUsuarioDomicilioNumero());
+		
+			usuario.setUsuarioVisible(false);
+			
+			super.getServices().updateUsuario(usuario);			
+			
+	
+		lista.clear();
+		setLista(super.getServices().consultarPersonal(usuario = new Usuario()));
+		
+		} catch (Exception e) {
+		
+			return;
+		}
+	}
+	public String modificar() {
+		usuario= getUsuarioSelect();
+		return "modificarPersonal";
+	}
+	public String guardarModificar() {
+		try {
+			
+		Permiso per = new Permiso(3);
+		usuario.setPermiso(per);
+		System.out.println(" entro 3");
+		super.getServices().updateUsuario(usuario);
+		System.out.println(" entro 4");
+		return "homePersonal";
+		} catch (Exception e) {
+			// TODO
+			// Se debe definir la vista cuando se produce un error
+			return "errorGuardado";
+		}
+	}
+	public String limpiar() {
+
 		setUsuario(new Usuario());
 		return "confirmar";
 	}
-	
+
 	public String limpiarlista() {
 		lista.clear();
 		setLista(super.getServices().getAllPersonal());
@@ -82,31 +144,16 @@ public class PersonalManagedBean  extends MasterManagedBean {
 		return "confirmar";
 	}
 
-	public String buscar(){
+	public String buscar() {
 		lista.clear();
 		setLista(super.getServices().consultarPersonal(usuario));
 		return limpiar();
 	}
-	
-	
-	
-	//Metodos de Validacion
-	
-	 public void onRowSelect(SelectEvent event) {  
-	        FacesMessage msgs = new FacesMessage("Element Selected", ((Usuario) event.getObject()).getUsuarioDni());  
-	  
-	        FacesContext.getCurrentInstance().addMessage(null, msgs);  
-	    }  
-	  
-	 public void onRowUnselect(UnselectEvent event) {  
-		 FacesMessage msgs = new FacesMessage("Element Selected", ( (Usuario) event.getObject()).getUsuarioDni());  
-	  
-	        FacesContext.getCurrentInstance().addMessage(null, msgs);  
-	    }  
 
 	
-	// getters and setters
 	
+	// getters and setters
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -114,15 +161,19 @@ public class PersonalManagedBean  extends MasterManagedBean {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	
 	public Permiso getPermiso() {
 		return permiso;
 	}
+
 	public void setPermiso(Permiso permiso) {
 		this.permiso = permiso;
 	}
+
 	public List<Usuario> getLista() {
 		return lista;
 	}
+
 	public void setLista(List<Usuario> lista) {
 		this.lista = lista;
 	}
@@ -134,15 +185,5 @@ public class PersonalManagedBean  extends MasterManagedBean {
 	public void setUsuarioSelect(Usuario usuarioSelect) {
 		this.usuarioSelect = usuarioSelect;
 	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
 
 }

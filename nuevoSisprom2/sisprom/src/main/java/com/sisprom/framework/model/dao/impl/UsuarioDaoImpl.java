@@ -117,4 +117,6 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 		
 		return criteria.list();
 	}
+
+	
 }

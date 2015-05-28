@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import org.hibernate.loader.custom.Return;
 
@@ -28,7 +29,8 @@ import com.sisprom.framework.model.xml.context.Context;
 
 @ManagedBean
 @SessionScoped
-public class MasterManagedBean implements Serializable{
+
+public class MasterManagedBean {
 
 	private Services services = Context.getBeanFacade();
 	public Usuario usu;
