@@ -15,4 +15,5 @@ public interface UsuarioDao {
 	 Usuario LoginUser(String usuario, String password);
 	 List<Usuario> findPersonal(Usuario usuario);
 	 List<Usuario> getAllPersonal();
+	 
 }

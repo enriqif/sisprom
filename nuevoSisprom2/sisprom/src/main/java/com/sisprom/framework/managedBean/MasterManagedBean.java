@@ -29,9 +29,7 @@ import com.sisprom.framework.model.xml.context.Context;
 
 @ManagedBean
 @SessionScoped
-@ViewScoped
-public class MasterManagedBean{
-
+public class MasterManagedBean {
 	/**
 	 * 
 	 */

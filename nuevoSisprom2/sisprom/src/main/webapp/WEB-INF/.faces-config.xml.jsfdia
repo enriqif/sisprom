@@ -85,10 +85,10 @@
     PATH="/views/personal/homePersonal.xhtml"
     TARGET="rules:#views#personal#homePersonal.xhtml" TITLE="confirmar" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="testPersonal::#views#personal#homePersonal.xhtml" NAME="output2"
-    PATH="/views/personal/homePersonal.xhtml"
-    TARGET="rules:#views#personal#homePersonal.xhtml"
-    TITLE="testPersonal" model-entity="JSFProcessItemOutput"/>
+    ID="moficarPersonal::#views#personal#modificarPersonal.xhtml"
+    NAME="output2" PATH="/views/personal/modificarPersonal.xhtml"
+    TARGET="rules:#views#personal#modificarPersonal.xhtml"
+    TITLE="moficarPersonal" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#nuevoPaciente.xhtml"
@@ -131,4 +131,6 @@
   PATH="/views/turnos/homeTurno.xhtml" SHAPE="304,529,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#homePersonal.xhtml"
   PATH="/views/personal/homePersonal.xhtml" SHAPE="304,1041,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#personal#modificarPersonal.xhtml"
+  PATH="/views/personal/modificarPersonal.xhtml" SHAPE="304,865,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

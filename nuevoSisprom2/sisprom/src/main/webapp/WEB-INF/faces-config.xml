@@ -103,8 +103,8 @@
    <to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
   </navigation-case>
   <navigation-case>
-     <from-outcome>testPersonal</from-outcome>
-   <to-view-id>/views/personal/homePersonal.xhtml</to-view-id>
+     <from-outcome>moficarPersonal</from-outcome>
+   <to-view-id>/views/personal/modificarPersonal.xhtml</to-view-id>
   </navigation-case>
   
  </navigation-rule>
