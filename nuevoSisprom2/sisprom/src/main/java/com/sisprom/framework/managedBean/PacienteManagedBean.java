@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.primefaces.event.SelectEvent;
 
 import com.sisprom.framework.dominio.Consulta;
+import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.dominio.Paciente;
 import com.sisprom.framework.dominio.Usuario;
 
@@ -30,6 +31,8 @@ public class PacienteManagedBean extends MasterManagedBean {
 	private List<Paciente> listaPacientes = new ArrayList<Paciente>();
 	
 	private Consulta consulta;
+	private HistoriaClinica historiaClinica;
+	
 	private List<Consulta> listaConsulta = new ArrayList<Consulta>();
 	
 	public PacienteManagedBean(){
@@ -44,6 +47,7 @@ public class PacienteManagedBean extends MasterManagedBean {
 		aux.setPacienteId(1);
 		listaPacientes = super.getServices().consultarPaciente(aux);
 		paciente = listaPacientes.get(0);
+		consulta = super.getServices().ultimaConsultaPaciente(aux);
 	}
 	public String nuevo() {
 		try {
@@ -141,6 +145,14 @@ public class PacienteManagedBean extends MasterManagedBean {
 
 	public void setListaConsulta(List<Consulta> listaConsulta) {
 		this.listaConsulta = listaConsulta;
+	}
+
+	public HistoriaClinica getHistoriaClinica() {
+		return historiaClinica;
+	}
+
+	public void setHistoriaClinica(HistoriaClinica historiaClinica) {
+		this.historiaClinica = historiaClinica;
 	}
 	
 	

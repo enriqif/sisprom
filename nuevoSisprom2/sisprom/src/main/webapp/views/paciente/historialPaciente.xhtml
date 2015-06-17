@@ -35,23 +35,23 @@
 
 
 			<h:form id="search_content">
-			<p:panel>
-			<f:facet name="header">
-					<h:outputText value="Consultas"></h:outputText>
-				</f:facet>
-				
-				<h:panelGrid style="margin-top:20px">
-<f:facet name="header">
-					<p:row>
-						<p:column colspan="2">Paciente: #{pacienteManagedBean.paciente.pacienteNombre}  #{pacienteManagedBean.paciente.pacienteApellido}</p:column>
-						
-					</p:row>
-</f:facet>
-					<p:row>
-					<h:commandButton class="style_button"
-						action="#{pacienteManagedBean.cargar}" value="Cargar" />
+				<p:panel>
+					<f:facet name="header">
+						<h:outputText value="Consultas"></h:outputText>
+					</f:facet>
+
+					<h:panelGrid style="margin-top:20px">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="1">Paciente: #{pacienteManagedBean.paciente.pacienteNombre}  #{pacienteManagedBean.paciente.pacienteApellido}</p:column>
+							</p:row>
+							
+						</f:facet>
+						<p:row>
+							<h:commandButton class="style_button"
+								action="#{pacienteManagedBean.cargar}" value="Cargar" />
 						</p:row>
-				</h:panelGrid>
+					</h:panelGrid>
 				</p:panel>
 			</h:form>
 			<p:panel>
@@ -64,47 +64,31 @@
 					<p:panelGrid style="margin-top:20px">
 						<f:facet name="header">
 							<p:row>
-								<p:column colspan="10">Consultas</p:column>
-							</p:row>
-							<p:row>
-								<p:column colspan="2">Ultima Consulta</p:column>
-								<p:column colspan="2">Consultas</p:column>
+								<p:column colspan="2">Ultima consulta</p:column>
 							</p:row>
 
 						</f:facet>
+
+						<p:row>
+							<p:column>Descripcion</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaDescripcion}</p:column>
+						</p:row>
 						<p:row>
 
 							<p:column>Fecha de Consulta</p:column>
-							<p:column>2</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaFecha}</p:column>
 
-							<p:column rowspan="2">Seattle</p:column>
-							<p:column rowspan="2">2</p:column>
 						</p:row>
-
 						<p:row>
 
-							<p:column>Descripcion</p:column>
-							<p:column>2</p:column>
+							<p:column>Fisico</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaExamenFisico}</p:column>
 						</p:row>
-				
-				<f:facet name="header">
-									<p:row>
-										<p:column> Consulta #{col.consultaId} - #{col.consultaFecha}</p:column>
-										
-									</p:row>
+						<p:row>
 
-								</f:facet>
-
-								<h:panelGrid columns="2" border="3" styleClass="styleGrid">
-									<h:outputText value="Descripcion:" style="font-weight: bold"></h:outputText>
-									<h:outputText value="#{col.consultaDescripcion}" />
-									<h:outputText value="Fisico: " style="font-weight: bold" />
-									<h:outputText value="#{col.consultaExamenFisico}" />
-									<h:outputText value="Evolucion:" style="font-weight: bold"></h:outputText>
-									<h:outputText value="#{col.consultaEvolucion}" />
-
-
-								</h:panelGrid>
+							<p:column>Evolucion</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaEvolucion}</p:column>
+						</p:row>
 
 					</p:panelGrid>
 

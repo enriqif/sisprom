@@ -71,6 +71,9 @@ public class Services {
 	public List<Paciente> consultarPaciente(Paciente paciente){
 		return pacienteDao.find(paciente);
 	}
+	public Consulta ultimaConsultaPaciente(Paciente paciente){
+		return pacienteDao.traerUltimaConsulta(paciente);
+	}
 	
 	// Servicio Turno
 	public void saveTurno(Turno turno){
