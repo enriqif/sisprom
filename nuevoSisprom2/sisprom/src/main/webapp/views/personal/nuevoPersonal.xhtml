@@ -127,15 +127,6 @@
 							</p:inputText>
 							<p:message for="usuarioDomicilioNumero" display="text" />
 
-							<h:outputLabel value="Obra Social" for="usuarioObraSocial" />
-							<p:inputText id="usuarioObraSocial" label="Obra Social"
-								styleClass="input_text"
-								validatorMessage="Formato de Obra Social invalido. Ejemplo: Osecac"
-								value="#{personalManagedBean.usuario.usuarioObraSocial}">
-								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
-							</p:inputText>
-							<p:message for="usuarioObraSocial" display="text" />
-
 							<h:outputLabel value="Edad" for="usuarioEdad" />
 							<p:inputText id="usuarioEdad" label="Edad"
 								styleClass="input_text"

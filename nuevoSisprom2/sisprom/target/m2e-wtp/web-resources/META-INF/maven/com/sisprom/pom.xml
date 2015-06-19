@@ -155,6 +155,17 @@
 			<version>1.6.1</version>
 		</dependency>
 
+	<dependency>
+    	<groupId>org.jboss.spec.javax.el</groupId>
+    	<artifactId>jboss-el-api_2.2_spec</artifactId>
+    	<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.jboss.spec.javax.el</groupId>
+		<artifactId>jboss-el-api_2.2_spec</artifactId>
+		<version>1.0.5.Final</version>
+	</dependency>
+	
 
 	</dependencies>
 

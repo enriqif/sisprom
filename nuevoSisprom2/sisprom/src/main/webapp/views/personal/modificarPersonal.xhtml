@@ -43,108 +43,110 @@
 					<a4j:form>
 						<h:panelGrid columns="3" title="Datos Personales">
 
-							
 							<h:outputLabel value="Nombres" for="usuarioNombre" />
-							<p:inputText id="usuarioNombre" label="Nombre" required="true"
+							<p:inputText id="usuarioNombre" label="Nombre" 
+								validatorMessage="Formato de nombre invalido."
 								styleClass="input_text" requiredMessage="Ingrese su Nombre."
-								validatorMessage="Formato de nombre invalido. Ejemplo: Migule Angel"
-								value="#{personalManagedBean.usuario.usuarioNombre}">
+								value="#{personalManagedBean.usuarioMod.usuarioNombre}">
 								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+								<p:watermark for="usuarioNombre" value="#{personalManagedBean.usuarioSelect.usuarioNombre}"/>
 							</p:inputText>
 							<p:message for="usuarioNombre" display="text" />
 
 							
 							<h:outputLabel value="Apellido" for="usuarioApellido" />
-							<p:inputText id="usuarioApellido" label="usuario" required="true"
+							<p:inputText id="usuarioApellido" label="usuario"
+								validatorMessage="Formato de nombre invalido."
 								styleClass="input_text" requiredMessage="Ingrese su Apellido."
-								validatorMessage="Formato de Apellido invalido. Ejemplo: Perez"
-								value="#{personalManagedBean.usuario.usuarioApellido}">
+								value="#{personalManagedBean.usuarioMod.usuarioApellido}">
 								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+								<p:watermark for="usuarioApellido" value="#{personalManagedBean.usuarioSelect.usuarioApellido}"/>								
 							</p:inputText>
 							<p:message for="usuarioApellido" display="text" />
 
-							<h:outputLabel value="Usuario" for="usuarioUsuario" />
-							<p:inputText id="usuarioUsuario" label="Usuario" required="true"
-								styleClass="input_text"
-								requiredMessage="Ingrese su Usuario. Ejemplo: maPerez"
-								value="#{personalManagedBean.usuario.usuarioUsuario}">
-							</p:inputText>
-							<p:message for="usuarioUsuario" display="text" />
-
-
-							<h:outputLabel value="Contrasenia" for="usuarioContrasenia" />
-							<p:inputText id="usuarioContrasenia" label="Contrasenia"
-								required="true" styleClass="input_text"
-								requiredMessage="Ingrese su Contrasenia. Ejemplo: perez123"
-								value="#{personalManagedBean.usuario.usuarioContrasenia}">
-							</p:inputText>
-							<p:message for="usuarioContrasenia" display="text" />
-
-
-							<h:outputLabel value="DNI" for="usuarioDni" />
-							<p:inputText id="usuarioDni" label="Dni" styleClass="input_text"
-								validatorMessage="Formato de Dni invalido. Ejemplo: 39636183"
-								value="#{personalManagedBean.usuario.usuarioDni}">
+                                         
+                            <h:outputLabel value="Edad" for="usuarioEdad" />
+                            <p:inputText id="usuarioEdad" styleClass="input_text" 
+                            	validatorMessage="Valor incorrecto"
+                            	value ="#{personalManagedBean.usuarioMod.usuarioEdad}">
+                            	<f:validateRegex pattern="[0-9]+" />
+                            	<p:watermark for="usuarioEdad" value ="#{personalManagedBean.usuarioSelect.usuarioEdad}"/>
+                            </p:inputText>
+                            <p:message for="usuarioEdad" display="text" />
+                            
+                            <h:outputLabel value="DNI" for="usuarioDni" />
+							<p:inputText id="usuarioDni" label="Dni" styleClass="input_text" value="#{personalManagedBean.usuarioMod.usuarioDni}">
 								<f:validateRegex pattern="[0-9]+" />
+								<p:watermark for="usuarioDni" value ="#{personalManagedBean.usuarioSelect.usuarioDni}" />
 							</p:inputText>
 							<p:message for="usuarioDni" display="text" />
-
-
+                            
+                            <h:outputText value="Calle" for="usuarioDomicilioCalle" />
+							<p:inputText id="usuarioDomicilioCalle" label="Calle" styleClass="input_text" 
+								value="#{personalManagedBean.usuarioMod.usuarioDomicilioCalle}">
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
+								<p:watermark for="usuarioDomicilioCalle" value ="#{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}" />
+							</p:inputText>
+							<p:message for="usuarioDomicilioCalle" display="text" />
+														
+							<h:outputText value="Numero" for="usuarioDomicilioNumero" />
+							<p:inputText id="usuarioDomicilioNumero" label="Numero"
+								styleClass="input_text"
+								value="#{personalManagedBean.usuarioMod.usuarioDomicilioNumero}">
+								<f:validateRegex pattern="[0-9]+" />
+								<p:watermark for="usuarioDomicilioNumero" value ="#{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}"/>
+							</p:inputText>
+							<p:message for="usuarioDomicilioNumero" display="text" />
+							
+							<h:outputText value="Barrio" for="usuarioDomicilioBarrio" />
+							<p:inputText id="usuarioDomicilioBarrio" label="Barrio"
+								styleClass="input_text"
+								value="#{personalManagedBean.usuarioMod.usuarioDomicilioBarrio}">
+								<f:validateRegex pattern="[A-Za-z0-9]+[\s]*[A-Za-z0-9]+" />
+								<p:watermark for="usuarioDomicilioBarrio" value ="#{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}"/>
+							</p:inputText>
+							<p:message for="usuarioDomicilioBarrio" display="text" />
+							
 							<h:outputLabel value="Telefono" for="usuarioTelefono" />
 							<p:inputText id="usuarioTelefono" label="Telefono"
 								styleClass="input_text"
 								validatorMessage="Formato de Telefono invalido. Ejemplo: 03884335036"
-								value="#{personalManagedBean.usuario.usuarioTelefono}">
+								value="#{personalManagedBean.usuarioMod.usuarioTelefono}">
+								<p:watermark value="#{personalManagedBean.usuarioSelect.usuarioTelefono}" for="usuarioTelefono"/>
 								<f:validateRegex pattern="[0-9]+" />
 							</p:inputText>
 							<p:message for="usuarioTelefono" display="text" />
-
-
-							<h:outputText value="Barrio" for="usuarioDomicilioBarrio" />
-							<p:inputText id="usuarioDomicilioBarrio" label="Barrio"
+							
+							<h:outputLabel value="Usuario" for="usuarioUsuario" />
+							<p:inputText id="usuarioUsuario" label="Usuario" 
 								styleClass="input_text"
-								validatorMessage="Formato de Barrio invalido. Ejemplo: San Pedrito"
-								value="#{personalManagedBean.usuario.usuarioDomicilioBarrio}">
-								<f:validateRegex pattern="[A-Za-z0-9]+[\s]*[A-Za-z0-9]+" />
+								requiredMessage="Ingrese su Usuario. Ejemplo: maPerez"
+								value="#{personalManagedBean.usuarioMod.usuarioUsuario}">
+								<p:watermark value="#{personalManagedBean.usuarioSelect.usuarioUsuario}" for="usuarioUsuario"/>
 							</p:inputText>
-							<p:message for="usuarioDomicilioBarrio" display="text" />
+							<p:message for="usuarioUsuario" display="text" />
 
-							<h:outputText value="Calle" for="usuarioDomicilioCalle" />
-							<p:inputText id="usuarioDomicilioCalle" label="Calle"
-								styleClass="input_text"
-								validatorMessage="Formato de Calle invalido. Ejemplo: Alberdi"
-								value="#{personalManagedBean.usuario.usuarioDomicilioCalle}">
-								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
-							</p:inputText>
-							<p:message for="usuarioDomicilioCalle" display="text" />
 
-							<h:outputText value="Numero" for="usuarioDomicilioNumero" />
-							<p:inputText id="usuarioDomicilioNumero" label="Numero"
-								styleClass="input_text"
-								validatorMessage="Formato de Numero invalido. Ejemplo: 164"
-								value="#{personalManagedBean.usuario.usuarioDomicilioNumero}">
-								<f:validateRegex pattern="[0-9]+" />
-							</p:inputText>
-							<p:message for="usuarioDomicilioNumero" display="text" />
-
-							<h:outputLabel value="Obra Social" for="usuarioObraSocial" />
-							<p:inputText id="usuarioObraSocial" label="Obra Social"
-								styleClass="input_text"
-								validatorMessage="Formato de Obra Social invalido. Ejemplo: Osecac"
-								value="#{personalManagedBean.usuario.usuarioObraSocial}">
-								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+" />
-							</p:inputText>
-							<p:message for="usuarioObraSocial" display="text" />
-
-							<h:outputLabel value="Edad" for="usuarioEdad" />
-							<p:inputText id="usuarioEdad" label="Edad"
-								styleClass="input_text"
-								validatorMessage="Formato de Edad invalido. Ejemplo: 34"
-								value="#{personalManagedBean.usuario.usuarioEdad}">
-								<f:validateRegex pattern="[0-9]+" />
-							</p:inputText>
-							<p:message for="usuarioEdad" display="text" />
-
+							<h:outputLabel value="Contraseña" for="pwd1" />
+							<p:password 
+								id="pwd1" 
+								value="#{personalManagedBean.usuarioMod.usuarioContrasenia}"
+								styleClass="input_text" 
+								match="pwd2" 
+								label="Contraseña">
+								<p:watermark value="**********" for="pwd1"></p:watermark>
+							</p:password>
+							<p:message for="pwd1" display="text" />
+							
+							<h:outputLabel value="Repetir Contraseña" for="pwd2" />
+							<p:password 
+								id="pwd2" 
+								value="#{personalManagedBean.usuarioMod.usuarioContrasenia}"
+								styleClass="input_text" 
+								label="Repetir Contraseña">
+								<p:watermark value="**********" for="pwd2"/>
+							</p:password>
+							<p:message for="pwd2" display="text" />
 
 						</h:panelGrid>
 						<section class="seccionBotones"> <h:commandButton
