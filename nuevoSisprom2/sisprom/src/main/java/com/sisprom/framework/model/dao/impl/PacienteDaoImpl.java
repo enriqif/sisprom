@@ -1,5 +1,7 @@
 package com.sisprom.framework.model.dao.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -7,6 +9,8 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.sisprom.framework.dominio.Consulta;
+import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.dominio.Paciente;
 import com.sisprom.framework.dominio.Permiso;
 import com.sisprom.framework.model.dao.PacienteDao;
@@ -81,6 +85,37 @@ public class PacienteDaoImpl extends HibernateDaoSupport  implements PacienteDao
 			   criteria.add(Restrictions.eq("pacienteId",id));
 		 
 		   return criteria.list();
+	}
+
+	@Override
+	public Consulta traerUltimaConsulta(Paciente paciente) {
+		
+		Boolean primeraFecha = true;
+		Consulta extraConsulta = new Consulta();
+		HistoriaClinica extraHist = new HistoriaClinica();
+		Criteria criteria = getSession().createCriteria(Consulta.class);		
+		List<Consulta> lista= criteria.list();
+		if(lista.size()!=0){
+			for (int i = 0; i < lista.size(); i++) {
+				extraHist = lista.get(i).getHistoriaClinica();
+				if (extraHist.getPaciente().getPacienteId()==paciente.getPacienteId() ){
+					
+//						if (extraConsulta.getConsultaFecha().before(lista.get(i).getConsultaFecha())){
+//							System.out.println("entro "+ extraConsulta.getConsultaFecha());
+//						}
+					if (primeraFecha){
+					extraConsulta = lista.get(i);
+					primeraFecha= false;
+					}else if (extraConsulta.getConsultaFecha().before(lista.get(i).getConsultaFecha())){
+						extraConsulta = lista.get(i);
+					}
+				}
+			}
+		}
+		
+		
+		
+		return extraConsulta;
 	}	
 	
 

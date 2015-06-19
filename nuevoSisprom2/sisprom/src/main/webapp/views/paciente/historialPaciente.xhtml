@@ -5,45 +5,195 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core">
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="resources/css/styleTable.css"
+		type="text/css" />
 </h:head>
 <body>
 	<ui:composition template="/templates/fatherLayout.xhtml">
+
 		<ui:define name="functions">
 			<div class="subMenu">
 				<h1>
 					<span>Funciones</span>
 				</h1>
 			</div>
-			<div>
-				<h:form>
-					<ul class="sb_menu">
-						<li><h:commandLink value="Nuevo" action="nuevoPaciente" /></li>
-						<li><h:commandLink value="Archivar" action="archivarPaciente" /></li>
-						<li><h:commandLink value="Actualizar" action="actualizarPaciente" /></li>
-						<li><h:commandLink value="Buscar" action="buscarPaciente" /></li>
-						<li><h:commandLink value="Historial" action="historialPaciente" /></li>
-					</ul>
-				</h:form>
-			</div>
+
 		</ui:define>
 		<ui:define name="content">
+			<h:outputStylesheet name="css/styleResize.css" />
+			<h:outputStylesheet name="css/styleGrid.css" />
 			<div class="subMenu">
 				<h1>
-					<p><span>Pacientes</span> -> <span>Historial Medico</span></p>
+					<span>Historial Clinico</span>
 				</h1>
 			</div>
-			<div class="form-nuevo">
-				<a4j:form>
-					<h:outputLabel value="historial Medico" />
-					<h:inputText value="#{js.texto2}"/>
-    			    
-				</a4j:form>
-			</div>
+
+
+			<h:form id="search_content">
+				<p:panel>
+					<f:facet name="header">
+						<h:outputText value="Consultas"></h:outputText>
+					</f:facet>
+
+					<h:panelGrid style="margin-top:20px">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="1">Paciente: #{pacienteManagedBean.paciente.pacienteNombre}  #{pacienteManagedBean.paciente.pacienteApellido}</p:column>
+							</p:row>
+							
+						</f:facet>
+						<p:row>
+							<h:commandButton class="style_button"
+								action="#{pacienteManagedBean.cargar}" value="Cargar" />
+						</p:row>
+					</h:panelGrid>
+				</p:panel>
+			</h:form>
+			<p:panel>
+
+				<f:facet name="header">
+					<h:outputText value="Consultas"></h:outputText>
+				</f:facet>
+				<p:panelGrid columns="2">
+
+					<p:panelGrid style="margin-top:20px">
+						<f:facet name="header">
+							<p:row>
+								<p:column colspan="2">Ultima consulta</p:column>
+							</p:row>
+
+						</f:facet>
+
+						<p:row>
+							<p:column>Descripcion</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaDescripcion}</p:column>
+						</p:row>
+						<p:row>
+
+							<p:column>Fecha de Consulta</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaFecha}</p:column>
+
+						</p:row>
+						<p:row>
+
+							<p:column>Fisico</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaExamenFisico}</p:column>
+						</p:row>
+						<p:row>
+
+							<p:column>Evolucion</p:column>
+							<p:column>#{pacienteManagedBean.consulta.consultaEvolucion}</p:column>
+						</p:row>
+
+					</p:panelGrid>
+
+					<p:scrollPanel mode="native" style="height: 400px">
+						<p:dataGrid value="#{pacienteManagedBean.listaConsulta}" var="col"
+							columns="1" elements="9">
+							<p:panel bodyClass="pbody">
+
+								<f:facet name="header">
+									<p:row>
+										<p:column> Consulta #{col.consultaId} - #{col.consultaFecha}</p:column>
+									</p:row>
+
+								</f:facet>
+
+								<h:panelGrid columns="2" border="3" styleClass="styleGrid">
+									<h:outputText value="Descripcion:" style="font-weight: bold"></h:outputText>
+									<h:outputText value="#{col.consultaDescripcion}" />
+									<h:outputText value="Fisico: " style="font-weight: bold" />
+									<h:outputText value="#{col.consultaExamenFisico}" />
+									<h:outputText value="Evolucion:" style="font-weight: bold"></h:outputText>
+									<h:outputText value="#{col.consultaEvolucion}" />
+
+
+								</h:panelGrid>
+							</p:panel>
+
+							<f:facet name="footer">
+							</f:facet>
+
+						</p:dataGrid>
+					</p:scrollPanel>
+				</p:panelGrid>
+			</p:panel>
+
+
+			<h1>
+				<span>Datos Consulta</span>
+			</h1>
+			<h:form>
+
+				<p:dataTable id="consutlas" styleClass="styleResize"
+					value="#{pacienteManagedBean.listaConsulta}" var="consulta"
+					rows="20" paginator="true" border="1">
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Id" />
+						</f:facet>
+						<h:outputText value="#{consulta.consultaId}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Nombre Paciente" />
+						</f:facet>
+						<h:outputText
+							value="#{consulta.historiaClinica.paciente.pacienteNombre}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Consulta Fecha" />
+						</f:facet>
+						<h:outputText value="#{consulta.consultaFecha}" />
+					</p:column>
+					<p:column style="width:50%">
+						<f:facet name="header">
+							<h:outputText value="Fisico" />
+						</f:facet>
+						<h:outputText value="#{consulta.consultaExamenFisico}" />
+					</p:column>
+				</p:dataTable>
+
+			</h:form>
+
+			<h:form>
+
+				<h1>
+					<span>Datos Consultas</span>
+				</h1>
+				<p:dataTable id="consutlasx" styleClass="styleResize"
+					value="#{pacienteManagedBean.listaConsulta}" var="consultax"
+					rows="20" paginator="true">
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Id" />
+						</f:facet>
+						<h:outputText value="#{consultax.consultaId}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Fisico" />
+						</f:facet>
+						<h:outputText value="#{consultax.consultaExamenFisico}" />
+					</p:column>
+
+
+				</p:dataTable>
+			</h:form>
+			<h1>
+				<span>Datos Antecedentes</span>
+			</h1>
+
 		</ui:define>
+
+
 	</ui:composition>
 </body>
 </html>
