@@ -9,12 +9,13 @@
 	<div id="menu_nav">
 		<h:form>
 			<ul class="nav">
-				<li><h:commandLink value="Paciente" action="paciente" /></li>
-				<li><h:commandLink value="Medicos" action="medico" /></li>
+				<li><h:commandLink value="Paciente" rendered="#{loginManagedBean.num eq 1}" action="paciente" /></li>
+				<li><h:commandLink value="Medicos" rendered="#{loginManagedBean.usuario.usuarioId eq 1}"  action="medico"/></li>
 				<li><h:commandLink value="Turnos" action="turno" /></li>
-				<li><h:commandLink value="Tratamientos" action="tratamiento" /></li>
-				<li><h:commandLink value="Informes" action="informe" /></li>
-				<li><h:commandLink value="Personal" action="personal" /></li>
+				<li><h:commandLink value="Tratamientos" rendered="#{loginManagedBean.usuario.usuarioId eq 1}" action="tratamiento" /></li>
+				<li><h:commandLink value="Informes" rendered="#{loginManagedBean.usuario.usuarioId eq 1}" action="informe" /></li>
+				<li><h:commandLink value="Personal" rendered="#{loginManagedBean.usuario.usuarioId eq 1}" action="personal" /></li>
+				<li><h:commandLink value="Logout" action="#{loginManagedBean.logout}" /></li>
 			</ul>
 		</h:form>
 

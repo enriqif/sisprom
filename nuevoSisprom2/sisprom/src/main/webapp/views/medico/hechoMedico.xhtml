@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</h:head>
+<body>
+	<ui:composition template="/templates/fatherLayout.xhtml">
+		<ui:define name="functions">
+			<div class="subMenu">
+				<h1>
+					<span>Funciones</span>
+				</h1>
+			</div>
+			<div>
+				<h:form>
+					<ul class="sb_menu">
+						<li><h:commandLink value="Buscar" action="buscarMedico" /></li>
+						<li><h:commandLink value="Volver al Perfil"	action="homeMedico" /></li>
+					</ul>
+				</h:form>
+			</div>
+		</ui:define>
+		<ui:define name="content">
+			<div class="subMenu">
+				<h1>
+					<span>Datos Personales</span>
+				</h1>
+			</div>
+			<div class="form-nuevo">
+				<h:panelGrid 
+							class="form-nuevo" 
+							columns="2" 
+							cellpadding="5"
+							title="Datos Personales">
+							
+								<f:facet name="header">
+									<p>El perfil ha sido mofidicado correctamente</p>
+								</f:facet>
+								<h:outputLabel class="out_put_text" value="Nombre: " for="nombre" />
+								<h:outputLabel class="out_put_text" id ="nombre" value="#{medicoManagedBean.medicoSelect.usuarioNombre}" />	
+						
+								<h:outputLabel class="out_put_text" value="Apellidos:" for="surname" />
+								<h:outputLabel class="out_put_text" id="surname" value="#{medicoManagedBean.medicoSelect.usuarioApellido}" />
+								
+								<h:outputLabel class="out_put_text" value="DNI:" for="dni" />
+								<h:outputLabel class="out_put_text" id="dni" value="#{medicoManagedBean.medicoSelect.usuarioDni}" />								
+													        
+								<h:outputLabel class="out_put_text" value="Telefono:" for="telefono" />
+								<h:outputLabel class="out_put_text" id="telefono" value="#{medicoManagedBean.medicoSelect.usuarioTelefono}" />					
+
+								<h:outputLabel class="out_put_text" value="Calle" for="calle" />
+								<h:outputLabel class="out_put_text" id="calle" value="#{medicoManagedBean.medicoSelect.usuarioDomicilioCalle}"/>
+																
+								<h:outputLabel class="out_put_text" value="Numero" for="numero" />
+								<h:outputLabel class="out_put_text" id="numero" value="#{medicoManagedBean.medicoSelect.usuarioDomicilioNumero}"/>
+																
+								<h:outputText class="out_put_text" value="Barrio" for="barrio" />
+								<h:outputText class="out_put_text" id="barrio" value="#{medicoManagedBean.medicoSelect.usuarioDomicilioBarrio}"/>			
+													
+						</h:panelGrid>
+			</div>
+		</ui:define>
+	</ui:composition>
+
+</body>
+</html>

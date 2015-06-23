@@ -84,21 +84,13 @@
 						<f:setPropertyActionListener
 							target="#{personalManagedBean.usuarioSelect}" value="#{user}" />
 
-						<p:dialog header="Info Personal" widgetVar="carDialog"
-<<<<<<< HEAD
-							resizable="false" id="carDig" modal="true" showEffect="fade"
-							hideEffect="fade">
-
-							<h:panelGrid id="display" columns="2" cellpadding="4">
-=======
-							resizable="false" id="carDig" modal="true" showEffect="explode"
+						<p:dialog header="Info Personal" widgetVar="carDialog" resizable="false" id="carDig" modal="true" showEffect="explode"
 							hideEffect="explode">
 
 							<h:panelGrid id="display" columns="2" cellpadding="4">
 								<h:outputText value="Id:" />
 								<h:outputText
 									value="#{personalManagedBean.usuarioSelect.usuarioId}" />
->>>>>>> 90b2a4b82d3c83e3a21c2acf80fb04744a1aa9ca
 								<h:outputText value="Apellido:" />
 								<h:outputText
 									value="#{personalManagedBean.usuarioSelect.usuarioApellido}" />
@@ -126,15 +118,7 @@
 								<h:outputText value="Domicilio:" />
 								<h:outputText
 									value="Barrio: #{personalManagedBean.usuarioSelect.usuarioDomicilioBarrio}, Nº #{personalManagedBean.usuarioSelect.usuarioDomicilioNumero}, Calle: #{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}" />
-<<<<<<< HEAD
-								<f:facet name="footer">
-									<p:commandButton id="buttonDelete" value="Borrar">
-									</p:commandButton>
-									<p:commandButton id="buttonUpdate" value="Modificar">
-									</p:commandButton>
-								</f:facet>
-=======
-								
+		
 								<f:facet name="footer">
 									<p:commandButton id="buttonDelete" value="Borrar"
 										action="#{personalManagedBean.archivar}" update="carDig"
@@ -147,7 +131,6 @@
 									</p:commandButton>
 								</f:facet>
 
->>>>>>> 90b2a4b82d3c83e3a21c2acf80fb04744a1aa9ca
 							</h:panelGrid>
 
 						</p:dialog>

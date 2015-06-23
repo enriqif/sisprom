@@ -41,30 +41,23 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	 * 
 	 */
 
-	//	public static String VALIDATE_USER="home";
-//	public static String VALIDATE_USER_ERROR = "error";
 	final static Logger logger = Logger.getLogger(LoginManagedBean.class);
 	
 	private Usuario usuario = new Usuario();
-	public Usuario usuarioSelect  = new Usuario();
-	public String nombre;
-	private List<Usuario> lista = new ArrayList<Usuario>();
-	
-//	public String usertmp = "eflores";
-//	public String passtmp = "naruto";
-//	
+	public Usuario medicoSelect  = new Usuario();
+	private List<Usuario> listaMedico = new ArrayList<Usuario>();
 	private String mensajeError = "";
 	
 	private Usuario medico = new Usuario();
-	private Usuario u = new Usuario();
+	public Usuario usu = new Usuario();
 	private Permiso permiso = new Permiso();
 	
 	private String destination="D:\\tmp\\";
 	
+
 	public MedicoManagedBean(){
-		usuario = new Usuario();
-		u = new Usuario();
-		setLista(super.getServices().getAllUsuario());
+		setMedicoSelect(super.getServices().consultarMedico(LoginManagedBean.usuario).get(0));
+		setListaMedico(super.getServices().getAllUsuario());
 	}
 	
 	 
@@ -100,18 +93,6 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	public void setPermiso(Permiso permiso) {
 		this.permiso = permiso;
 	} 
-
-//	public String validateUser(){
-//		if (usertmp.equals(medico) && passtmp.equals(contrasenia)){
-//			System.out.println("salida: "+VALIDATE_USER);
-//			return VALIDATE_USER;
-//		}else{
-//			System.out.println("error: "+VALIDATE_USER_ERROR);
-//			mensajeError = "Usuario o contraseña incorrecto";
-//			return VALIDATE_USER_ERROR;
-//		}
-//	}
-	
 
 	public String getMensajeError() {
 		return mensajeError;
@@ -172,45 +153,62 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	
 	    public String actualizar(){
 			try {				
-				u.setUsuarioModificacion("ahora");
-				usuario.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
-//				super.getServices().saveUsuario(u);
+				medicoSelect.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
+				if (usu.getUsuarioNombre()!=""){medicoSelect.setUsuarioNombre(usu.getUsuarioNombre());}
+				if (usu.getUsuarioApellido()!=""){medicoSelect.setUsuarioApellido(usu.getUsuarioApellido());}
+				if (usu.getUsuarioDni()!=""){medicoSelect.setUsuarioDni(usu.getUsuarioDni());}
+				if (usu.getUsuarioTelefono()!=""){medicoSelect.setUsuarioTelefono(usu.getUsuarioTelefono());}
+				if (usu.getUsuarioDomicilioCalle()!=""){medicoSelect.setUsuarioDomicilioCalle(usu.getUsuarioDomicilioCalle());}
+				if (usu.getUsuarioDomicilioNumero()!=""){medicoSelect.setUsuarioDomicilioNumero(usu.getUsuarioDomicilioNumero());}
+				if (usu.getUsuarioDomicilioBarrio()!=""){medicoSelect.setUsuarioDomicilioBarrio(usu.getUsuarioDomicilioBarrio());}
+				super.getServices().updateUsuario(medicoSelect);
 				return "hechoMedico";			
 			} catch (Exception e) {
 				//TODO
 				//Se debe definir la vista cuando se produce un error
-				return "errorGuardado";
+				return "error";
 			}
-		}
+		}  
+	
 	    public String buscar(){
-			lista.clear();
-			setLista(super.getServices().consultarUsuario(usuario));
+			listaMedico.clear();
+			setListaMedico(super.getServices().consultarUsuario(usuario));
 			return limpiar();
 		}
 	    public String limpiar() {
 			setUsuario(new Usuario());
 			return "confirmar";
 		}
-	    public Usuario getU() {
-			return u;
+	  
+	    
+	    public Usuario getUsu() {
+			return usu;
 		}
 
-		public void setU(Usuario usuario) {
-			this.u = usuario;
+
+		public void setUsu(Usuario usu) {
+			this.usu = usu;
 		}
-	    
-	    public Usuario getUsuario() {
+
+
+		public Usuario getUsuario() {
 			return usuario;
 		}
 
 		public void setUsuario(Usuario usuario) {
 			this.usuario = usuario;
 		}
-	    public List<Usuario> getLista() {
-			return lista;
+	    public List<Usuario> getListaMedico() {
+			return listaMedico;
 		}
-		public void setLista(List<Usuario> lista) {
-			this.lista = lista;
+		public void setListaMedico(List<Usuario> lista) {
+			this.listaMedico = lista;
 		}
-		
+		public Usuario getMedicoSelect() {
+			return medicoSelect;
+		}
+
+		public void setMedicoSelect(Usuario medicoSelect) {
+			this.medicoSelect = medicoSelect;
+		}
 }

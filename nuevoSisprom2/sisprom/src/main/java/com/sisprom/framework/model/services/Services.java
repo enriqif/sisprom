@@ -254,6 +254,9 @@ public class Services{
 	public List<Usuario> consultarUsuario(Usuario usuario){
 		return usuarioDao.find(usuario);
 	}
+	public List<Usuario> consultarMedico(Usuario usuario){
+		return usuarioDao.findMedico(usuario);
+	}
 	public List<Usuario> consultarPersonal(Usuario usuario){
 		return usuarioDao.findPersonal(usuario);
 	}
