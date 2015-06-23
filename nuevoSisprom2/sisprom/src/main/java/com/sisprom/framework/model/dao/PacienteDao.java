@@ -20,4 +20,6 @@ public interface PacienteDao {
 	List<Paciente> findById(Integer id);
 	
 	Consulta traerUltimaConsulta (Paciente paciente);
+	List<Consulta> traerListaConsultaPaciente(Paciente paciente);
+	
 }

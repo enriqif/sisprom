@@ -45,7 +45,7 @@
 							<p:row>
 								<p:column colspan="1">Paciente: #{pacienteManagedBean.paciente.pacienteNombre}  #{pacienteManagedBean.paciente.pacienteApellido}</p:column>
 							</p:row>
-							
+
 						</f:facet>
 						<p:row>
 							<h:commandButton class="style_button"
@@ -126,70 +126,188 @@
 
 
 			<h1>
-				<span>Datos Consulta</span>
-			</h1>
-			<h:form>
-
-				<p:dataTable id="consutlas" styleClass="styleResize"
-					value="#{pacienteManagedBean.listaConsulta}" var="consulta"
-					rows="20" paginator="true" border="1">
-
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Id" />
-						</f:facet>
-						<h:outputText value="#{consulta.consultaId}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Nombre Paciente" />
-						</f:facet>
-						<h:outputText
-							value="#{consulta.historiaClinica.paciente.pacienteNombre}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Consulta Fecha" />
-						</f:facet>
-						<h:outputText value="#{consulta.consultaFecha}" />
-					</p:column>
-					<p:column style="width:50%">
-						<f:facet name="header">
-							<h:outputText value="Fisico" />
-						</f:facet>
-						<h:outputText value="#{consulta.consultaExamenFisico}" />
-					</p:column>
-				</p:dataTable>
-
-			</h:form>
-
-			<h:form>
-
-				<h1>
-					<span>Datos Consultas</span>
-				</h1>
-				<p:dataTable id="consutlasx" styleClass="styleResize"
-					value="#{pacienteManagedBean.listaConsulta}" var="consultax"
-					rows="20" paginator="true">
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Id" />
-						</f:facet>
-						<h:outputText value="#{consultax.consultaId}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Fisico" />
-						</f:facet>
-						<h:outputText value="#{consultax.consultaExamenFisico}" />
-					</p:column>
-
-
-				</p:dataTable>
-			</h:form>
-			<h1>
 				<span>Datos Antecedentes</span>
 			</h1>
+
+
+			<p:panelGrid style="margin-top:20px">
+
+				<f:facet name="header">
+					<p:row>
+						<p:column colspan="2">Antecedente General</p:column>
+						<p:column colspan="2">Antecedente General</p:column>
+						<p:column colspan="2">Antecedente Patologico</p:column>
+					</p:row>
+				</f:facet>
+
+				<p:row>
+					<p:column>Personal al nacer</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Talla</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Nombre</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Parto normal</p:column>
+					<p:column>1</p:column>
+
+					<p:column>CCEFALIC</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Descripcion</p:column>
+					<p:column>1</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>Parto distocico</p:column>
+					<p:column>1</p:column>
+
+					<p:column>SCOREDEAPGAR</p:column>
+					<p:column>1</p:column>
+
+
+				</p:row>
+
+				<p:row>
+					<p:column>Parto Cersarian</p:column>
+					<p:column>1</p:column>
+
+					<p:column>SocioEconomico</p:column>
+					<p:column>1</p:column>
+					<p:column>Nombre</p:column>
+					<p:column>1</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>Complicaciones</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Diabetes</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Descripcion</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Asma</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Tbc</p:column>
+					<p:column>1</p:column>
+
+
+				</p:row>
+				<p:row>
+					<p:column>Hipertension</p:column>
+					<p:column>1</p:column>
+
+					<p:column>del Padre</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Nombre</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>de la madre</p:column>
+					<p:column>1</p:column>
+
+					<p:column>hijos</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Descripcion</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>hermanos</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Reaccion adversa</p:column>
+					<p:column>1</p:column>
+
+
+				</p:row>
+				<p:row>
+					<p:column>Tabaco</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Adiccion</p:column>
+					<p:column>1</p:column>
+					<p:column>Nombre</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Operacion anterior</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Tipo operacion</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Descripcion</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Traumatismo</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Localizacion</p:column>
+					<p:column>1</p:column>
+
+				</p:row>
+				<p:row>
+					<p:column>Peso</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Gral Talla</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Nombre</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Tensio arterial</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Piel y faneras</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Descripcion</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Vision</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Audicion</p:column>
+					<p:column>1</p:column>
+
+
+				</p:row>
+				<p:row>
+					<p:column>Odontologia</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Obesidad</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Nombre</p:column>
+					<p:column>1</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Peso normal</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Peso bajo</p:column>
+					<p:column>1</p:column>
+
+					<p:column>Descripcion</p:column>
+					<p:column>1</p:column>
+				</p:row>
+
+			</p:panelGrid>
+
 
 		</ui:define>
 
