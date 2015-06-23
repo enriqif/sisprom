@@ -7,6 +7,7 @@ import org.hibernate.criterion.Order;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.sisprom.framework.dominio.AntecedentePerPatologico;
+import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.model.dao.AntecedentePerPatologicoDao;
 
 public class AntecedentePerPatologicoDaoImpl extends HibernateDaoSupport implements AntecedentePerPatologicoDao{
@@ -39,6 +40,13 @@ public class AntecedentePerPatologicoDaoImpl extends HibernateDaoSupport impleme
 	@Override
 	public List<AntecedentePerPatologico> find(
 			AntecedentePerPatologico antecedentePerPatologico) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AntecedentePerPatologico> findByHistoriaClinica(
+			HistoriaClinica historiaClinica) {
 		// TODO Auto-generated method stub
 		return null;
 	}

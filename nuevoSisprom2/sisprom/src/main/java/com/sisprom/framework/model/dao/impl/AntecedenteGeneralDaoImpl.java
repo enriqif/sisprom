@@ -7,6 +7,7 @@ import org.hibernate.criterion.Order;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.sisprom.framework.dominio.AntecedenteGeneral;
+import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.model.dao.AntecedenteGeneralDao;
 
 public class AntecedenteGeneralDaoImpl extends HibernateDaoSupport implements AntecedenteGeneralDao{
@@ -41,6 +42,17 @@ public class AntecedenteGeneralDaoImpl extends HibernateDaoSupport implements An
 			AntecedenteGeneral antecedenteGeneral) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<AntecedenteGeneral> findByHistoriaClinica(HistoriaClinica historiaClinica) {
+		
+		Criteria criteria= getSession().createCriteria(AntecedenteGeneral.class);
+		List<AntecedenteGeneral> lista = criteria.list();
+		Integer idHistoriaClinica= historiaClinica.getHistoriaClinicaId();
+		
+		
+		return lista;
 	}
 
 }

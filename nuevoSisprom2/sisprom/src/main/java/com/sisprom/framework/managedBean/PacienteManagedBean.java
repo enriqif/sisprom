@@ -12,6 +12,8 @@ import javax.faces.bean.SessionScoped;
 import org.apache.log4j.Logger;
 import org.primefaces.event.SelectEvent;
 
+import com.sisprom.framework.dominio.Consulta;
+import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.dominio.Paciente;
 import com.sisprom.framework.dominio.Usuario;
 
@@ -28,11 +30,30 @@ public class PacienteManagedBean extends MasterManagedBean {
 	private Paciente paciente;
 	private List<Paciente> listaPacientes = new ArrayList<Paciente>();
 	
+	private Consulta consulta;
+	private HistoriaClinica historiaClinica;
+	
+	private List<Consulta> listaConsulta = new ArrayList<Consulta>();
+	private List<Consulta> listaConsultax = new ArrayList<Consulta>();
+	
 	public PacienteManagedBean(){
 		paciente = new Paciente();
 		setListaPacientes(super.getServices().getAllPaciente());
+		consulta =new Consulta();
+		setListaConsulta(super.getServices().getAllConsulta());
+		setListaConsultax(super.getServices().getAllConsulta());
+
 	}
 
+	public void cargar(){
+		
+		Paciente aux = new Paciente();
+		aux.setPacienteId(1);
+		listaPacientes = super.getServices().consultarPaciente(aux);
+		listaConsulta = super.getServices().listaConsultaPaciente(aux);
+		paciente = listaPacientes.get(0);
+		consulta = super.getServices().ultimaConsultaPaciente(aux);
+	}
 	public String nuevo() {
 		try {
 
@@ -113,6 +134,38 @@ public class PacienteManagedBean extends MasterManagedBean {
 
 	public void setListaPacientes(List<Paciente> listaPacientes) {
 		this.listaPacientes = listaPacientes;
+	}
+
+	public Consulta getConsulta() {
+		return consulta;
+	}
+
+	public void setConsulta(Consulta consulta) {
+		this.consulta = consulta;
+	}
+
+	public List<Consulta> getListaConsulta() {
+		return listaConsulta;
+	}
+
+	public void setListaConsulta(List<Consulta> listaConsulta) {
+		this.listaConsulta = listaConsulta;
+	}
+
+	public HistoriaClinica getHistoriaClinica() {
+		return historiaClinica;
+	}
+
+	public void setHistoriaClinica(HistoriaClinica historiaClinica) {
+		this.historiaClinica = historiaClinica;
+	}
+
+	public List<Consulta> getListaConsultax() {
+		return listaConsultax;
+	}
+
+	public void setListaConsultax(List<Consulta> listaConsultax) {
+		this.listaConsultax = listaConsultax;
 	}
 	
 	

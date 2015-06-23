@@ -1,0 +1,15 @@
+
+
+h1 {
+  color: #000000;
+}
+
+
+.ui-datatable {
+    display: table;
+}
+
+.ui-datatable table {
+    table-layout: auto ;
+    
+}

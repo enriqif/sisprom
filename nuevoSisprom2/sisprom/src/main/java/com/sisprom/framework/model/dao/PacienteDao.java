@@ -2,6 +2,7 @@ package com.sisprom.framework.model.dao;
 
 import java.util.List;
 
+import com.sisprom.framework.dominio.Consulta;
 import com.sisprom.framework.dominio.Paciente;
 
 public interface PacienteDao {
@@ -17,4 +18,8 @@ public interface PacienteDao {
 	List<Paciente>getAll();
 	List<Paciente>find(Paciente paciente);
 	List<Paciente> findById(Integer id);
+	
+	Consulta traerUltimaConsulta (Paciente paciente);
+	List<Consulta> traerListaConsultaPaciente(Paciente paciente);
+	
 }

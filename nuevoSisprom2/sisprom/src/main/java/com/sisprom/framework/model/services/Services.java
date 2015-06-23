@@ -75,6 +75,12 @@ public class Services{
 	public List<Paciente> consultarPaciente(Paciente paciente){
 		return pacienteDao.find(paciente);
 	}
+	public Consulta ultimaConsultaPaciente(Paciente paciente){
+		return pacienteDao.traerUltimaConsulta(paciente);
+	}
+	public List<Consulta> listaConsultaPaciente(Paciente paciente){
+		return pacienteDao.traerListaConsultaPaciente(paciente);
+	}
 	
 	// Servicio Turno
 	public void saveTurno(Turno turno){
@@ -292,6 +298,9 @@ public class Services{
 	public List<AntecedentePerPatologico> getAllAntecedentePerPatologico(){
 		return antecedentePerPatologicoDao.getAll();
 	}
+	public List<AntecedentePerPatologico> getAntecedentePerPatologicoByHC(HistoriaClinica historiaClinica){
+		return antecedentePerPatologicoDao.findByHistoriaClinica(historiaClinica);
+	}
 	
 	//servicios antecedentes generales
 	
@@ -303,10 +312,12 @@ public class Services{
 	}
 	public void  deleteAntecedenteGeneral (AntecedenteGeneral antecedenteGeneral){
 		antecedenteGeneralDao.delete(antecedenteGeneral);
-	}
-	
+	}	
 	public List<AntecedenteGeneral> getAllAntecedenteGeneral(){
 		return antecedenteGeneralDao.getAll();
+	}
+	public List<AntecedenteGeneral> findByHistoriaClinica(HistoriaClinica historiaClinica){
+		return antecedenteGeneralDao.findByHistoriaClinica(historiaClinica);
 	}
 	
 	// getter and setters

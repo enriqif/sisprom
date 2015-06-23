@@ -1,0 +1,14 @@
+.ui-widget .ui-widget {
+  font-size: 14px;
+  text-align: justify;
+  height:auto;
+
+overflow: auto;
+border: 1px solid #666;
+background-color: #ccc;
+padding-left: 1px;
+padding-right: 1px;  
+}
+.output_tables{
+	text-decoration: blink;
+}

@@ -121,9 +121,8 @@ public class PersonalManagedBean extends MasterManagedBean {
 			
 		Permiso per = new Permiso(3);
 		usuario.setPermiso(per);
-		System.out.println(" entro 3");
 		super.getServices().updateUsuario(usuario);
-		System.out.println(" entro 4");
+		
 		return "homePersonal";
 		} catch (Exception e) {
 			// TODO
