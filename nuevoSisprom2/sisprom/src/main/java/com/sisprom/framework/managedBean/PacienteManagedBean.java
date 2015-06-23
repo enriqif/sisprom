@@ -34,18 +34,23 @@ public class PacienteManagedBean extends MasterManagedBean {
 	private HistoriaClinica historiaClinica;
 	
 	private List<Consulta> listaConsulta = new ArrayList<Consulta>();
+	private List<Consulta> listaConsultax = new ArrayList<Consulta>();
 	
 	public PacienteManagedBean(){
 		paciente = new Paciente();
 		setListaPacientes(super.getServices().getAllPaciente());
 		consulta =new Consulta();
 		setListaConsulta(super.getServices().getAllConsulta());
+		setListaConsultax(super.getServices().getAllConsulta());
+
 	}
 
 	public void cargar(){
+		
 		Paciente aux = new Paciente();
 		aux.setPacienteId(1);
 		listaPacientes = super.getServices().consultarPaciente(aux);
+		listaConsulta = super.getServices().listaConsultaPaciente(aux);
 		paciente = listaPacientes.get(0);
 		consulta = super.getServices().ultimaConsultaPaciente(aux);
 	}
@@ -153,6 +158,14 @@ public class PacienteManagedBean extends MasterManagedBean {
 
 	public void setHistoriaClinica(HistoriaClinica historiaClinica) {
 		this.historiaClinica = historiaClinica;
+	}
+
+	public List<Consulta> getListaConsultax() {
+		return listaConsultax;
+	}
+
+	public void setListaConsultax(List<Consulta> listaConsultax) {
+		this.listaConsultax = listaConsultax;
 	}
 	
 	

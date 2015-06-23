@@ -1,6 +1,7 @@
 package com.sisprom.framework.model.dao.impl;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -100,22 +101,41 @@ public class PacienteDaoImpl extends HibernateDaoSupport  implements PacienteDao
 				extraHist = lista.get(i).getHistoriaClinica();
 				if (extraHist.getPaciente().getPacienteId()==paciente.getPacienteId() ){
 					
-//						if (extraConsulta.getConsultaFecha().before(lista.get(i).getConsultaFecha())){
-//							System.out.println("entro "+ extraConsulta.getConsultaFecha());
-//						}
 					if (primeraFecha){
 					extraConsulta = lista.get(i);
 					primeraFecha= false;
+					
 					}else if (extraConsulta.getConsultaFecha().before(lista.get(i).getConsultaFecha())){
 						extraConsulta = lista.get(i);
 					}
 				}
 			}
-		}
-		
-		
-		
+		}		
 		return extraConsulta;
+	}
+
+	@Override
+	public List<Consulta> traerListaConsultaPaciente(Paciente paciente) {
+
+		Consulta extraConsulta = new Consulta();
+		List <Consulta> listaConsulta = new ArrayList<Consulta>();
+		HistoriaClinica extraHist = new HistoriaClinica();
+		Criteria criteria = getSession().createCriteria(Consulta.class);		
+		List<Consulta> lista= criteria.list();
+		
+		if(lista.size()!=0){
+			for (int i = 0; i < lista.size(); i++) {
+				extraConsulta=lista.get(i);
+				extraHist = extraConsulta.getHistoriaClinica();
+				
+				if (extraHist.getPaciente().getPacienteId()==paciente.getPacienteId() ){
+					listaConsulta.add(extraConsulta);
+					
+					}
+				}
+			}
+		
+		return listaConsulta;
 	}	
 	
 
