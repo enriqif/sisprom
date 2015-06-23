@@ -134,20 +134,27 @@ public class PersonalManagedBean extends MasterManagedBean {
 	
 	public String guardarModificar() {
 		try {
+
 			setUsuarioSelect(super.getServices().consultarPersonal(usuarioSelect).get(0));
 			
+			//atributos que setea por codigo
+			//No son ingresados por el usuario
 			usuarioMod.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
-			
 			SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
 			usuarioMod.setFechaModificacion(formateador.parse(formateador
 					.format(new Date())));
-			
 			usuarioMod.setPermiso(new Permiso(3));
 			usuarioMod.setUsuarioVisible(true);
+			usuarioMod.setUsuarioId(usuarioSelect.getUsuarioId());
+			usuarioMod.setFechaCreacion(usuarioSelect.getFechaCreacion());
 			
+			//campos q no son ingresados por el usuario
+			// pero si estan disponibles para ser editados
 			
-			limpiar();
-			return "homePersonal";		
+			super.getServices().updateUsuario(usuarioMod);
+			setUsuarioMod(usuarioMod);
+			return "guardadoOk";
+			//return "homePersonal";		
 		} catch (Exception e) {
 			// TODO
 			// Se debe definir la vista cuando se produce un error
@@ -175,7 +182,12 @@ public class PersonalManagedBean extends MasterManagedBean {
 		setLista(super.getServices().consultarPersonal(usuario));
 		return limpiar();
 	}
-
+	
+	public String continuar(){
+		logger.info("termino el proceso de actualizacion..");
+		limpiar();
+		return "homePersonal";
+	}
 	
 	
 	// getters and setters

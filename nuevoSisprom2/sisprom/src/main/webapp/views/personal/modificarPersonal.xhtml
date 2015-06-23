@@ -94,7 +94,7 @@
 								styleClass="input_text"
 								value="#{personalManagedBean.usuarioMod.usuarioDomicilioNumero}">
 								<f:validateRegex pattern="[0-9]+" />
-								<p:watermark for="usuarioDomicilioNumero" value ="#{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}"/>
+								<p:watermark for="usuarioDomicilioNumero" value ="#{personalManagedBean.usuarioSelect.usuarioDomicilioNumero}"/>
 							</p:inputText>
 							<p:message for="usuarioDomicilioNumero" display="text" />
 							
@@ -103,7 +103,7 @@
 								styleClass="input_text"
 								value="#{personalManagedBean.usuarioMod.usuarioDomicilioBarrio}">
 								<f:validateRegex pattern="[A-Za-z0-9]+[\s]*[A-Za-z0-9]+" />
-								<p:watermark for="usuarioDomicilioBarrio" value ="#{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}"/>
+								<p:watermark for="usuarioDomicilioBarrio" value ="#{personalManagedBean.usuarioSelect.usuarioDomicilioBarrio}"/>
 							</p:inputText>
 							<p:message for="usuarioDomicilioBarrio" display="text" />
 							

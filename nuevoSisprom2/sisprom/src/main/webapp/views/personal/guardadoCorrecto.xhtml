@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="resources/css/styTable.css" type="text/css" />
+
+</head>
+
+<h:body>
+	<ui:composition template="/templates/fatherLayout.xhtml">
+		<ui:define name="functions">
+			<div class="subMenu">
+				<h1>
+					<span>Funciones</span>
+				</h1>
+			</div>
+			<div>
+				<h:form>
+					<ul class="sb_menu">
+						<li><h:commandLink value="Nuevo" action="Nuevo Personal" /></li>
+
+					</ul>
+				</h:form>
+			</div>
+		</ui:define>
+		<ui:define name="content">
+			<div class="subMenu">
+				<h1>
+					Los datos se guardaron exitosamente
+				</h1>
+			</div>
+
+			<div class="form-nuevo">
+				<h:form>
+
+					<a4j:form>
+						<h:panelGrid columns="2" title="Datos Personales">
+
+							
+							<h:outputLabel value="Nombres" />
+							<h:outputLabel value="#{personalManagedBean.usuarioMod.usuarioNombre}"/>
+							
+							<h:outputLabel value="Apellido" />
+							<h:outputLabel value="#{personalManagedBean.usuarioMod.usuarioApellido}"/>
+							
+							<h:outputLabel value="Usuario" />
+							<h:outputLabel value="#{personalManagedBean.usuarioMod.usuarioUsuario}" />
+							
+							<h:outputLabel value="Contrasenia" />
+							<h:outputLabel value="#{personalManagedBean.usuarioMod.usuarioContrasenia}" />
+							
+							<h:outputLabel value="DNI" />
+							<h:outputLabel value="#{personalManagedBean.usuarioMod.usuarioDni}" />
+								
+							<h:outputLabel value="Telefono"/>
+							<h:outputLabel value="#{personalManagedBean.usuarioMod.usuarioTelefono}"/>
+							
+							<h:outputText value="Barrio"/>
+							<h:outputText value="#{personalManagedBean.usuarioMod.usuarioDomicilioBarrio}"/>
+							
+							<h:outputText value="Calle" />
+							<h:outputText value="#{personalManagedBean.usuarioMod.usuarioDomicilioCalle}"/>
+								
+							<h:outputText value="Numero" />
+							<h:outputText value="#{personalManagedBean.usuarioMod.usuarioDomicilioNumero}"/>
+
+							<h:outputLabel value="Edad" />
+							<h:outputLabel value="#{personalManagedBean.usuarioMod.usuarioEdad}"/>
+							
+						</h:panelGrid>
+						<section class="seccionBotones"> 
+							<h:commandButton action="continuar" value="Continuar" styleClass="style_button"/> 
+						</section>
+					</a4j:form>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

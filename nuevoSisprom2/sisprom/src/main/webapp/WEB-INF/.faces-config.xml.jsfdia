@@ -89,6 +89,14 @@
     NAME="output2" PATH="/views/personal/modificarPersonal.xhtml"
     TARGET="rules:#views#personal#modificarPersonal.xhtml"
     TITLE="moficarPersonal" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="guardadoOk::#views#personal#guardadoCorrecto.xhtml"
+    NAME="output3" PATH="/views/personal/guardadoCorrecto.xhtml"
+    TARGET="rules:#views#personal#guardadoCorrecto.xhtml"
+    TITLE="guardadoOk" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="errorGuardado::#views#error#error.xhtml"
+    NAME="output4" PATH="/views/error/error.xhtml"
+    TARGET="rules:#views#error#error.xhtml" TITLE="errorGuardado" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#nuevoPaciente.xhtml"
@@ -133,4 +141,6 @@
   PATH="/views/personal/homePersonal.xhtml" SHAPE="304,896,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#modificarPersonal.xhtml"
   PATH="/views/personal/modificarPersonal.xhtml" SHAPE="304,832,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#personal#guardadoCorrecto.xhtml"
+  PATH="/views/personal/guardadoCorrecto.xhtml" SHAPE="304,1297,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>
