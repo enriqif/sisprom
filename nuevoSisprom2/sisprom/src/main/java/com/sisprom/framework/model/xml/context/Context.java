@@ -16,7 +16,7 @@ public class Context {
 
 	// public static final ApplicationContext context= new
 	// ClassPathXmlApplicationContext("classpath*:**/SpringContext.xml");
-
+	
 	public static Services getBeanFacade() {
 		return (Services) context.getBean("services");
 	}

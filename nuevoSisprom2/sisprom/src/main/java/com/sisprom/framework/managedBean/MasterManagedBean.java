@@ -29,9 +29,10 @@ import com.sisprom.framework.model.xml.context.Context;
 
 @ManagedBean
 @SessionScoped
-
 public class MasterManagedBean {
-
+	/**
+	 * 
+	 */
 	private Services services = Context.getBeanFacade();
 	public Usuario usu;
 	public String llamada(){

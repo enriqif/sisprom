@@ -23,7 +23,7 @@
 				<h:form>
 					<ul class="sb_menu">
 						<li><h:commandLink value="Modificar Perfil" action="modificarPerfil" /></li>
-						<li><h:commandLink value="Buscar Medico" action="modificarPerfil" /></li>
+						<li><h:commandLink value="Buscar Medico" action="buscarMedico" /></li>
 					</ul>
 				</h:form>
 			</div>
@@ -43,9 +43,9 @@
 									value="../../resources/image/medico.jpg"
 									style="width : 181px; height : 135px;"></h:graphicImage></td>
 							<td><h:outputLabel class="out_put_text" id="username"
-									value="#{loginManagedBean.usuario.usuarioNombre}" /> <h:outputLabel
+									value="#{medicoManagedBean.medicoSelect.usuarioNombre}" /> <h:outputLabel
 									class="out_put_text" id="apellido"  
-									value="#{loginManagedBean.usuario.usuarioApellido}" />
+									value="#{medicoManagedBean.medicoSelect.usuarioApellido}" />
 								<table cellspacing="10">
 									<caption>
 										<h3>Contacto</h3>
@@ -55,7 +55,7 @@
 										<tr>
 											<td><h4>Telefono:</h4></td>
 											<td><h:outputLabel class="out_put_text" id="telefono"
-													value="#{loginManagedBean.usuario.usuarioTelefono}" /></td>
+													value="#{medicoManagedBean.medicoSelect.usuarioTelefono}" /></td>
 										</tr>
 										<tr>
 											<td><h4>Email:</h4></td>
@@ -73,7 +73,7 @@
 					<tr>
 						<td align="center">Especialidad: <h:outputLabel
 								class="out_put_text" id="especialidad"
-								value="#{loginManagedBean.usuario.usuarioEspecialidad}" /></td>
+								value="#{medicoManagedBean.medicoSelect.usuarioEspecialidad}" /></td>
 					</tr>
 				</table>
 				<hr />
@@ -81,7 +81,7 @@
 					<tr>
 						<td align="center">Matricula Numero:<h:outputLabel
 								class="out_put_text" id="matricula"
-								value="#{loginManagedBean.usuario.usuarioMatricula}" /></td>
+								value="#{medicoManagedBean.medicoSelect.usuarioMatricula}" /></td>
 					</tr>
 				</table>
 				<hr />
@@ -95,17 +95,17 @@
 									<tr>
 										<td><h5>Barrio:</h5></td>
 										<td><h:outputLabel class="out_put_text" id="domicilioB"
-												value="#{loginManagedBean.usuario.usuarioDomicilioBarrio}" /></td>
+												value="#{medicoManagedBean.medicoSelect.usuarioDomicilioBarrio}" /></td>
 									</tr>
 									<tr>
 										<td><h5>Calle:</h5></td>
 										<td><h:outputLabel class="out_put_text" id="domicilioC"
-												value="#{loginManagedBean.usuario.usuarioDomicilioCalle}" /></td>
+												value="#{medicoManagedBean.medicoSelect.usuarioDomicilioCalle}" /></td>
 									</tr>
 									<tr>
 										<td><h5>Numero:</h5></td>
 										<td><h:outputLabel class="out_put_text" id="domicilioN"
-												value="#{loginManagedBean.usuario.usuarioDomicilioNumero}" /></td>
+												value="#{medicoManagedBean.medicoSelect.usuarioDomicilioNumero}" /></td>
 									</tr>
 
 								</tbody>

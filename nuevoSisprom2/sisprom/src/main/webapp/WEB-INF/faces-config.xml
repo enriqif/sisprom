@@ -126,4 +126,29 @@
    <to-view-id>/views/paciente/error.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
+ <!-- Reglas para navegacion desde el submenu izquierdo ubicado en la vista
+  "/homeMedico.xhtml" -->
+ <navigation-rule>
+  <from-view-id>/views/medico/*</from-view-id>
+  <navigation-case>
+   <from-outcome>buscarMedico</from-outcome>
+   <to-view-id>/views/medico/buscarMedico.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>modificarPerfil</from-outcome>
+   <to-view-id>/views/medico/modificarPerfil.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>hechoMedico</from-outcome>
+   <to-view-id>/views/medico/hechoMedico.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>error</from-outcome>
+   <to-view-id>/views/error/error.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+  	<from-outcome>confirmar</from-outcome>
+  	<to-view-id>/views/medico/homeMedico.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule> 
 </faces-config>

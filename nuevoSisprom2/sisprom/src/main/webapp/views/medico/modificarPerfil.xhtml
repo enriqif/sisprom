@@ -23,7 +23,6 @@
 			<div>
 				<h:form>
 					<ul class="sb_menu">
-						<li><h:commandLink value="Guardar" action="#{medicoManagedBean.actualizar()}" /></li>
 						<li><h:commandLink value="Volver" action="homeMedico" /></li>
 					</ul>
 				</h:form>
@@ -33,118 +32,98 @@
 			<div class="subMenu">
 				<h1>Modificar Perfil</h1>
 			</div>
-			<div class="form-nuevo">
-				<h:form>	
-					<h:form enctype="multipart/form-data">
+			
+			<div>
+				<h:form class="formulario">
+					<a4j:form>
+						
+						<h:panelGrid class="form-nuevo" columns="3" cellpadding="5"
+							title="Datos Personales">
+							<f:facet name="header">
+								<h2>Datos Personales</h2>
+								<p>Ingrese la informacion correspondiente para modificar el
+									perfil de usuario</p>
+							</f:facet>
 
-						<p:growl id="messages" showDetail="true" />
-						<p:fileUpload value="#{fileUploadView.file}" mode="simple"
-							skinSimple="true" />
-						<p:commandButton value="Submit" ajax="false"
-							actionListener="#{fileUploadView.upload}" disabled="false" />
-					</h:form>
-				</h:form>
+							<h:outputLabel value="Nombres" for="medicoNombre" />
+							<p:inputText id="medicoNombre" label="Nombre"
+								styleClass="input_text" requiredMessage="Ingrese su Nombre."
+								validatorMessage="Formato de nombre invalido. Ejemplo: Miguel Angel"						
+								value="#{medicoManagedBean.usu.usuarioNombre}">
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+[\S]" />
+							<p:watermark for="medicoNombre" value="#{medicoManagedBean.medicoSelect.usuarioNombre}"/>
+							</p:inputText>
+							<p:message for="medicoNombre" display="text" />
+						
+							<h:outputLabel value="Apellido" for="medicoApellido" />
+							<p:inputText id="medicoApellido" label="usuario" styleClass="input_text"
+								requiredMessage="Ingrese su Apellido."
+								validatorMessage="Formato de apellido invalido. Ejemplo: Carrizo"								
+								value="#{medicoManagedBean.usu.usuarioApellido}">
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+[\S]" />
+							<p:watermark for="medicoApellido" value="#{medicoManagedBean.medicoSelect.usuarioApellido}"/>
+							</p:inputText>
+							<p:message for="medicoApellido" display="text" />
 
-				<hr />
-				<table cellspacing="10" width="100%">
-					<tr>
-						<td align="center">Especialidad: <h:outputLabel
-								class="out_put_text" id="especialidad1"
-								value="#{loginManagedBean.usuario.usuarioEspecialidad}" /></td>
-					</tr>
-				</table>
-				<hr />
+																									
+								<h:outputLabel value="DNI" for="medicoDni" />
+							<p:inputText id="medicoDni" label="Dni" styleClass="input_text"
+								validatorMessage="Formato de dni invalido. Ejemplo: 33567444"
+								value="#{medicoManagedBean.usu.usuarioDni}">
+								<f:validateRegex pattern="[1-9]+" />								
+							<p:watermark for="medicoDni" value="#{medicoManagedBean.medicoSelect.usuarioDni}"/>
+							</p:inputText>
+							<p:message for="medicoDni" display="text" />
+														
+								<h:outputLabel value="Telefono" for="medicoTelefono" />
+							<p:inputText id="medicoTelefono" label="Telefono"
+								styleClass="input_text"
+								validatorMessage="Formato de Telefono invalido. Ejemplo: 03884335036"
+								value="#{medicoManagedBean.usu.usuarioTelefono}">
+								<f:validateRegex pattern="[1-9]+" />								
+							<p:watermark for="medicoTelefono" value="#{medicoManagedBean.medicoSelect.usuarioTelefono}"/>
+							</p:inputText>
+							<p:message for="medicoTelefono" display="text" />
+																											
+							<h:outputText value="Calle" for="medicoDomicilioCalle" />
+							<p:inputText id="medicoDomicilioCalle" label="Calle"
+								styleClass="input_text"
+								validatorMessage="Formato de calle invalido. Ejemplo: Las Heras"								
+								value="#{medicoManagedBean.usu.usuarioDomicilioCalle}">
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+[\S]" />
+							<p:watermark for="medicoDomicilioCalle" value="#{medicoManagedBean.medicoSelect.usuarioDomicilioCalle}"/>
+							</p:inputText>
+							<p:message for="medicoDomicilioCalle" display="text" />
 
-				<h:outputLabel class="out_put_text" id="component_form"
-					value="Nombre" for="nombre" />
-
-				<h:inputText class="input_text" id="nombre"
-					value="#{loginManagedBean.usuario.usuarioNombre}"
-					required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="nombre" errorStyle="color:red"
-					infoStyle="color:green" />
-
-				<h:outputLabel class="out_put_text" value="Apellidos" for="surname" />
-				<h:inputText id="surname" class="input_text"
-					value="#{loginManagedBean.usuario.usuarioApellido}"
-					required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="surname" errorStyle="color:red"
-					infoStyle="color:green" />
-
-				<h:outputLabel class="out_put_text" value="Edad" for="edad" />
-				<h:inputText id="edad" class="input_text"
-					value="#{usuarioManagedBean.usuario.usuarioEdad}"
-					required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="edad" errorStyle="color:red" infoStyle="color:green" />
-
-				<h:outputLabel class="out_put_text" value="DNI:" for="dni" />
-				<h:inputText id="dni" class="input_text"
-					value="#{medicoManagedBean.medico.usuarioDni}" required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="dni" errorStyle="color:red" infoStyle="color:green" />
-				
-				<h:outputLabel class="out_put_text" value="Especialidad" for="especialidad" />
-				<h:inputText id="especialidad" class="input_text"
-					value="#{medicoManagedBean.medico.usuarioEspecialidad}" required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="especialidad" errorStyle="color:red" infoStyle="color:green" />
-
-				
-				<h:outputLabel class="out_put_text" value="Telefono" for="telefono" />
-				<h:inputText id="telefono" class="input_text"
-					value="#{medicoManagedBean.medico.usuarioTelefono}"
-					required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="telefono" errorStyle="color:red"
-					infoStyle="color:green" />
-
-
-				<h:outputLabel class="out_put_text" value="Calle" for="calle" />
-				<h:inputText id="calle" class="input_text"
-					value="#{medicoManagedBean.medico.usuarioDomicilioCalle}"
-					required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="calle" errorStyle="color:red"
-					infoStyle="color:green" />
-
-				<h:outputLabel class="out_put_text" value="Numero" for="numero" />
-				<h:inputText id="numero" class="input_text"
-					value="#{medicoManagedBean.medico.usuarioDomicilioNumero}"
-					required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="numero" errorStyle="color:red"
-					infoStyle="color:green" />
-
-				<h:outputText class="out_put_text" value="Barrio" for="barrio" />
-				<h:inputText id="barrio" class="input_text"
-					value="#{medicoManagedBean.medico.usuarioDomicilioBarrio}"
-					required="true">
-					<a4j:support ajaxSingle="true" event="onblur"
-						reRender="outputContainer" />
-				</h:inputText>
-				<h:message for="barrio" errorStyle="color:red"
-					infoStyle="color:green" />
+															
+							<h:outputText value="Numero" for="medicoDomicilioNumero" />
+							<p:inputText id="medicoDomicilioNumero" label="Numero"
+								styleClass="input_text"
+								validatorMessage="Formato de direccion invalido. Ejemplo: 334"
+								value="#{medicoManagedBean.usu.usuarioDomicilioNumero}">
+								<f:validateRegex pattern="[1-9]+" />								
+							<p:watermark for="medicoDomicilioNumero" value="#{medicoManagedBean.medicoSelect.usuarioDomicilioNumero}"/>
+							</p:inputText>
+							<p:message for="medicoDomicilioNumero" display="text" />
 								
+							<h:outputText value="Barrio" for="medicoDomicilioBarrio" />
+							<p:inputText id="medicoDomicilioBarrio" label="Barrio"
+								styleClass="input_text"
+								validatorMessage="Formato de barrio invalido. Ejemplo: San Pedrito"								
+								value="#{medicoManagedBean.usu.usuarioDomicilioBarrio}">
+								<f:validateRegex pattern="[A-Za-z]+[\s]*[A-Za-z]+[\S]" />								
+							</p:inputText>
+							<p:watermark for="medicoDomicilioBarrio" value="#{medicoManagedBean.medicoSelect.usuarioDomicilioBarrio}"/>
+							<p:message for="medicoDomicilioBarrio" display="text" />
+							
+
+						</h:panelGrid>
+						<section> <h:commandButton class="style_button"
+							action="#{medicoManagedBean.actualizar()}" value="Actualizar" /> </section>
+					</a4j:form>
+				</h:form>
 			</div>
+			
 		</ui:define>
 	</ui:composition>
 

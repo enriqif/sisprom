@@ -152,7 +152,6 @@ public class PersonalManagedBean extends MasterManagedBean {
 			// pero si estan disponibles para ser editados
 			
 			super.getServices().updateUsuario(usuarioMod);
-			setUsuarioMod(usuarioMod);
 			return "guardadoOk";
 			//return "homePersonal";		
 		} catch (Exception e) {

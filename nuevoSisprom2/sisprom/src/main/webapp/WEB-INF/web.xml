@@ -6,12 +6,10 @@
 	<display-name>sisprom</display-name>
 
 	<welcome-file-list>
-
-
 <!-- 		<welcome-file>/views/medico/homeMedico.xhtml</welcome-file> -->
-
 <!-- 		<welcome-file>/views/paciente/homePaciente.xhtml</welcome-file> -->
 		<welcome-file>views/usuario/login.xhtml</welcome-file>
+<!-- 		<welcome-file>index.xhtml</welcome-file> -->
 
 	</welcome-file-list>
 

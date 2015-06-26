@@ -70,6 +70,25 @@ public class UsuarioDaoImpl extends HibernateDaoSupport implements UsuarioDao{
 	}
 
 	@Override
+	public List<Usuario> findMedico(Usuario usuario) {
+			
+		Criteria criteria = getSession().createCriteria(Usuario.class);
+		String palabra = usuario.getUsuarioUsuario();
+					
+		   if (palabra!=null && !palabra.isEmpty() ){
+			   if (!palabra.matches("[0-9]*")) {
+				   criteria.add(Restrictions.eq("usuarioVisible",true));
+				   Criterion usu = Restrictions.ilike("usuarioUsuario", "%"+palabra+"%");
+			       Criterion nombre = Restrictions.ilike("usuarioNombre", "%"+palabra+"%");
+			       LogicalExpression orExp = Restrictions.or(usu,nombre);
+			       criteria.add(orExp);
+			        
+				}
+		   }		   
+		   return criteria.list();
+	}
+	
+	@Override
 	public Usuario LoginUser(String usuario, String contrasenia) {
 		Usuario unUsuario=null;
 		Criteria criteria = getSession().createCriteria(Usuario.class);

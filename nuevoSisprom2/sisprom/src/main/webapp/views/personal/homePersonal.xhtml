@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -41,7 +41,6 @@
 			<h2>Busqueda Personal</h2>
 			<h:form id="search_content">
 				<h:panelGrid columns="3" class="search">
-
 					<h:inputText id="usuarioApellido" class="input_text" size="40"
 						value="#{personalManagedBean.usuario.usuarioApellido}" />
 					<p:watermark for="usuarioApellido" value="Ej. Alcantara o 31356973"
@@ -85,8 +84,7 @@
 						<f:setPropertyActionListener
 							target="#{personalManagedBean.usuarioSelect}" value="#{user}" />
 
-						<p:dialog header="Info Personal" widgetVar="carDialog"
-							resizable="false" id="carDig" modal="true" showEffect="explode"
+						<p:dialog header="Info Personal" widgetVar="carDialog" resizable="false" id="carDig" modal="true" showEffect="explode"
 							hideEffect="explode">
 
 							<h:panelGrid id="display" columns="2" cellpadding="4">
@@ -120,7 +118,7 @@
 								<h:outputText value="Domicilio:" />
 								<h:outputText
 									value="Barrio: #{personalManagedBean.usuarioSelect.usuarioDomicilioBarrio}, Nº #{personalManagedBean.usuarioSelect.usuarioDomicilioNumero}, Calle: #{personalManagedBean.usuarioSelect.usuarioDomicilioCalle}" />
-								
+		
 								<f:facet name="footer">
 									<p:commandButton id="buttonDelete" value="Borrar"
 										action="#{personalManagedBean.archivar}" update="carDig"

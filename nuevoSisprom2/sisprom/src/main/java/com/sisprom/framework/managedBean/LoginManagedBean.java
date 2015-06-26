@@ -2,7 +2,7 @@ package com.sisprom.framework.managedBean;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
+import javax.faces.context.FacesContext;
 import org.apache.log4j.Logger;
 
 import com.sisprom.framework.dominio.Usuario;
@@ -13,12 +13,14 @@ public class LoginManagedBean extends MasterManagedBean {
 
 	final static Logger logger = Logger.getLogger(LoginManagedBean.class);
 	static Usuario usuario = new Usuario();
-		
+	public int num;
+	
 	public LoginManagedBean() {
 		// Exists only to defeat instantiation.
 	}
-	
-	/**verifica que el log se haya realizado con exito para enviarlo al home o
+
+	/**
+	 * verifica que el log se haya realizado con exito para enviarlo al home o
 	 * volver a intentarlo
 	 * 
 	 * @return
@@ -27,11 +29,14 @@ public class LoginManagedBean extends MasterManagedBean {
 		String user = usuario.getUsuarioUsuario();
 		String contr = usuario.getUsuarioContrasenia();
 
-		Usuario userIn = super.getServices().getUsuarioDao().LoginUser(user, contr);
-		
-		if ( userIn!= null) {
+		Usuario userIn = super.getServices().getUsuarioDao()
+				.LoginUser(user, contr);
+
+		if (userIn != null) {
 			setUsuario(userIn);
-			logger.info("mensaje: "+ userIn.getUsuarioUsuario());
+			if (userIn.getUsuarioRol().toString()=="Medico") {setNum(1);}
+			else if (userIn.getUsuarioRol().toString()=="Secretaria") {setNum(2);}
+			logger.info("mensaje: " + userIn.getUsuarioUsuario());
 			return "bienvenido";
 		} else {
 			logger.info("error x");
@@ -39,11 +44,11 @@ public class LoginManagedBean extends MasterManagedBean {
 		}
 	}
 
-	// public String salir() {
-	//TODO
-	// return "loggin";
-	// }
-
+	public String logout() {
+		FacesContext.getCurrentInstance().getExternalContext()
+				.invalidateSession();
+		return "/views/usuario/login.xhtml?faces-redirect=true";
+	}
 
 	public Usuario getUsuario() {
 		return usuario;
@@ -52,4 +57,13 @@ public class LoginManagedBean extends MasterManagedBean {
 	public void setUsuario(Usuario usuario) {
 		LoginManagedBean.usuario = usuario;
 	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
 }
