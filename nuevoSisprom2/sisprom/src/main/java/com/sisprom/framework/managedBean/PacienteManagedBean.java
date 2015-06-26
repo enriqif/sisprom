@@ -8,17 +8,21 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import org.apache.log4j.Logger;
 import org.primefaces.event.SelectEvent;
 
+import com.sisprom.framework.dominio.AntecedenteGeneral;
+import com.sisprom.framework.dominio.AntecedentePerPatologico;
 import com.sisprom.framework.dominio.Consulta;
 import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.dominio.Paciente;
 import com.sisprom.framework.dominio.Usuario;
 
 @ManagedBean
-
+@SessionScoped
+@ViewScoped
 public class PacienteManagedBean extends MasterManagedBean {
 
 	/**
@@ -30,29 +34,38 @@ public class PacienteManagedBean extends MasterManagedBean {
 	private Paciente paciente;
 	private List<Paciente> listaPacientes = new ArrayList<Paciente>();
 	
+	private AntecedenteGeneral antecedenteGeneral;
+	
 	private Consulta consulta;
 	private HistoriaClinica historiaClinica;
 	
 	private List<Consulta> listaConsulta = new ArrayList<Consulta>();
 	private List<Consulta> listaConsultax = new ArrayList<Consulta>();
+	private List<AntecedentePerPatologico > listaAntecedentePatologico = new ArrayList<AntecedentePerPatologico>();
 	
 	public PacienteManagedBean(){
 		paciente = new Paciente();
 		setListaPacientes(super.getServices().getAllPaciente());
 		consulta =new Consulta();
+		antecedenteGeneral= new AntecedenteGeneral();
+		
 		setListaConsulta(super.getServices().getAllConsulta());
 		setListaConsultax(super.getServices().getAllConsulta());
-
+		setListaAntPatologico(super.getServices().getAllAntecedentePerPatologico());
 	}
 
-	public void cargar(){
+	public void cargar(Paciente paciente){
 		
-		Paciente aux = new Paciente();
-		aux.setPacienteId(1);
-		listaPacientes = super.getServices().consultarPaciente(aux);
-		listaConsulta = super.getServices().listaConsultaPaciente(aux);
+		
+		listaPacientes = super.getServices().consultarPaciente(paciente);
+		listaConsulta = super.getServices().listaConsultaPaciente(paciente);
+		listaAntecedentePatologico = super.getServices().listaAntecPatologicos(paciente);
+		
 		paciente = listaPacientes.get(0);
-		consulta = super.getServices().ultimaConsultaPaciente(aux);
+		antecedenteGeneral = super.getServices().traerAntecedenteGral(paciente);
+		System.out.println("hola "+ listaAntecedentePatologico.get(0).getAntecedentePerNombre());
+		consulta = super.getServices().ultimaConsultaPaciente(paciente);
+		
 	}
 	public String nuevo() {
 		try {
@@ -102,6 +115,12 @@ public class PacienteManagedBean extends MasterManagedBean {
 		return limpiar();
 	}
 	
+	public String historial() {
+		paciente= getPaciente();
+		cargar(paciente);
+		
+		return "historialPaciente";
+	}
 	public String nuevoPaciente(){
 		return "nuevoPaciente";
 	}
@@ -167,6 +186,25 @@ public class PacienteManagedBean extends MasterManagedBean {
 	public void setListaConsultax(List<Consulta> listaConsultax) {
 		this.listaConsultax = listaConsultax;
 	}
+
+	public AntecedenteGeneral getAntecedenteGeneral() {
+		return antecedenteGeneral;
+	}
+
+	public void setAntecedenteGeneral(AntecedenteGeneral antecedenteGeneral) {
+		this.antecedenteGeneral = antecedenteGeneral;
+	}
+
+	public List<AntecedentePerPatologico> getListaAntPatologico() {
+		return listaAntecedentePatologico;
+	}
+
+	public void setListaAntPatologico(
+			List<AntecedentePerPatologico> listaAntPatologico) {
+		this.listaAntecedentePatologico = listaAntPatologico;
+	}
+
+
 	
 	
 }

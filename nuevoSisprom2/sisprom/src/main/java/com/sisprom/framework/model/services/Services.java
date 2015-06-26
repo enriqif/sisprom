@@ -67,8 +67,7 @@ public class Services{
 	}
 	public List<Paciente> getAllPaciente(){
 		return pacienteDao.getAll();
-	}
-	
+	}	
 	public List<Paciente> findByIdPaciente(Integer id){
 		return pacienteDao.findById(id);
 	}
@@ -80,6 +79,13 @@ public class Services{
 	}
 	public List<Consulta> listaConsultaPaciente(Paciente paciente){
 		return pacienteDao.traerListaConsultaPaciente(paciente);
+	}
+	
+	public AntecedenteGeneral traerAntecedenteGral (Paciente paciente){
+		return pacienteDao.traerAntecedenteGral(paciente);
+	}
+	public List<AntecedentePerPatologico> listaAntecPatologicos(Paciente paciente){
+		return pacienteDao.traerListaAntecedentesPatologico(paciente);
 	}
 	
 	// Servicio Turno
