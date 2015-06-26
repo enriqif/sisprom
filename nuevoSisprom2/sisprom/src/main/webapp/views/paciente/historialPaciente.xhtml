@@ -47,10 +47,7 @@
 							</p:row>
 
 						</f:facet>
-						<p:row>
-							<h:commandButton class="style_button"
-								action="#{pacienteManagedBean.cargar}" value="Cargar" />
-						</p:row>
+
 					</h:panelGrid>
 				</p:panel>
 			</h:form>
@@ -129,186 +126,193 @@
 				<span>Datos Antecedentes</span>
 			</h1>
 
+			<p:panel>
+			
+			<p:panelGrid columns="2">
+				<p:panelGrid style="margin-top:10px">
 
-			<p:panelGrid style="margin-top:20px">
+					<f:facet name="header">
+						<p:row>
+							<p:column colspan="4">Antecedente General</p:column>
+							
+						</p:row>
+					</f:facet>
 
-				<f:facet name="header">
 					<p:row>
-						<p:column colspan="2">Antecedente General</p:column>
-						<p:column colspan="2">Antecedente General</p:column>
-						<p:column colspan="2">Antecedente Patologico</p:column>
+						<p:column>Peso al nacer</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePesoalnacer}</p:column>
+
+						<p:column>Talla</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteTalla}</p:column>
+
 					</p:row>
-				</f:facet>
+					<p:row>
+						<p:column>Parto normal</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePartoNormal}</p:column>
 
-				<p:row>
-					<p:column>Personal al nacer</p:column>
-					<p:column>1</p:column>
+						<p:column>CCEFALIC</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteCcefalic}</p:column>
 
-					<p:column>Talla</p:column>
-					<p:column>1</p:column>
+					</p:row>
 
-					<p:column>Nombre</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Parto normal</p:column>
-					<p:column>1</p:column>
+					<p:row>
+						<p:column>Parto distocico</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePartoDistocico}</p:column>
 
-					<p:column>CCEFALIC</p:column>
-					<p:column>1</p:column>
+						<p:column>SCOREDEAPGAR</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteScoredeapgar}</p:column>
 
-					<p:column>Descripcion</p:column>
-					<p:column>1</p:column>
-				</p:row>
+					</p:row>
 
-				<p:row>
-					<p:column>Parto distocico</p:column>
-					<p:column>1</p:column>
+					<p:row>
+						<p:column>Parto Cersaria</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePartoCesaria}</p:column>
 
-					<p:column>SCOREDEAPGAR</p:column>
-					<p:column>1</p:column>
+						<p:column>SocioEconomico</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteSocioEconomico}</p:column>
 
+					</p:row>
 
-				</p:row>
+					<p:row>
+						<p:column>Complicaciones</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteComplicaciones}</p:column>
 
-				<p:row>
-					<p:column>Parto Cersarian</p:column>
-					<p:column>1</p:column>
+						<p:column>Diabetes</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteDiabetes}</p:column>
 
-					<p:column>SocioEconomico</p:column>
-					<p:column>1</p:column>
-					<p:column>Nombre</p:column>
-					<p:column>1</p:column>
-				</p:row>
+					</p:row>
+					<p:row>
+						<p:column>Asma</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteAsma}</p:column>
 
-				<p:row>
-					<p:column>Complicaciones</p:column>
-					<p:column>1</p:column>
+						<p:column>Tbc</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteTbc}</p:column>
 
-					<p:column>Diabetes</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Hipertension</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteHipertension}</p:column>
 
-					<p:column>Descripcion</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Asma</p:column>
-					<p:column>1</p:column>
+						<p:column>del Padre</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePadre}</p:column>
 
-					<p:column>Tbc</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>de la madre</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteMadre}</p:column>
 
+						<p:column>hijos</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteHijos}</p:column>
 
-				</p:row>
-				<p:row>
-					<p:column>Hipertension</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>hermanos</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteHermanos}</p:column>
 
-					<p:column>del Padre</p:column>
-					<p:column>1</p:column>
-
-					<p:column>Nombre</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>de la madre</p:column>
-					<p:column>1</p:column>
-
-					<p:column>hijos</p:column>
-					<p:column>1</p:column>
-
-					<p:column>Descripcion</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>hermanos</p:column>
-					<p:column>1</p:column>
-
-					<p:column>Reaccion adversa</p:column>
-					<p:column>1</p:column>
+						<p:column>Reaccion adversa</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteReaccionAdversa}</p:column>
 
 
-				</p:row>
-				<p:row>
-					<p:column>Tabaco</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Tabaco</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteTabaco}</p:column>
 
-					<p:column>Adiccion</p:column>
-					<p:column>1</p:column>
-					<p:column>Nombre</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Operacion anterior</p:column>
-					<p:column>1</p:column>
+						<p:column>Adiccion</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteAdiccion}</p:column>
 
-					<p:column>Tipo operacion</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Operacion anterior</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteOperacionanterior}</p:column>
 
-					<p:column>Descripcion</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Traumatismo</p:column>
-					<p:column>1</p:column>
+						<p:column>Tipo operacion</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteTipooperacion}</p:column>
 
-					<p:column>Localizacion</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Traumatismo</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteTraumatismos}</p:column>
 
-				</p:row>
-				<p:row>
-					<p:column>Peso</p:column>
-					<p:column>1</p:column>
+						<p:column>Localizacion</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteLocalizacion}</p:column>
 
-					<p:column>Gral Talla</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Peso</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePeso}</p:column>
 
-					<p:column>Nombre</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Tensio arterial</p:column>
-					<p:column>1</p:column>
+						<p:column>Gral Talla</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteGeneralTalla}</p:column>
 
-					<p:column>Piel y faneras</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Tensio arterial</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteTensionarterial}</p:column>
 
-					<p:column>Descripcion</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Vision</p:column>
-					<p:column>1</p:column>
+						<p:column>Piel y faneras</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePielyfaneras}</p:column>
 
-					<p:column>Audicion</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Vision</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteVision}</p:column>
+
+						<p:column>Audicion</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteAudicion}</p:column>
 
 
-				</p:row>
-				<p:row>
-					<p:column>Odontologia</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Odontologia</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteOdontologia}</p:column>
 
-					<p:column>Obesidad</p:column>
-					<p:column>1</p:column>
+						<p:column>Obesidad</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedenteObesidad}</p:column>
 
-					<p:column>Nombre</p:column>
-					<p:column>1</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Peso normal</p:column>
-					<p:column>1</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Peso normal</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePartoNormal}</p:column>
 
-					<p:column>Peso bajo</p:column>
-					<p:column>1</p:column>
+						<p:column>Peso bajo</p:column>
+						<p:column>#{pacienteManagedBean.antecedenteGeneral.antecedentePesobajo}</p:column>
 
-					<p:column>Descripcion</p:column>
-					<p:column>1</p:column>
-				</p:row>
+					</p:row>
 
-			</p:panelGrid>
+				</p:panelGrid>
+				
+				<p:scrollPanel mode="native" style="height: 400px">
+			
+						<p:dataGrid value="#{pacienteManagedBean.listaAntPatologico}" var="colm"
+							columns="1" elements="9">
+						
+							<p:panel bodyClass="pbody">
 
+								<f:facet name="header">
+									<p:row>
+										<p:column>Antecedente Patologico  </p:column>
+									</p:row>
 
+								</f:facet>
+
+								<h:panelGrid columns="2" border="2" styleClass="styleGrid">
+									<h:outputText value="Nombre" style="font-weight: bold"></h:outputText>
+									<h:outputText value="#{colm.antecedentePerNombre}" />
+									<h:outputText value="Descripcion: " style="font-weight: bold" />
+									<h:outputText value="#{colm.antecedentePerDescripcion}" />
+								
+
+								</h:panelGrid>
+							</p:panel>
+
+							<f:facet name="footer">
+							</f:facet>
+
+						</p:dataGrid>
+					</p:scrollPanel>
+</p:panelGrid>
+			</p:panel>
 		</ui:define>
 
 

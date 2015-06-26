@@ -62,7 +62,7 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="numAfiliado" />
+							<h:outputText value="Nª Afiliado" />
 						</f:facet>
 						<h:outputText value="#{item.pacienteNumeroAfiliado}" />
 					</p:column>
@@ -86,9 +86,24 @@
 					</p:column>
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="obraSocial" />
+							<h:outputText value="Obra Social" />
 						</f:facet>
 						<h:outputText value="#{item.pacienteObraSocial}" />
+					</p:column>
+					
+						<p:column>
+						<f:facet name="header">
+							<h:outputText value="Detalle" />
+						</f:facet>
+						
+						
+							
+						<p:commandButton id="buttonHistorial" value="Historial" 
+						
+						action="#{pacienteManagedBean.historial}">
+						<f:setPropertyActionListener
+							target="#{pacienteManagedBean.paciente}" value="#{item}" />
+						</p:commandButton>
 					</p:column>
 				</p:dataTable>
 			</h:panelGroup>

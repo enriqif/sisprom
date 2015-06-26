@@ -10,6 +10,8 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.sisprom.framework.dominio.AntecedenteGeneral;
+import com.sisprom.framework.dominio.AntecedentePerPatologico;
 import com.sisprom.framework.dominio.Consulta;
 import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.dominio.Paciente;
@@ -130,14 +132,56 @@ public class PacienteDaoImpl extends HibernateDaoSupport  implements PacienteDao
 				
 				if (extraHist.getPaciente().getPacienteId()==paciente.getPacienteId() ){
 					listaConsulta.add(extraConsulta);
-					
 					}
 				}
-			}
-		
+			}		
 		return listaConsulta;
+	}
+
+	@Override
+	public AntecedenteGeneral traerAntecedenteGral(Paciente paciente) {
+		
+		AntecedenteGeneral extraAntGral= new AntecedenteGeneral();
+		AntecedenteGeneral extraAntGralSalida= new AntecedenteGeneral();
+
+		HistoriaClinica extraHist = new HistoriaClinica();
+		Criteria criteria = getSession().createCriteria(AntecedenteGeneral.class);
+		List<AntecedenteGeneral> lista= criteria.list();
+		if(lista.size()!=0){
+			for (int i = 0; i < lista.size(); i++) {
+				extraAntGral=lista.get(i);
+				extraHist = extraAntGral.getHistoriaClinica();
+				if (extraHist.getPaciente().getPacienteId()==paciente.getPacienteId() ){
+					extraAntGralSalida=extraAntGral;
+				}
+			}
+		}		
+		return extraAntGralSalida;
+	}
+
+	@Override
+	public List<AntecedentePerPatologico> traerListaAntecedentesPatologico(Paciente paciente) {
+		
+		HistoriaClinica extraHist = new HistoriaClinica();
+		AntecedentePerPatologico extraAntPat= new AntecedentePerPatologico();
+		List<AntecedentePerPatologico> listaAntecPatologicos = new ArrayList<AntecedentePerPatologico>();
+
+		Criteria criteria = getSession().createCriteria(AntecedentePerPatologico.class);
+		List<AntecedentePerPatologico>  lista= criteria.list();
+		if(lista.size()!=0){
+			for (int i = 0; i < lista.size(); i++) {
+				extraAntPat= lista.get(i);
+				extraHist = extraAntPat.getHistoriaClinica();
+				if (extraHist.getPaciente().getPacienteId()==paciente.getPacienteId() ){
+					listaAntecPatologicos.add(extraAntPat);
+				}
+			}
+		}
+				
+		return listaAntecPatologicos;
 	}	
 	
 
+	
 
 }
