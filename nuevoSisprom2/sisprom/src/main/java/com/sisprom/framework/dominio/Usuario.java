@@ -17,10 +17,12 @@ public class Usuario implements java.io.Serializable {
 	private String usuarioApellido;
 	private String usuarioDni;
 	private String usuarioTelefono;
+	private String usuarioDomicilioCalle;
+	private String usuarioDomicilioNumero;
 	private String usuarioDomicilioBarrio;
+	private String usuarioRol;
 	private String usuarioUsuario;
 	private String usuarioContrasenia;
-	private String usuarioRol;
 	private String usuarioObraSocial;
 	private String usuarioEdad;
 	private String usuarioMatricula;
@@ -31,8 +33,6 @@ public class Usuario implements java.io.Serializable {
 	private Date fechaModificacion;
 	private String usuarioCreacion;
 	private String usuarioModificacion;
-	private String usuarioDomicilioCalle;
-	private String usuarioDomicilioNumero;
 	private Set historiaClinicas = new HashSet(0);
 	private Boolean usuarioVisible;
 	public Usuario() {

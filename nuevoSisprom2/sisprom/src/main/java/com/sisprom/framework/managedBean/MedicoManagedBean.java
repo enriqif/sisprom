@@ -32,12 +32,12 @@ import com.sisprom.framework.dominio.Usuario;
 @ViewScoped
 public class MedicoManagedBean extends MasterManagedBean implements Serializable{
 	
-/**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-/**
+	/**
 	 * 
 	 */
 
@@ -154,13 +154,20 @@ public class MedicoManagedBean extends MasterManagedBean implements Serializable
 	    public String actualizar(){
 			try {				
 				medicoSelect.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
-				if (usu.getUsuarioNombre()!=""){medicoSelect.setUsuarioNombre(usu.getUsuarioNombre());}
-				if (usu.getUsuarioApellido()!=""){medicoSelect.setUsuarioApellido(usu.getUsuarioApellido());}
-				if (usu.getUsuarioDni()!=""){medicoSelect.setUsuarioDni(usu.getUsuarioDni());}
-				if (usu.getUsuarioTelefono()!=""){medicoSelect.setUsuarioTelefono(usu.getUsuarioTelefono());}
-				if (usu.getUsuarioDomicilioCalle()!=""){medicoSelect.setUsuarioDomicilioCalle(usu.getUsuarioDomicilioCalle());}
-				if (usu.getUsuarioDomicilioNumero()!=""){medicoSelect.setUsuarioDomicilioNumero(usu.getUsuarioDomicilioNumero());}
-				if (usu.getUsuarioDomicilioBarrio()!=""){medicoSelect.setUsuarioDomicilioBarrio(usu.getUsuarioDomicilioBarrio());}
+				if (usu.getUsuarioNombre()!=""){
+					medicoSelect.setUsuarioNombre(usu.getUsuarioNombre());}
+				if (usu.getUsuarioApellido()!=""){
+					medicoSelect.setUsuarioApellido(usu.getUsuarioApellido());}
+				if (usu.getUsuarioDni()!=""){
+					medicoSelect.setUsuarioDni(usu.getUsuarioDni());}
+				if (usu.getUsuarioTelefono()!=""){
+					medicoSelect.setUsuarioTelefono(usu.getUsuarioTelefono());}
+				if (usu.getUsuarioDomicilioCalle()!=""){
+					medicoSelect.setUsuarioDomicilioCalle(usu.getUsuarioDomicilioCalle());}
+				if (usu.getUsuarioDomicilioNumero()!=""){
+					medicoSelect.setUsuarioDomicilioNumero(usu.getUsuarioDomicilioNumero());}
+				if (usu.getUsuarioDomicilioBarrio()!=""){
+					medicoSelect.setUsuarioDomicilioBarrio(usu.getUsuarioDomicilioBarrio());}
 				super.getServices().updateUsuario(medicoSelect);
 				return "hechoMedico";			
 			} catch (Exception e) {

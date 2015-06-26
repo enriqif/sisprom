@@ -31,6 +31,7 @@ import org.primefaces.event.FileUploadEvent;
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.UnselectEvent;
 
+import com.sisprom.framework.dominio.HistoriaClinica;
 import com.sisprom.framework.dominio.Paciente;
 import com.sisprom.framework.dominio.Permiso;
 import com.sisprom.framework.dominio.Usuario;
@@ -127,31 +128,67 @@ public class PersonalManagedBean extends MasterManagedBean {
 
 	public String modificar() {
 		logger.info("Ejecutando metodo modificar");
-		usuario= getUsuarioSelect();
-		
+		//setUsuarioSelect(super.getServices().consultarPersonal(usuarioSelect).get(0));
 		return "modificarPersonal";
 	}
 	
 	public String guardarModificar() {
 		try {
-
-			setUsuarioSelect(super.getServices().consultarPersonal(usuarioSelect).get(0));
-			
 			//atributos que setea por codigo
 			//No son ingresados por el usuario
-			usuarioMod.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
+			usuarioSelect.setUsuarioId(usuarioSelect.getUsuarioId());
+			usuarioSelect.setPermiso(new Permiso(3));
+			
+			usuarioSelect.setUsuarioObraSocial("");
+			usuarioSelect.setUsuarioMatricula("");
+			usuarioSelect.setUsuarioEspecialidad("");
+			
+			usuarioSelect.setUsuarioModificacion(LoginManagedBean.usuario.getUsuarioUsuario());
 			SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
-			usuarioMod.setFechaModificacion(formateador.parse(formateador
+			usuarioSelect.setFechaModificacion(formateador.parse(formateador
 					.format(new Date())));
-			usuarioMod.setPermiso(new Permiso(3));
-			usuarioMod.setUsuarioVisible(true);
-			usuarioMod.setUsuarioId(usuarioSelect.getUsuarioId());
-			usuarioMod.setFechaCreacion(usuarioSelect.getFechaCreacion());
+			usuarioSelect.setUsuarioHoraAtencionMax(formateador.parse(formateador
+					.format(new Date())));
+			usuarioSelect.setUsuarioHoraAtencionMin(formateador.parse(formateador
+					.format(new Date())));
+			usuarioSelect.setUsuarioVisible(true);
+
+			usuarioSelect.setFechaCreacion(usuarioSelect.getFechaCreacion());
 			
 			//campos q no son ingresados por el usuario
 			// pero si estan disponibles para ser editados
+			if (usuarioMod.getUsuarioNombre()!=""){
+				usuarioSelect.setUsuarioNombre(usuarioMod.getUsuarioNombre());
+				}
+			if (usuarioMod.getUsuarioApellido()!=""){
+				usuarioSelect.setUsuarioApellido(usuarioMod.getUsuarioApellido());
+			}
+			if (usuarioMod.getUsuarioDni()!=""){
+				usuarioSelect.setUsuarioDni(usuarioMod.getUsuarioDni());
+			}
+			if (usuarioMod.getUsuarioTelefono()!=""){
+				usuarioSelect.setUsuarioTelefono(usuarioMod.getUsuarioTelefono());
+			}
+			if (usuarioMod.getUsuarioDomicilioCalle()!=""){
+				usuarioSelect.setUsuarioDomicilioCalle(usuarioMod.getUsuarioDomicilioCalle());
+			}
+			if (usuarioMod.getUsuarioDomicilioNumero()!=""){
+				usuarioSelect.setUsuarioDomicilioNumero(usuarioMod.getUsuarioDomicilioNumero());
+			}
+			if (usuarioMod.getUsuarioDomicilioBarrio()!=""){
+				usuarioSelect.setUsuarioDomicilioBarrio(usuarioMod.getUsuarioDomicilioBarrio());
+			}
+			if (usuarioMod.getUsuarioRol()!=""){
+				usuarioSelect.setUsuarioRol(usuarioMod.getUsuarioRol());
+			}
+			if (usuarioMod.getUsuarioUsuario()!=""){
+				usuarioSelect.setUsuarioUsuario(usuarioMod.getUsuarioUsuario());
+			}
 			
-			super.getServices().updateUsuario(usuarioMod);
+			super.getServices().updateUsuario(usuarioSelect);
+			limpiar();
+			lista.clear();
+			setLista(super.getServices().consultarPersonal(usuario = new Usuario()));
 			return "guardadoOk";
 			//return "homePersonal";		
 		} catch (Exception e) {

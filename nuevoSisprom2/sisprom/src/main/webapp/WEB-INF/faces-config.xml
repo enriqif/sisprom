@@ -2,11 +2,7 @@
 <faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
- <managed-bean>
-  <managed-bean-name>pacienteManagedBean</managed-bean-name>
-  <managed-bean-class>com.sisprom.framework.managedBean.PacienteManagedBean</managed-bean-class>
-  <managed-bean-scope>session</managed-bean-scope>
- </managed-bean>
+
  <managed-bean>
   <managed-bean-name>loginManagedBean</managed-bean-name>
   <managed-bean-class>com.sisprom.framework.managedBean.LoginManagedBean</managed-bean-class>
@@ -105,15 +101,15 @@
   <navigation-case>
    <from-outcome>moficarPersonal</from-outcome>
    <to-view-id>/views/personal/modificarPersonal.xhtml</to-view-id>
+   </navigation-case>
+  <navigation-case>
+  	<from-outcome>guardadoOk</from-outcome>
+  	<to-view-id>/views/personal/guardadoCorrecto.xhtml</to-view-id>
   </navigation-case>
-  	<navigation-case>
-  		<from-outcome>guardadoOk</from-outcome>
-  		<to-view-id>/views/personal/guardadoCorrecto.xhtml</to-view-id>
-  	</navigation-case>
-    <navigation-case>
-	  	<from-outcome>errorGuardado</from-outcome>
-  		<to-view-id>/views/error/error.xhtml</to-view-id>
-  	</navigation-case>	
+  <navigation-case>
+	<from-outcome>errorGuardado</from-outcome>
+  	<to-view-id>/views/error/error.xhtml</to-view-id>
+  </navigation-case>	
  </navigation-rule>
  <navigation-rule>
   <from-view-id>/views/paciente/nuevoPaciente.xhtml</from-view-id>

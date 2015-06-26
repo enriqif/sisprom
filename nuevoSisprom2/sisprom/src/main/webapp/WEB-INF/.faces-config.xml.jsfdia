@@ -34,7 +34,7 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#*" PATH="/views/paciente/*"
-  SHAPE="32,1137,0,0" model-entity="JSFProcessGroup">
+  SHAPE="8,1104,53,138" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#paciente#*:0" NAME="item"
    PATH="/views/paciente/*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
@@ -100,7 +100,7 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#paciente#nuevoPaciente.xhtml"
-  PATH="/views/paciente/nuevoPaciente.xhtml" SHAPE="304,1425,0,0" model-entity="JSFProcessGroup">
+  PATH="/views/paciente/nuevoPaciente.xhtml" SHAPE="304,1128,50,57" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#paciente#nuevoPaciente.xhtml:0"
    NAME="item" PATH="/views/paciente/nuevoPaciente.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="hecho::#views#hecho.xhtml" NAME="output"
@@ -116,33 +116,33 @@
  <PROCESS-ITEM NAME="rules:#views#informes#homeInformes.xhtml"
   PATH="/views/informes/homeInformes.xhtml" SHAPE="304,641,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#actualizarPaciente.xhtml"
-  PATH="/views/paciente/actualizarPaciente.xhtml" SHAPE="304,1793,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/paciente/actualizarPaciente.xhtml" SHAPE="304,1288,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#homePaciente.xhtml"
   PATH="/views/paciente/homePaciente.xhtml" SHAPE="304,145,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#buscarPaciente.xhtml"
-  PATH="/views/paciente/buscarPaciente.xhtml" SHAPE="304,1896,50,25" model-entity="JSFProcessGroup"/>
+  PATH="/views/paciente/buscarPaciente.xhtml" SHAPE="288,1384,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#nuevoPersonal.xhtml"
   PATH="/views/personal/nuevoPersonal.xhtml" SHAPE="296,776,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#historialPaciente.xhtml"
-  PATH="/views/paciente/historialPaciente.xhtml" SHAPE="304,2000,50,25" model-entity="JSFProcessGroup"/>
+  PATH="/views/paciente/historialPaciente.xhtml" SHAPE="288,1432,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#error#error.xhtml"
-  PATH="/views/error/error.xhtml" SHAPE="304,1153,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/error/error.xhtml" SHAPE="304,1008,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#error.xhtml"
-  PATH="/views/paciente/error.xhtml" SHAPE="528,1553,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/paciente/error.xhtml" SHAPE="576,1192,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#hecho.xhtml" PATH="/views/hecho.xhtml"
-  SHAPE="528,1409,0,0" model-entity="JSFProcessGroup"/>
+  SHAPE="576,1152,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#paciente#archivarPaciente.xhtml"
-  PATH="/views/paciente/archivarPaciente.xhtml" SHAPE="304,1681,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/paciente/archivarPaciente.xhtml" SHAPE="304,1240,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#usuario#bienvenido.xhtml"
   PATH="/views/usuario/bienvenido.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#turnos#homeTurno.xhtml"
   PATH="/views/turnos/homeTurno.xhtml" SHAPE="304,529,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#homePersonal.xhtml"
-  PATH="/views/personal/homePersonal.xhtml" SHAPE="304,896,50,25" model-entity="JSFProcessGroup"/>
+  PATH="/views/personal/homePersonal.xhtml" SHAPE="312,944,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#personal#modificarPersonal.xhtml"
-  PATH="/views/personal/modificarPersonal.xhtml" SHAPE="304,865,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/personal/modificarPersonal.xhtml" SHAPE="304,896,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#medico#*" PATH="/views/medico/*"
-  SHAPE="32,1777,0,0" model-entity="JSFProcessGroup">
+  SHAPE="32,1560,53,106" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#views#medico#*:0" NAME="item"
    PATH="/views/medico/*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
@@ -167,9 +167,11 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#views#medico#buscarMedico.xhtml"
-  PATH="/views/medico/buscarMedico.xhtml" SHAPE="304,2049,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/views/medico/buscarMedico.xhtml" SHAPE="368,1584,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#medico#modificarPerfil.xhtml"
-  PATH="/views/medico/modificarPerfil.xhtml" SHAPE="304,1944,50,25" model-entity="JSFProcessGroup"/>
+  PATH="/views/medico/modificarPerfil.xhtml" SHAPE="520,1600,50,25" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#views#medico#hechoMedico.xhtml"
-  PATH="/views/medico/hechoMedico.xhtml" SHAPE="296,1848,50,25" model-entity="JSFProcessGroup"/>
+  PATH="/views/medico/hechoMedico.xhtml" SHAPE="608,1616,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#personal#guardadoCorrecto.xhtml"
+  PATH="/views/personal/guardadoCorrecto.xhtml" SHAPE="304,1080,50,25" model-entity="JSFProcessGroup"/>
 </PROCESS>
